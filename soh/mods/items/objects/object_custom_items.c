@@ -15,3 +15,4 @@
 #include "object_mogma_mitts.c"
 #include "object_beetle.c"
 #include "object_whip.c"
+#include "object_timegate.c"

@@ -15,10 +15,12 @@
 // Thresholds for beam/bar shape detection (OoT world units)
 // =============================================================================
 // Adult Link height = 68 units for reference
-#define GRAPPLE_MIN_LENGTH        40.0f   // Min beam length (0.6x Link)
-#define GRAPPLE_MAX_CROSS_SECTION 120.0f  // Max cross-section dim (1.8x Link)
-#define GRAPPLE_MIN_THICKNESS     3.0f    // Min thickness (avoid degenerate polys)
-#define GRAPPLE_MAX_CROSS_SUM     220.0f  // Sum of 2 smallest dims
+#define GRAPPLE_MIN_LENGTH        30.0f   // Min beam length (relaxed)
+#define GRAPPLE_MAX_CROSS_SECTION 200.0f  // Max cross-section dim (relaxed)
+#define GRAPPLE_MIN_THICKNESS     2.0f    // Min thickness (avoid degenerate polys)
+#define GRAPPLE_MAX_CROSS_SUM     350.0f  // Sum of 2 smallest dims (relaxed)
+#define GRAPPLE_ASPECT_RATIO      1.5f    // Min ratio of largest to middle dim for elongated shape
+#define GRAPPLE_NEIGHBOR_DIST     50.0f   // Max distance to consider polys as neighbors
 
 // =============================================================================
 // GrappleTarget: result of surface analysis

@@ -4280,6 +4280,7 @@ typedef enum {
     RG_CANE_OF_SOMARIA,
     RG_SHOVEL,
     RG_DOMINION_ROD,
+    RG_DESIRE_SENSOR,
     // Logic Only
     RG_DISTANT_SCARECROW,
     RG_STICKS,

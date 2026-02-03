@@ -21,7 +21,7 @@ const std::array<RandomizerGet, 16> JunkPoolItems = {
     RG_RECOVERY_HEART, RG_ARROWS_5,   RG_ARROWS_10,    RG_ARROWS_30,   RG_BLUE_RUPEE,   RG_RED_RUPEE,
     RG_PURPLE_RUPEE,   RG_HUGE_RUPEE, RG_DEKU_NUTS_10, RG_ICE_TRAP,
 };
-const std::array<RandomizerGet, 83> alwaysItems = {
+const std::array<RandomizerGet, 84> alwaysItems = {
     RG_BIGGORON_SWORD,
     RG_BOOMERANG,
     RG_LENS_OF_TRUTH,
@@ -106,6 +106,7 @@ const std::array<RandomizerGet, 83> alwaysItems = {
     RG_CANE_OF_SOMARIA,
     RG_SHOVEL,
     RG_DOMINION_ROD,
+    RG_DESIRE_SENSOR,
 };
 const std::array<RandomizerGet, 44> easyItems = {
     RG_BIGGORON_SWORD,

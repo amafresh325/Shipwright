@@ -26,9 +26,8 @@
 #define WHIP_BODY_SCALE    0.015f  // Body segment render scale
 #define WHIP_HEAD_SCALE    0.022f  // Snake head render scale
 #define WHIP_TAIL_SCALE    0.018f  // Tail crystal render scale
-#define WHIP_COIL_SEGMENTS 5       // Body segments in coiled state
-#define WHIP_COIL_RADIUS   6.0f    // Coil spiral radius
-#define WHIP_COIL_SCALE    0.010f  // Slightly smaller for coil
+#define WHIP_EQUIP_SCALE   0.016f  // Scale for equipped head
+#define WHIP_EQUIP_BODY_COUNT 2    // Short body extension when equipped
 
 // =============================================================================
 // SNAKE BODY SEGMENT — Hexagonal tube along Z axis
@@ -250,53 +249,55 @@ static void Whip_DrawTailCrystal(PlayState* play, Vec3f* pos) {
 }
 
 // =============================================================================
-// Draw coiled snake near hand (equip state)
+// Draw equipped whip: snake head + short body + purple crystal (held in hand)
 // =============================================================================
-static void Whip_DrawCoiledSnake(PlayState* play, Vec3f* handPos, Player* player) {
+static void Whip_DrawEquippedWhip(PlayState* play, Vec3f* handPos, Player* player) {
+    f32 yaw = (f32)player->actor.shape.rot.y * (M_PI / 32768.0f);
+    f32 pitch = -0.3f; // Slight downward angle
+    Vec3f headPos, tailPos, segPos;
     s32 i;
-    f32 angle, tangentYaw;
-    Vec3f segPos, headPos;
 
     OPEN_DISPS(play->state.gfxCtx);
 
-    // Body segments in a helical coil
-    for (i = 0; i < WHIP_COIL_SEGMENTS; i++) {
-        angle = (f32)i * (2.0f * M_PI / (f32)WHIP_COIL_SEGMENTS);
+    // Snake head at front (forward from hand)
+    headPos.x = handPos->x + sinf(yaw) * 18.0f;
+    headPos.y = handPos->y + 5.0f;
+    headPos.z = handPos->z + cosf(yaw) * 18.0f;
 
-        segPos.x = handPos->x + cosf(angle) * WHIP_COIL_RADIUS;
-        segPos.y = handPos->y + (f32)i * 2.0f;
-        segPos.z = handPos->z + sinf(angle) * WHIP_COIL_RADIUS;
+    Matrix_Translate(headPos.x, headPos.y, headPos.z, MTXMODE_NEW);
+    Matrix_RotateY(yaw, MTXMODE_APPLY);
+    Matrix_RotateX(pitch, MTXMODE_APPLY);
+    Matrix_Scale(WHIP_EQUIP_SCALE, WHIP_EQUIP_SCALE, WHIP_EQUIP_SCALE, MTXMODE_APPLY);
 
-        // Each segment tangent to the coil circle
-        tangentYaw = angle + (M_PI / 2.0f);
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, __FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPDisplayList(POLY_OPA_DISP++, sWhipHeadDL);
+
+    // Short body segments between head and handle
+    for (i = 0; i < WHIP_EQUIP_BODY_COUNT; i++) {
+        f32 t = (f32)(i + 1) / (f32)(WHIP_EQUIP_BODY_COUNT + 1);
+        segPos.x = handPos->x + sinf(yaw) * (18.0f - t * 20.0f);
+        segPos.y = handPos->y + 5.0f - t * 8.0f;
+        segPos.z = handPos->z + cosf(yaw) * (18.0f - t * 20.0f);
 
         Matrix_Translate(segPos.x, segPos.y, segPos.z, MTXMODE_NEW);
-        Matrix_RotateY(tangentYaw, MTXMODE_APPLY);
-        Matrix_Scale(WHIP_COIL_SCALE, WHIP_COIL_SCALE, WHIP_COIL_SCALE, MTXMODE_APPLY);
+        Matrix_RotateY(yaw, MTXMODE_APPLY);
+        Matrix_RotateX(pitch, MTXMODE_APPLY);
+        Matrix_Scale(WHIP_BODY_SCALE * 0.8f, WHIP_BODY_SCALE * 0.8f, WHIP_BODY_SCALE * 0.8f, MTXMODE_APPLY);
 
         gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, __FILE__, __LINE__),
                   G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
         gSPDisplayList(POLY_OPA_DISP++, sWhipBodyDL);
     }
 
-    // Snake head on top of coil, facing player direction
-    headPos.x = handPos->x;
-    headPos.y = handPos->y + (f32)WHIP_COIL_SEGMENTS * 2.0f + 5.0f;
-    headPos.z = handPos->z;
+    // Purple crystal handle at hand
+    tailPos.x = handPos->x - sinf(yaw) * 5.0f;
+    tailPos.y = handPos->y - 3.0f;
+    tailPos.z = handPos->z - cosf(yaw) * 5.0f;
 
-    tangentYaw = (f32)player->actor.shape.rot.y * (M_PI / 32768.0f);
-
-    Matrix_Translate(headPos.x, headPos.y, headPos.z, MTXMODE_NEW);
-    Matrix_RotateY(tangentYaw, MTXMODE_APPLY);
-    Matrix_Scale(WHIP_HEAD_SCALE * 0.7f, WHIP_HEAD_SCALE * 0.7f, WHIP_HEAD_SCALE * 0.7f, MTXMODE_APPLY);
-
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, __FILE__, __LINE__),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
-    gSPDisplayList(POLY_OPA_DISP++, sWhipHeadDL);
-
-    // Purple tail crystal at the base of the coil
-    Matrix_Translate(handPos->x, handPos->y - 3.0f, handPos->z, MTXMODE_NEW);
-    Matrix_Scale(WHIP_TAIL_SCALE * 0.6f, WHIP_TAIL_SCALE * 0.6f, WHIP_TAIL_SCALE * 0.6f, MTXMODE_APPLY);
+    Matrix_Translate(tailPos.x, tailPos.y, tailPos.z, MTXMODE_NEW);
+    Matrix_RotateY(yaw, MTXMODE_APPLY);
+    Matrix_Scale(WHIP_TAIL_SCALE * 0.7f, WHIP_TAIL_SCALE * 0.7f, WHIP_TAIL_SCALE * 0.7f, MTXMODE_APPLY);
 
     gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, __FILE__, __LINE__),
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
@@ -319,7 +320,7 @@ void CustomItems_DrawWhip(Player* player, PlayState* play) {
 
     switch (state) {
         case WHIP_STATE_EQUIP:
-            Whip_DrawCoiledSnake(play, &handPos, player);
+            Whip_DrawEquippedWhip(play, &handPos, player);
             break;
 
         case WHIP_STATE_EXTENDING:

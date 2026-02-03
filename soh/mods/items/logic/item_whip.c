@@ -24,6 +24,7 @@
 #include "variables.h"
 #include <math.h>
 #include "../anim/ballchain/ballchain_anim_data.h"
+#include "assets/objects/gameplay_keep/gameplay_keep.h"
 
 // =============================================================================
 // Internal Constants
@@ -38,6 +39,7 @@
 // Static Data
 // =============================================================================
 static u8 sWhipColInitialized = 0;
+static s32 sWhipAnimState = -1; // Tracks animation state for upper action
 
 // =============================================================================
 // Collider Functions
@@ -191,6 +193,7 @@ static void Whip_Stop(Player* p, PlayState* play) {
     whipSwingAngle = 0.0f;
     whipSwingVel = 0.0f;
     whipRopeLength = 0.0f;
+    sWhipAnimState = -1;
     p->actor.gravity = -1.0f;
     ItemEquip_PlayUnequipSFX(play, p);
 }
@@ -206,13 +209,15 @@ static void Whip_Start(Player* p, PlayState* play) {
 
     // When Z-targeting with focus actor, launch immediately toward target
     if (Player_IsZTargeting(p) && p->focusActor != NULL) {
-        f32 dx = p->focusActor->focus.pos.x - p->actor.world.pos.x;
-        f32 dy = p->focusActor->focus.pos.y - (p->actor.world.pos.y + 50.0f);
-        f32 dz = p->focusActor->focus.pos.z - p->actor.world.pos.z;
+        // Use actor world.pos (body center) instead of focus.pos (head) for better aim
+        f32 targetY = p->focusActor->world.pos.y + (p->focusActor->shape.yOffset * p->focusActor->scale.y);
+        f32 dx = p->focusActor->world.pos.x - p->actor.world.pos.x;
+        f32 dy = targetY - (p->actor.world.pos.y + 50.0f);
+        f32 dz = p->focusActor->world.pos.z - p->actor.world.pos.z;
         f32 hDist = sqrtf(dx * dx + dz * dz);
 
         whipExtendYaw = Math_Atan2S(dx, dz);
-        whipExtendPitch = Math_Atan2S(-dy, hDist);
+        whipExtendPitch = Math_Atan2S(dy, hDist);
         whipTipPos = p->bodyPartsPos[PLAYER_BODYPART_R_HAND];
         whipTimer = WHIP_TIMER_MAX;
         whipState = WHIP_STATE_EXTENDING;
@@ -267,12 +272,14 @@ static void WhipStateEquip(Player* p, PlayState* play, ItemInputState* in) {
             FirstPerson_Exit(p, play);
             whipFirstPerson = 0;
         } else if (isZTarget && p->focusActor != NULL) {
-            f32 dx = p->focusActor->focus.pos.x - p->actor.world.pos.x;
-            f32 dy = p->focusActor->focus.pos.y - (p->actor.world.pos.y + 50.0f);
-            f32 dz = p->focusActor->focus.pos.z - p->actor.world.pos.z;
+            // Use actor world.pos (body center) instead of focus.pos (head) for better aim
+            f32 targetY = p->focusActor->world.pos.y + (p->focusActor->shape.yOffset * p->focusActor->scale.y);
+            f32 dx = p->focusActor->world.pos.x - p->actor.world.pos.x;
+            f32 dy = targetY - (p->actor.world.pos.y + 50.0f);
+            f32 dz = p->focusActor->world.pos.z - p->actor.world.pos.z;
             f32 hDist = sqrtf(dx * dx + dz * dz);
             whipExtendYaw = Math_Atan2S(dx, dz);
-            whipExtendPitch = Math_Atan2S(-dy, hDist);
+            whipExtendPitch = Math_Atan2S(dy, hDist);
         } else {
             whipExtendYaw = p->actor.shape.rot.y;
             whipExtendPitch = 0;
@@ -671,8 +678,52 @@ void Player_InitWhipIA(PlayState* play, Player* p) {
     whipSwingVel = 0.0f;
     whipRopeLength = 0.0f;
     whipFirstPerson = 0;
+    sWhipAnimState = -1;
 }
 
 s32 Player_UpperAction_Whip(Player* p, PlayState* play) {
-    return 0;
+    // Not active: let lower body control everything
+    if (!whipActive) {
+        sWhipAnimState = -1;
+        return 0;
+    }
+
+    // Detect state transitions and play appropriate animation
+    if ((s32)whipState != sWhipAnimState) {
+        sWhipAnimState = whipState;
+        switch (whipState) {
+            case WHIP_STATE_EQUIP:
+                // Idle holding pose (boomerang wait)
+                LinkAnimation_PlayLoop(play, &p->upperSkelAnime, &gPlayerAnim_link_boom_throw_waitR);
+                break;
+            case WHIP_STATE_EXTENDING:
+                // Throw animation (one-handed swing forward)
+                LinkAnimation_PlayOnce(play, &p->upperSkelAnime, &gPlayerAnim_link_boom_throwR);
+                break;
+            case WHIP_STATE_RETRACTING:
+                // Keep throw pose while retracting
+                break;
+            case WHIP_STATE_ATTACHED:
+            case WHIP_STATE_SWINGING:
+                // Swinging uses joint override from WhipStateSwinging, no anim needed
+                break;
+        }
+    }
+
+    // Advance animation and handle transitions when finished
+    if (LinkAnimation_Update(play, &p->upperSkelAnime)) {
+        switch (whipState) {
+            case WHIP_STATE_EXTENDING:
+                // Hold at end of throw during extension
+                break;
+            case WHIP_STATE_RETRACTING:
+                // Return to wait pose
+                LinkAnimation_PlayLoop(play, &p->upperSkelAnime, &gPlayerAnim_link_boom_throw_waitR);
+                break;
+            default:
+                break;
+        }
+    }
+
+    return 1;
 }

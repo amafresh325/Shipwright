@@ -313,6 +313,10 @@ typedef struct {
     u8 timeGateSubPhase;
     s16 timeGateTimer;
     u8 timeGatePromptShown;
+    u8 timeGateItemVisible;   // Show item in Link's hand during cast
+    u8 timeGatePortalActive;  // Show blue warp portal on ground
+    f32 timeGatePortalAlpha;  // Portal fade alpha (0-255)
+    f32 timeGatePortalScale;  // Portal scale for grow/shrink effect
 
     // Mogma Mitts
     u8 mogmaMittsActive;
@@ -425,6 +429,8 @@ void CustomItems_DrawDominionRodReticle(Player* player, PlayState* play);
 void CustomItems_DrawCaneOfSomaria(Player* player, PlayState* play);
 void CustomItems_DrawMogmaMitts(Player* player, PlayState* play);
 void CustomItems_DrawWhip(Player* player, PlayState* play);
+void CustomItems_DrawTimeGate(Player* player, PlayState* play);
+void CustomItems_DrawTimeGatePortal(Player* player, PlayState* play);
 
 // External display lists
 extern Gfx* gFireRodBodyDL;

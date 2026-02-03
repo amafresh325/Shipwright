@@ -53,6 +53,7 @@ void Randomizer_DrawDemiseDestruction(PlayState* play, GetItemEntry* getItemEntr
 void Randomizer_DrawMagnesis(PlayState* play, GetItemEntry* getItemEntry);
 void Randomizer_DrawStasis(PlayState* play, GetItemEntry* getItemEntry);
 void Randomizer_DrawCryonis(PlayState* play, GetItemEntry* getItemEntry);
+void Randomizer_DrawDesireSensor(PlayState* play, GetItemEntry* getItemEntry);
 
 #define GET_ITEM_MYSTERY                                                                                 \
     {                                                                                                    \

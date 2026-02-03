@@ -57,6 +57,10 @@ extern "C" {
 #include "mods/items/objects/magic_spell_giveDL/model.inc.c"
 #include "mods/items/objects/bombarrows_giveDL/header.h"
 #include "mods/items/objects/bombarrows_giveDL/model.inc.c"
+#include "mods/items/objects/time_gate_giveDL/header.h"
+#include "mods/items/objects/time_gate_giveDL/model.inc.c"
+#include "mods/items/objects/desire_sensor_giveDL/header.h"
+#include "mods/items/objects/desire_sensor_giveDL/model.inc.c"
 
 extern PlayState* gPlayState;
 extern SaveContext gSaveContext;
@@ -1361,6 +1365,14 @@ Gfx gRandoBombarrowsDL[] = {
     gsSPDisplayList(gBombarrowsGiveDL),
     gsSPEndDisplayList(),
 };
+Gfx gRandoTimegateDL[] = {
+    gsSPDisplayList(g_timegate_dl),
+    gsSPEndDisplayList(),
+};
+Gfx gRandoDesireSensorDL[] = {
+    gsSPDisplayList(g_desire_sensor_dl),
+    gsSPEndDisplayList(),
+};
 
 DEFINE_GREEN_CUBE_ITEM(Whip)
 DEFINE_GREEN_CUBE_ITEM(Firerod)
@@ -1368,7 +1380,6 @@ DEFINE_GREEN_CUBE_ITEM(Icerod)
 DEFINE_GREEN_CUBE_ITEM(Lightrod)
 DEFINE_GREEN_CUBE_ITEM(SwitchHook)
 DEFINE_GREEN_CUBE_ITEM(Dominionrod)
-DEFINE_GREEN_CUBE_ITEM(Timegate)
 DEFINE_GREEN_CUBE_ITEM(Shovel)
 DEFINE_GREEN_CUBE_ITEM(Magnesis)
 DEFINE_GREEN_CUBE_ITEM(Stasis)
@@ -1445,7 +1456,7 @@ void Randomizer_DrawLightRod(PlayState* play, GetItemEntry* getItemEntry) {
 }
 
 void Randomizer_DrawDekuLeaf(PlayState* play, GetItemEntry* getItemEntry) {
-    DrawCustomItemDiamond(play, gRandoDekuLeafDL, 2.5f);
+    DrawCustomItemDiamond(play, gRandoDekuLeafDL, 0.5f);
 }
 
 void Randomizer_DrawSwitchHook(PlayState* play, GetItemEntry* getItemEntry) {
@@ -1465,7 +1476,7 @@ void Randomizer_DrawBallAndChain(PlayState* play, GetItemEntry* getItemEntry) {
 }*/
 
 void Randomizer_DrawBallAndChain(PlayState* play, GetItemEntry* getItemEntry) {
-    DrawCustomItemDiamond(play, gRandoBallandChainDL, 0.25f);
+    DrawCustomItemDiamond(play, gRandoTimegateDL, 0.5f);
 }
 
 void Randomizer_DrawCaneOfSomaria(PlayState* play, GetItemEntry* getItemEntry) {
@@ -1477,7 +1488,11 @@ void Randomizer_DrawDominionRod(PlayState* play, GetItemEntry* getItemEntry) {
 }
 
 void Randomizer_DrawTimeGate(PlayState* play, GetItemEntry* getItemEntry) {
-    DrawCustomItemDiamond(play, gRandoTimegateDL, 2.5f);
+    DrawCustomItemDiamond(play, gRandoTimegateDL, 0.5f);
+}
+
+void Randomizer_DrawDesireSensor(PlayState* play, GetItemEntry* getItemEntry) {
+    DrawCustomItemDiamond(play, gRandoDesireSensorDL, 0.5f);
 }
 
 void Randomizer_DrawBeetle(PlayState* play, GetItemEntry* getItemEntry) {

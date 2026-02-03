@@ -20,6 +20,7 @@
 #include "macros.h"
 #include "functions.h"
 #include "variables.h"
+#include "objects/object_warp1/object_warp1.h"
 
 // SwitchAge() is declared in mods.h with extern "C" linkage
 extern void SwitchAge(void);
@@ -67,6 +68,10 @@ static void TimeGate_Stop(Player* p, PlayState* play) {
     tgSubPhase = 0;
     tgTimer = 0;
     tgPromptShown = 0;
+    tgItemVisible = 0;
+    tgPortalActive = 0;
+    tgPortalAlpha = 0.0f;
+    tgPortalScale = 0.0f;
 }
 
 static void TimeGate_Start(Player* p, PlayState* play) {
@@ -91,6 +96,10 @@ static void TimeGate_Start(Player* p, PlayState* play) {
     tgSubPhase = TGATE_CAST_TAMASHII1;
     tgTimer = -2;  // Deferred setup on frame -1
     tgPromptShown = 0;
+    tgItemVisible = 0;
+    tgPortalActive = 0;
+    tgPortalAlpha = 0.0f;
+    tgPortalScale = 0.0f;
     sTGPhaseEnd = 0;
 }
 
@@ -162,6 +171,29 @@ static void TimeGate_StateCasting(Player* p, PlayState* play) {
         }
     }
 
+    // Detect when Link "places" the item (around frame 10 of first animation)
+    // Activate item visibility and portal when we reach this point
+    if (tgSubPhase == TGATE_CAST_TAMASHII1 && p->skelAnime.curFrame >= TGATE_CAST_ITEM_FRAME && !tgItemVisible) {
+        tgItemVisible = 1;
+        tgPortalActive = 1;
+        tgPortalAlpha = 0.0f;  // Will fade in
+        tgPortalScale = 0.0f;  // Will grow
+        Audio_PlaySoundGeneral(NA_SE_EV_WARP_HOLE, &p->actor.world.pos, 4,
+            &gSfxDefaultFreqAndVolScale, &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
+    }
+
+    // Grow portal during casting
+    if (tgPortalActive) {
+        if (tgPortalAlpha < 255.0f) {
+            tgPortalAlpha += 8.0f;
+            if (tgPortalAlpha > 255.0f) tgPortalAlpha = 255.0f;
+        }
+        if (tgPortalScale < 1.0f) {
+            tgPortalScale += 0.05f;
+            if (tgPortalScale > 1.0f) tgPortalScale = 1.0f;
+        }
+    }
+
     // Blue-purple sparkles during casting (time-themed)
     if (tgTimer > 10 && play->gameplayFrames % 4 == 0) {
         Vec3f sparklePos = p->actor.world.pos;
@@ -190,10 +222,10 @@ static void TimeGate_StateHovering(Player* p, PlayState* play) {
 
     tgTimer++;
 
-    // Play warp hover animation on entry
+    // Play warp hover animation on entry - start with ANIMMODE_ONCE to play through once
     if (tgTimer == 1) {
         LinkAnimation_Change(play, &p->skelAnime, &gPlayerAnim_link_demo_warp, TGATE_ANIM_SPEED, 0.0f,
-            Animation_GetLastFrame(&gPlayerAnim_link_demo_warp), ANIMMODE_LOOP, -8.0f);
+            Animation_GetLastFrame(&gPlayerAnim_link_demo_warp), ANIMMODE_ONCE, -8.0f);
         Audio_PlaySoundGeneral(NA_SE_PL_MAGIC_WIND_WARP, &p->actor.world.pos, 4,
             &gSfxDefaultFreqAndVolScale, &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
     }
@@ -201,6 +233,19 @@ static void TimeGate_StateHovering(Player* p, PlayState* play) {
     // Double-update (Demise pattern)
     if (tgTimer >= 1) {
         LinkAnimation_Update(play, &p->skelAnime);
+    }
+
+    // Manual loop of last 2 frames while waiting for player choice
+    // When animation reaches the end, loop back to (lastFrame - 2)
+    {
+        f32 lastFrame = Animation_GetLastFrame(&gPlayerAnim_link_demo_warp);
+        f32 loopStart = lastFrame - 2.0f;
+        if (loopStart < 0.0f) loopStart = 0.0f;
+
+        // If we've reached near the end, reset to loop start
+        if (p->skelAnime.curFrame >= lastFrame - 0.5f) {
+            p->skelAnime.curFrame = loopStart;
+        }
     }
 
     // Show textbox after settling into hover
@@ -228,6 +273,9 @@ static void TimeGate_StateHovering(Player* p, PlayState* play) {
             // Close the textbox
             Message_CloseTextbox(play);
             play->msgCtx.msgMode = MSGMODE_TEXT_DONE;
+
+            // Hide item in hand immediately on selection
+            tgItemVisible = 0;
 
             if (play->msgCtx.choiceIndex == 0) {
                 // YES - switch age
@@ -267,6 +315,10 @@ static void TimeGate_StateSwitching(Player* p, PlayState* play) {
     tgSubPhase = 0;
     tgTimer = 0;
     tgPromptShown = 0;
+    tgItemVisible = 0;
+    tgPortalActive = 0;
+    tgPortalAlpha = 0.0f;
+    tgPortalScale = 0.0f;
 
     // Switch age - this triggers scene transition
     SwitchAge();
@@ -294,6 +346,17 @@ static void TimeGate_StateCancel(Player* p, PlayState* play) {
         LinkAnimation_Update(play, &p->skelAnime);
     }
 
+    // Fade out portal during cancel
+    if (tgPortalActive) {
+        tgPortalAlpha -= 12.0f;
+        tgPortalScale -= 0.04f;
+        if (tgPortalAlpha <= 0.0f) {
+            tgPortalAlpha = 0.0f;
+            tgPortalActive = 0;
+        }
+        if (tgPortalScale < 0.0f) tgPortalScale = 0.0f;
+    }
+
     // End after cancel duration
     if (tgTimer >= TGATE_CANCEL_DURATION) {
         p->stateFlags1 &= ~(PLAYER_STATE1_IN_ITEM_CS | PLAYER_STATE1_INPUT_DISABLED);
@@ -304,6 +367,10 @@ static void TimeGate_StateCancel(Player* p, PlayState* play) {
         tgSubPhase = 0;
         tgTimer = 0;
         tgPromptShown = 0;
+        tgItemVisible = 0;
+        tgPortalActive = 0;
+        tgPortalAlpha = 0.0f;
+        tgPortalScale = 0.0f;
     }
 }
 
@@ -358,6 +425,10 @@ void Player_InitTimeGateIA(PlayState* play, Player* p) {
     tgSubPhase = 0;
     tgTimer = 0;
     tgPromptShown = 0;
+    tgItemVisible = 0;
+    tgPortalActive = 0;
+    tgPortalAlpha = 0.0f;
+    tgPortalScale = 0.0f;
 }
 
 s32 Player_UpperAction_TimeGate(Player* p, PlayState* play) { return 0; }

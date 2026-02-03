@@ -156,6 +156,10 @@ CustomItemState gCustomItemState = {
     .timeGateSubPhase = 0,
     .timeGateTimer = 0,
     .timeGatePromptShown = 0,
+    .timeGateItemVisible = 0,
+    .timeGatePortalActive = 0,
+    .timeGatePortalAlpha = 0.0f,
+    .timeGatePortalScale = 0.0f,
     // Mogma Mitts
     .mogmaMittsActive = 0,
     .mogmaMittsDrainTick = 0,
@@ -358,6 +362,10 @@ s32 CustomItems_OverrideDraw(Player* p, PlayState* play) {
     }
     if (gCustomItemState.whipActive) {
         CustomItems_DrawWhip(p, play);
+    }
+    if (gCustomItemState.timeGateActive) {
+        CustomItems_DrawTimeGate(p, play);
+        CustomItems_DrawTimeGatePortal(p, play);
     }
 
     // Draw reticle for items using first-person aiming mode

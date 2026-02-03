@@ -39,16 +39,35 @@ static void ExpandBBox(Vec3f* bMin, Vec3f* bMax, Vec3s* vtx) {
 }
 
 // =============================================================================
+// Internal: get center of a polygon
+// =============================================================================
+static void GetPolyCenterF(Vec3s* vtxList, u16 idxA, u16 idxB, u16 idxC, Vec3f* out) {
+    out->x = (vtxList[idxA].x + vtxList[idxB].x + vtxList[idxC].x) / 3.0f;
+    out->y = (vtxList[idxA].y + vtxList[idxB].y + vtxList[idxC].y) / 3.0f;
+    out->z = (vtxList[idxA].z + vtxList[idxB].z + vtxList[idxC].z) / 3.0f;
+}
+
+// =============================================================================
+// Internal: check if two polygons have similar normals (within ~30 degrees)
+// =============================================================================
+static s32 NormalsAreSimilar(CollisionPoly* p1, CollisionPoly* p2) {
+    f32 n1x, n1y, n1z, n2x, n2y, n2z, dot;
+    CollisionPoly_GetNormalF(p1, &n1x, &n1y, &n1z);
+    CollisionPoly_GetNormalF(p2, &n2x, &n2y, &n2z);
+    dot = n1x * n2x + n1y * n2y + n1z * n2z;
+    return (dot > 0.85f); // cos(30 deg) ≈ 0.866
+}
+
+// =============================================================================
 // Grapple_AnalyzeSurface
 // =============================================================================
 s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
                            Vec3f* hitPos, GrappleTarget* outTarget) {
     CollisionHeader* colHeader;
     Vec3s* vtxList;
-    u16 hitType;
     u16 idxA, idxB, idxC;
-    Vec3f bMin, bMax;
-    f32 dx, dy, dz;
+    Vec3f bMin, bMax, hitCenter;
+    f32 dx, dy, dz, aspectRatio;
 
     if (outTarget == NULL || poly == NULL) return 0;
 
@@ -67,7 +86,7 @@ s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
                              &outTarget->surfaceNormal.y,
                              &outTarget->surfaceNormal.z);
 
-    // Check hookshot flag
+    // Check hookshot flag (info only, not automatic graspable)
     outTarget->isHookshottable = SurfaceType_IsHookshotSurface(&play->colCtx, poly, bgId);
 
     // Get collision header
@@ -83,10 +102,12 @@ s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
     if (vtxList == NULL) return 0;
 
     // Get hit poly vertex indices
-    hitType = poly->type;
     idxA = COLPOLY_VTX_INDEX(poly->flags_vIA);
     idxB = COLPOLY_VTX_INDEX(poly->flags_vIB);
     idxC = poly->vIC;
+
+    // Get hit poly center for proximity checks
+    GetPolyCenterF(vtxList, idxA, idxB, idxC, &hitCenter);
 
     // Initialize bounding box from hit poly vertices
     bMin.x = bMin.y = bMin.z = 99999.0f;
@@ -96,14 +117,18 @@ s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
     ExpandBBox(&bMin, &bMax, &vtxList[idxB]);
     ExpandBBox(&bMin, &bMax, &vtxList[idxC]);
 
-    // Walk neighbor polygons: same surface type AND share at least 1 vertex
+    // Walk neighbor polygons: similar normal AND (shared vertex OR within distance)
     for (u16 i = 0; i < colHeader->numPolygons; i++) {
         CollisionPoly* other = &colHeader->polyList[i];
         u16 oA, oB, oC;
         s32 shared;
+        Vec3f otherCenter;
+        f32 distSq;
 
-        if (other->type != hitType) continue;
         if (other == poly) continue;
+
+        // Must have similar surface normal (facing same direction)
+        if (!NormalsAreSimilar(poly, other)) continue;
 
         oA = COLPOLY_VTX_INDEX(other->flags_vIA);
         oB = COLPOLY_VTX_INDEX(other->flags_vIB);
@@ -114,7 +139,15 @@ s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
                   oB == idxA || oB == idxB || oB == idxC ||
                   oC == idxA || oC == idxB || oC == idxC);
 
-        if (!shared) continue;
+        if (!shared) {
+            // Check proximity: is the other poly center close to hit poly center?
+            GetPolyCenterF(vtxList, oA, oB, oC, &otherCenter);
+            dx = otherCenter.x - hitCenter.x;
+            dy = otherCenter.y - hitCenter.y;
+            dz = otherCenter.z - hitCenter.z;
+            distSq = dx * dx + dy * dy + dz * dz;
+            if (distSq > GRAPPLE_NEIGHBOR_DIST * GRAPPLE_NEIGHBOR_DIST) continue;
+        }
 
         ExpandBBox(&bMin, &bMax, &vtxList[oA]);
         ExpandBBox(&bMin, &bMax, &vtxList[oB]);
@@ -132,13 +165,22 @@ s32 Grapple_AnalyzeSurface(PlayState* play, CollisionPoly* poly, s32 bgId,
     outTarget->dims[1] = dy; // middle
     outTarget->dims[2] = dz; // largest
 
-    // Check graspable proportions
+    // Calculate aspect ratio (how elongated the shape is)
+    aspectRatio = (dy > 0.1f) ? (dz / dy) : 10.0f;
+
+    // Check graspable: elongated shape (beam/bar/ledge) with reasonable cross-section
+    // More permissive: accept if either elongated OR has good proportions
     outTarget->isGraspable =
-        (dz >= GRAPPLE_MIN_LENGTH) &&
-        (dx >= GRAPPLE_MIN_THICKNESS) &&
-        (dx <= GRAPPLE_MAX_CROSS_SECTION) &&
-        (dy <= GRAPPLE_MAX_CROSS_SECTION) &&
-        (dx + dy <= GRAPPLE_MAX_CROSS_SUM);
+        // Traditional beam/bar check (relaxed thresholds)
+        ((dz >= GRAPPLE_MIN_LENGTH) &&
+         (dx >= GRAPPLE_MIN_THICKNESS) &&
+         (dx <= GRAPPLE_MAX_CROSS_SECTION) &&
+         (dy <= GRAPPLE_MAX_CROSS_SECTION) &&
+         (dx + dy <= GRAPPLE_MAX_CROSS_SUM)) ||
+        // Elongated shape check (high aspect ratio)
+        ((dz >= GRAPPLE_MIN_LENGTH) &&
+         (aspectRatio >= GRAPPLE_ASPECT_RATIO) &&
+         (dx <= GRAPPLE_MAX_CROSS_SECTION));
 
     return outTarget->isGraspable;
 }

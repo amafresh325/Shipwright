@@ -5641,10 +5641,15 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "Du hast den %rStab von Somaria%w!&Ein Stab der magische Blöcke&aus dem Nichts erschafft.^Drücke %y[C]%w um einen&%rmagischen Block%w zu erschaffen.&Nur einer kann gleichzeitig existieren.^Nutze ihn für Schalter,&um Feinde zu blockieren,&oder als Plattform.",
       "Vous obtenez la %rCanne de Somaria%w!&Une baguette qui crée des&blocs magiques de nulle part.^Appuyez sur %y[C]%w pour créer&un %rbloc magique%w. Un seul&peut exister à la fois.^Utilisez-le pour activer des&interrupteurs, bloquer des ennemis,&ou comme plateforme." },
 
-    { RG_DOMINION_ROD, static_cast<ItemID>(ITEM_DOMINION_ROD), 
-      "You got the %pDominion Rod%w!&It breathes life into statues.&Control machines! Uses %gMagic%w.", 
-      "Du hast den %pKopierstab%w erhalten!&Er haucht Statuen Leben ein.&Kontrolliere Maschinen! Verbraucht %gMagie%w.", 
+    { RG_DOMINION_ROD, static_cast<ItemID>(ITEM_DOMINION_ROD),
+      "You got the %pDominion Rod%w!&It breathes life into statues.&Control machines! Uses %gMagic%w.",
+      "Du hast den %pKopierstab%w erhalten!&Er haucht Statuen Leben ein.&Kontrolliere Maschinen! Verbraucht %gMagie%w.",
       "Vous obtenez la %pBaguette des Animes%w!&Elle donne vie aux statues.&Contrôlez les machines! Utilise de la %gMagie%w." },
+
+    { RG_DESIRE_SENSOR, static_cast<ItemID>(ITEM_DESIRE_SENSOR),
+      "You got the %bDesire Sensor%w!&A rare gem that glows brighter&the more you desire something.^Legend says it knows what&you want most...&and denies it.",
+      "Du hast den %bWunsch-Sensor%w!&Ein seltener Edelstein der heller&leuchtet je mehr du dir wünschst.^Die Legende sagt er weiß was&du am meisten willst...&und verweigert es dir.",
+      "Vous obtenez le %bCapteur de Désir%w!&Une gemme rare qui brille&plus fort selon vos désirs.^La légende dit qu'il sait ce&que vous voulez le plus...&et vous le refuse." },
 
     { RG_BEETLE, static_cast<ItemID>(ITEM_BEETLE), 
       "You got the %gBeetle%w!&A remote mechanical insect.&Fly to grab items!", 
@@ -6576,6 +6581,9 @@ extern "C" u16 Randomizer_Item_Give(PlayState* play, GetItemEntry giEntry) {
             break;
         case RG_DOMINION_ROD:
             ExtInv_SetItemById(ITEM_DOMINION_ROD);
+            break;
+        case RG_DESIRE_SENSOR:
+            ExtInv_SetItemById(ITEM_DESIRE_SENSOR);
             break;
         default:
             LUSLOG_WARN("Randomizer_Item_Give didn't have behaviour specified for getItemId=%d", item);
