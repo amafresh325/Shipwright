@@ -23,12 +23,6 @@
 #include "../anim/superhero/demise_anim.h"
 #include "../anim/superhero/demise_anim_data.c"
 #include "../anim/superhero/demise_anim.c"
-#include "mods/extended_equipment.h"
-
-// --- EIGENE MAKROS ---
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost)) 
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1) 
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
 
 static s8 sDemisePrevInvinc = 0;
 static FX_Color sDemiseDustColor = { 60, 0, 0, 255 };
@@ -45,11 +39,7 @@ static void Demise_Stop(Player* p, PlayState* play) {
 static void Demise_Start(Player* p, PlayState* play) {
     if (ddActive)
         return;
-
-    // Kosten dynamisch über das Macro berechnen
-    s16 cost = MAGIC_REQ(DEMISE_MAGIC_COST);
-
-    if (!ItemMagic_HasEnough(play, cost)) {
+    if (!ItemMagic_HasEnough(play, DEMISE_MAGIC_COST)) {
         Audio_PlaySoundGeneral(NA_SE_SY_ERROR, &p->actor.world.pos, 4, &gSfxDefaultFreqAndVolScale,
                                &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
         return;
@@ -60,7 +50,7 @@ static void Demise_Start(Player* p, PlayState* play) {
     ddActive = 1;
     ddState = DEMISE_STATE_WINDUP;
     ddTimer = -2;
-    ItemMagic_Consume(play, cost);
+    ItemMagic_Consume(play, DEMISE_MAGIC_COST);
 }
 
 static void Demise_FinalExplosion(PlayState* play, Player* p) {

@@ -82,30 +82,7 @@ void Randomizer_DrawExtPendantOfMemories(PlayState* play, GetItemEntry* getItemE
 void Randomizer_DrawExtWaterDragonScale(PlayState* play, GetItemEntry* getItemEntry);
 
 // MM Mask Get-Item 3D Models (all 24, from mm.o2r)
-void DrawCustomMmMask_Postman(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_AllNight(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Blast(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Stone(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_GreatFairy(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Deku(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Keaton(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Bremen(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Bunny(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_DonGero(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Scents(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Goron(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Romani(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_CircusLeader(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Kafei(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Couple(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Truth(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Zora(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Kamaro(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Gibdo(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Garo(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Captain(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_Giant(PlayState* play, GetItemEntry* getItemEntry);
-void DrawCustomMmMask_FierceDeity(PlayState* play, GetItemEntry* getItemEntry);
+void Randomizer_DrawMmMask(PlayState* play, GetItemEntry* getItemEntry);
 
 // Chateau Romani bottle (from mm.o2r)
 void Randomizer_DrawChateauRomani(PlayState* play, GetItemEntry* getItemEntry);

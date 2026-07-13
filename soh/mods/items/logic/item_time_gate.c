@@ -21,12 +21,6 @@
 #include "functions.h"
 #include "variables.h"
 #include "objects/object_warp1/object_warp1.h"
-#include "mods/extended_equipment.h"
-
-// --- EIGENE MAKROS ---
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost)) 
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1) 
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
 
 // SwitchAge() is declared in mods.h with extern "C" linkage
 extern void SwitchAge(void);
@@ -86,8 +80,8 @@ static void TimeGate_Start(Player* p, PlayState* play) {
     if (tgActive)
         return;
 
-    // Validate magic (dynamische Kosten prüfen)
-    if (!ItemMagic_HasEnough(play, MAGIC_REQ(TGATE_MAGIC_COST))) {
+    // Validate magic (don't consume yet - only on Yes)
+    if (!ItemMagic_HasEnough(play, TGATE_MAGIC_COST)) {
         Audio_PlaySoundGeneral(NA_SE_SY_ERROR, &p->actor.world.pos, 4, &gSfxDefaultFreqAndVolScale,
                                &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
         return;
@@ -307,8 +301,8 @@ static void TimeGate_StateHovering(Player* p, PlayState* play) {
 // =============================================================================
 
 static void TimeGate_StateSwitching(Player* p, PlayState* play) {
-    // Consume magic now that user confirmed (dynamisch berechnet)
-    ItemMagic_Consume(play, MAGIC_REQ(TGATE_MAGIC_COST));
+    // Consume magic now that user confirmed
+    ItemMagic_Consume(play, TGATE_MAGIC_COST);
 
     // Screen flash effect
     func_800AA000(400.0f, 200, 30, 100);

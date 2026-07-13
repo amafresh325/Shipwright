@@ -76,8 +76,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_PROGRESSIVE_ROCS, static_cast<ItemID>(ITEM_ROCS_FEATHER_SKIJER),
       "You got %rRoc's Feather%w!&This magical feather lets you&jump higher than normal.^Assign it to %y\xA1%w and "
       "press&to perform a high jump.&It even works in water!",
-      "Du hast die %rGreifenfeder%w erhalten!&Diese magische Feder lässt&dich höher springen.^Weise sie %y\xA1%w zu und "
-      "drücke,&um hochzuspringen.&Funktioniert auch im Wasser!",
+      "Du hast %rRocs Feder%w erhalten!&Diese magische Feder lässt&dich höher springen.^Weise sie %y\xA1%w zu und "
+      "drücke&um hoch zu springen.&Funktioniert auch im Wasser!",
       "Vous obtenez la %rPlume de Roc%w!&Cette plume magique vous&permet de sauter plus haut.^Assignez-la à %y\xA1%w et "
       "appuyez&pour faire un grand saut.&Fonctionne même dans l'eau!" },
 
@@ -85,7 +85,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_ROCS_FEATHER, static_cast<ItemID>(ITEM_ROCS_FEATHER_SKIJER),
       "You got %rRoc's Feather%w!&Assign it to %y\xA1%w and press it&while standing to leap into&the air. It shares "
       "its slot&with Nayru's Love.",
-      "Du hast die %rGreifenfeder%w erhalten!&Weise sie %y\xA1%w zu und drücke,&um in die Luft zu springen.^Sie teilt sich "
+      "Du hast %rRocs Feder%w erhalten!&Weise sie %y\xA1%w zu und drücke,&um in die Luft zu springen.&Sie teilt sich "
       "den Platz mit&Nayrus Umarmung.",
       "Vous obtenez la %rPlume de Roc%w!&Assignez-la à %y\xA1%w et appuyez&pour bondir dans les airs.&Elle partage son "
       "emplacement&avec l'Amour de Nayru." },
@@ -93,8 +93,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_ROCS_CAPE, static_cast<ItemID>(ITEM_ROCS_CAPE),
       "You got %rRoc's Cape%w!&This magical cape enhances&your jumping ability.^Now you can perform a&%gdouble jump%w "
       "in midair.&Press %y\xA1%w again while&jumping to go higher!",
-      "Du hast den %rGreifenmantel%w&erhalten!&Dieser magische Umhang&verbessert deine Sprungkraft.^Du kannst nun "
-      "einen %gDoppelsprung%w&in der Luft ausführen.&Drücke %y\xA1%w erneut,&während du springst!",
+      "Du hast %rRocs Umhang%w erhalten!&Dieser magische Umhang&verbessert deine Sprungkraft.^Du kannst nun "
+      "einen&%gDoppelsprung%w in der Luft&ausführen. Drücke %y\xA1%w&erneut während du springst!",
       "Vous obtenez la %rCape de Roc%w!&Cette cape magique améliore&vos capacités de saut.^Vous pouvez maintenant "
       "effectuer&un %gdouble saut%w en l'air.&Appuyez sur %y\xA1%w en sautant&pour aller plus haut!" },
 
@@ -103,7 +103,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "cover great&distances. Consumes magic.^%yOn the ground%w: Creates a gust&of wind that pushes objects&and "
       "enemies forward.",
       "Du hast das %gDeku-Blatt%w erhalten!&Ein Riesenblatt mit der&Kraft des Windes.^%yIn der Luft%w: Gleite "
-      "langsam&und überbrücke große Distanzen.&Verbraucht Magie.^%yAm Boden%w: Erzeugt einen&Windstoß, der Objekte "
+      "langsam&und überbrücke große&Distanzen. Verbraucht Magie.^%yAm Boden%w: Erzeugt einen&Windstoß der Objekte "
       "und&Feinde nach vorne schiebt.",
       "Vous obtenez la %gFeuille Mojo%w!&Une feuille géante dotée&des pouvoirs du vent.^%yDans les airs%w: "
       "Planez&lentement sur de grandes&distances. Consomme de la magie.^%yAu sol%w: Crée une rafale&qui pousse les "
@@ -114,9 +114,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got %pHylia's Grace%w!&A divine blessing that transforms&you into a %cfairy%w for 10 seconds.^Press %y\xA1%w "
       "to activate&(requires a %rFairy in a Bottle%w).^%yA%w = Ascend  %yB%w = Descend&%yL%w = Sprint&1 minute "
       "cooldown after use.",
-      "Du hast %pHylias Gnade%w erhalten!&Ein göttlicher Segen, der dich für 10 Sekunden in eine %cFee%w "
-      "verwandelt.^Drücke %y\xA1%w zum Aktivieren&(benötigt eine %rFee in einer Flasche%w).^%yA%w = Aufsteigen&%yB%w = "
-      "Absteigen&%yL%w = Sprinten&1 Minute Abklingzeit.",
+      "Du hast %pHylias Gnade%w erhalten!&Ein göttlicher Segen der dich&für 10 Sekunden in eine %cFee%w "
+      "verwandelt.^Drücke %y\xA1%w zum Aktivieren&(benötigt eine %rFee in einer Flasche%w).^%yA%w = Aufsteigen  %yB%w = "
+      "Absteigen&%yL%w = Sprinten&1 Minute Abklingzeit nach Nutzung.",
       "Vous obtenez la %pGrâce d'Hylia%w!&Une bénédiction divine qui vous&transforme en %cfée%w pendant 10 "
       "secondes.^Appuyez sur %y\xA1%w pour activer&(nécessite une %rFée en Bouteille%w).^%yA%w = Monter  %yB%w = "
       "Descendre&%yL%w = Sprint&1 minute de recharge après utilisation." },
@@ -124,107 +124,107 @@ static const CustomItemMessageEntry customItemMessages[] = {
     // MM Masks (Third Inventory Page)
     { RG_MM_MASK_POSTMAN, static_cast<ItemID>(ITEM_MM_MASK_POSTMAN),
       "You got the %yPostman's Hat%w!&The official cap of Termina's&most punctual courier.^Equip from the mask page.^Walk up to any %gunlocked mailbox%w&and press %y\xA0%w to open the&%cMailbox Warp Menu%w - fast travel&to any other unlocked mailbox.",
-      "Du erhältst die %yMütze des Postboten%w! Die offizielle Mütze von Terminas pünktlichstem Boten.^Aufsetzen auf der Maskenseite.^Geh zu einem %gfreigeschalteten&Briefkasten%w und drücke %y\xA0%w für das %cBriefkasten-Warp-Menü%w^Schnellreise zu jedem anderen&freigeschalteten Briefkasten.",
+      "Du hast den %yBriefträgerhut%w!&Die offizielle Mütze von Terminas&pünktlichstem Boten.^Aufsetzen auf der Maskenseite.^Geh zu einem %gfreigeschalteten Briefkasten%w&und drücke %y\xA0%w für das&%cBriefkasten-Warp-Menü%w - Schnellreise&zu jedem anderen freigeschalteten Briefkasten.",
       "Vous obtenez le %yChapeau du Facteur%w!&Le képi officiel du courrier le&plus ponctuel de Termina.^Équipez depuis la page des masques.^Approchez n'importe quelle %gboîte aux&lettres débloquée%w et %y\xA0%w pour ouvrir&le %cMenu de Téléportation%w - voyage&rapide vers toute autre boîte." },
     { RG_MM_MASK_ALL_NIGHT, static_cast<ItemID>(ITEM_MM_MASK_ALL_NIGHT),
       "You got the %yAll-Night Mask%w!&A mask said to grant insomnia&and the gift of seeing in the dark.^Equip from the mask page.^While worn during %gdaytime%w, all&%cnight-only Gold Skulltulas%w spawn&as if it were night - Graveyard,&Zora's Fountain, Gerudo Fortress,&Kakariko, and Lon Lon Ranch.",
-      "Du erhältst die %yMaske der Nacht%w!&Eine Maske, die Schlaflosigkeit&und Nachtsicht verleihen soll.^Aufsetzen auf der Maskenseite.^Beim Tragen am %gTag%w erscheinen alle %cNur-Nachts-Gold-Skulltulas%w, als wäre es Nacht.^Gebiete: Friedhof, Zora-Quelle,&Gerudo-Festung, Kakariko und Lon Lon Ranch.",
+      "Du hast die %yNachtmaske%w!&Eine Maske, die Schlaflosigkeit&und Nachtsicht verleihen soll.^Aufsetzen auf der Maskenseite.^Beim Tragen am %gTag%w erscheinen alle&%cnur-nachts Goldskulltulas%w, als wäre&es Nacht - Friedhof, Zora-Quelle,&Gerudo-Festung, Kakariko und&Lon Lon Ranch.",
       "Vous obtenez le %yMasque de Nuit%w!&Un masque qui octroierait l'insomnie&et le don de voir dans l'obscurité.^Équipez depuis la page des masques.^Porté de %gjour%w, toutes les&%cSkulltulas d'Or de nuit%w apparaissent&comme s'il faisait nuit - Cimetière,&Fontaine Zora, Forteresse Gerudo,&Kakariko et Ranch Lon Lon." },
     { RG_MM_MASK_BLAST, static_cast<ItemID>(ITEM_MM_MASK_BLAST),
       "You got the %yBlast Mask%w!&A mask of explosive power born&of pure detonation.^Equip from the mask page.^%y\xA0%w detonates an %rinstant explosion%w&at Link's position - no bombs needed.&Cooldown: %g~310 frames%w (~16 s).&With %cgMods.BlastMask.Instant%w on,&cooldown drops to 1 frame.",
-      "Du erhältst die %yKa-Bumm-Maske%w!&Eine Maske explosiver Kraft,&geboren aus reiner Detonation.^Aufsetzen auf der Maskenseite.^%y\xA0%w zündet eine %rsofortige Explosion%w um dich herum - keine Bomben nötig.^Abklingzeit: %g~310 Frames%w (~16 s).^Mit %cMods: BlastMask Instant%w an,&fällt die Abklingzeit auf 1 Frame.",
+      "Du hast die %yExplosionsmaske%w!&Eine Maske explosiver Kraft,&geboren aus reiner Detonation.^Aufsetzen auf der Maskenseite.^%y\xA0%w zündet eine %rsofortige Explosion%w&an Links Position - keine Bomben nötig.&Abklingzeit: %g~310 Frames%w (~16 s).&Mit %cgMods.BlastMask.Instant%w an,&fällt die Abklingzeit auf 1 Frame.",
       "Vous obtenez le %yMasque d'Explosion%w!&Un masque de pure détonation&aux pouvoirs explosifs.^Équipez depuis la page des masques.^%y\xA0%w déclenche une %rexplosion instantanée%w&à la position de Link - aucune bombe.&Recharge: %g~310 frames%w (~16 s).&Avec %cgMods.BlastMask.Instant%w activé,&la recharge tombe à 1 frame." },
     { RG_MM_MASK_STONE, static_cast<ItemID>(ITEM_MM_MASK_STONE),
       "You got the %yStone Mask%w!&A featureless gray mask said to&render its wearer beneath notice.^Equip from the mask page.^While worn, %cenemies cannot see you%w&- they will not target you,&aggro you, or react to your&presence at all. Stealth pure.",
-      "Du erhältst die %yFels-Maske%w!&Eine merkmallose graue Maske, die ihren Träger unsichtbar macht.^Aufsetzen auf der Maskenseite.^Beim Tragen können dich %cFeinde nicht sehen%w - sie zielen nicht auf dich, werden nicht aggressiv und reagieren nicht auf dich.^Reine Tarnung.",
+      "Du hast die %ySteinmaske%w!&Eine merkmallose graue Maske, die&ihren Träger unsichtbar macht.^Aufsetzen auf der Maskenseite.^Beim Tragen können dich %cFeinde&nicht sehen%w - sie zielen nicht&auf dich, werden nicht aggressiv&und reagieren nicht auf dich. Reine Tarnung.",
       "Vous obtenez le %yMasque de Pierre%w!&Un masque gris sans visage qui&rend son porteur invisible.^Équipez depuis la page des masques.^Pendant le port, %cles ennemis ne&peuvent pas vous voir%w - ils ne&vous ciblent pas, ne deviennent pas&agressifs, ne réagissent pas. Furtivité pure." },
     { RG_MM_MASK_GREAT_FAIRY, static_cast<ItemID>(ITEM_MM_MASK_GREAT_FAIRY),
       "You got the %yGreat Fairy Mask%w!&A wreath of long pink hair&blessed by the fairies.^Equip from the mask page.&In a fairy fountain, %y\xA0%w claims&the Great Fairy reward.^Press %y\xA1%w anywhere to open the&%cFairy Warp Menu%w - teleport to&any unlocked Great Fairy fountain.&Hair physics flow as you move.",
-      "Du erhältst die %yFeen-Maske%w!&Ein Kranz langer rosa Haare,&von den Feen gesegnet.^Aufsetzen auf der Maskenseite.^In einer Feenquelle %y\xA0%w drücken,&um die Belohnung zu erhalten.^Drücke %y\xA1%w überall für das&%cFeen-Warp-Menü%w - teleportiere dich zu jeder freigeschalteten Feenquelle.",
+      "Du hast die %yFeenmaske%w!&Ein Kranz langer rosa Haare,&von den Feen gesegnet.^Aufsetzen auf der Maskenseite.&In einer Feenquelle %y\xA0%w drücken,&um die Belohnung zu erhalten.^Drücke %y\xA1%w überall für das&%cFeen-Warp-Menü%w - teleportiere&zu jeder freigeschalteten Feenquelle.&Haar-Physik beim Bewegen.",
       "Vous obtenez le %yMasque de la Grande Fée%w!&Une couronne de longs cheveux roses&bénie par les fées.^Équipez depuis la page des masques.&Dans une fontaine, %y\xA0%w réclame&la récompense de la Grande Fée.^%y\xA1%w n'importe où ouvre le&%cMenu de Téléportation%w - voyagez&vers toute fontaine débloquée.&Physique de cheveux en mouvement." },
     { RG_MM_MASK_DEKU, static_cast<ItemID>(ITEM_MM_MASK_DEKU),
       "You got the %gDeku Mask%w!&Holds the spirit of a fallen&Deku Scrub.^Equip from the mask page -&Link transforms into a small,&light Deku Scrub.^%y\xA0%w spin attack (pn_attack).&Hold %y\xA0%w to aim -> release fires&a %gbubble projectile%w (costs Magic).^Stand on a %gDeku Flower%w + %y\xA0%w to&burrow, charge, then launch into&a finite-distance %gglide%w.^%bWater%w skips you across the&surface like a stone (5 hops).&%rFire/lava/water%w is fatal.",
-      "Du erhältst die %gDeku-Schale%w!&Birgt den Geist eines gefallenen Deku-Hörigen.^Aufsetzen auf der Maskenseite^Link verwandelt sich in einen kleinen, leichten Deku-Hörigen.^%y\xA0%w Drehangriff (pn_attack).&Halte %y\xA0%w zum Zielen -> loslassen&feuert ein %gBlasenprojektil%w (Magie).^Auf einer %gDeku-Blume%w + %y\xA0%w zum&Eingraben, Aufladen und Abschuss in einen begrenzten %gGleitflug%w.^%bWasser%w lässt dich wie ein Stein&hüpfen (5 Sprünge). %rFeuer/Lava/Wasser%w ist tödlich.",
+      "Du hast die %gDeku-Maske%w!&Birgt den Geist eines gefallenen&Deku-Höriger.^Aufsetzen auf der Maskenseite -&Link verwandelt sich in einen kleinen,&leichten Deku-Höriger.^%y\xA0%w Drehangriff (pn_attack).&Halte %y\xA0%w zum Zielen -> loslassen&feuert ein %gBlasenprojektil%w (Magie).^Auf einer %gDeku-Blume%w + %y\xA0%w zum&Eingraben, Aufladen und Abschuss&in einen begrenzten %gGleitflug%w.^%bWasser%w lässt dich wie ein Stein&hüpfen (5 Sprünge). %rFeuer/Lava/Wasser%w&ist tödlich.",
       "Vous obtenez le %gMasque Mojo%w!&Renferme l'esprit d'une Pestoène&tombée au combat.^Équipez depuis la page des masques -&Link se transforme en petite&Pestoène légère.^%y\xA0%w attaque tournoyante (pn_attack).&Maintenez %y\xA0%w pour viser -> relâchez&pour tirer une %gbulle%w (coûte de la Magie).^Sur une %gFleur Mojo%w + %y\xA0%w pour&s'enfouir, charger et se lancer&en %gvol plané%w à distance limitée.^%bL'eau%w vous fait ricocher comme&un caillou (5 sauts). %rFeu/lave/eau%w&est fatal." },
     { RG_MM_MASK_KEATON, static_cast<ItemID>(ITEM_MM_MASK_KEATON),
       "You got the %yKeaton Mask%w!&A fox-fairy mask said to summon&the trickster Keaton.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.",
-      "Du erhältst die %yFuchs-Maske%w!&Eine Fuchsgeist-Maske, die den&Trickser Keaton beschwören soll.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast die %yKeaton-Maske%w!&Eine Fuchsgeist-Maske, die den&Trickser Keaton beschwören soll.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
       "Vous obtenez le %yMasque de Keaton%w!&Un masque de renard-esprit qui&invoquerait le farceur Keaton.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement." },
     { RG_MM_MASK_BREMEN, static_cast<ItemID>(ITEM_MM_MASK_BREMEN),
       "You got the %yBremen Mask%w!&The mask of the marching musician&from the Bremen Town Musicians.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.",
-      "Du erhältst die %yBremer-Maske%w!&Die Maske des marschierenden Musikers aus den Bremer Stadtmusikanten.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast die %yBremen-Maske%w!&Die Maske des marschierenden Musikers&aus den Bremer Stadtmusikanten.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
       "Vous obtenez le %yMasque de Brême%w!&Le masque du musicien en marche&des Musiciens de Brême.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement." },
     { RG_MM_MASK_BUNNY, static_cast<ItemID>(ITEM_MM_MASK_BUNNY),
       "You got the %yBunny Hood%w (MM)!&The fluffy long-eared hood of&Majora's Mask.^Equip from the mask page.^Grants %gincreased run speed%w&and %ghigher jumps%w (uses the&existing Bunny Hood enhancement&while wearing the MM hood).",
-      "Du erhältst die %yHasenohren%w (MM)!&Die flauschige Langohren-Mütze&aus Majoras Mask.^Aufsetzen auf der Maskenseite.^Gewährt %gerhöhte Lauf-&geschwindigkeit%w und %ghöhere Sprünge%w.^(nutzt die bestehende Hasenohren-Erweiterung beim Tragen der MM-Mütze).",
+      "Du hast die %yHasenohren%w (MM)!&Die flauschige lange-Ohren-Mütze&aus Majoras Mask.^Aufsetzen auf der Maskenseite.^Gewährt %gerhöhte Laufgeschwindigkeit%w&und %ghöhere Sprünge%w (nutzt die&bestehende Hasenohren-Erweiterung&beim Tragen der MM-Mütze).",
       "Vous obtenez le %yMasque de Lapin%w (MM)!&La capuche aux longues oreilles&velues de Majora's Mask.^Équipez depuis la page des masques.^Octroie %gvitesse de course%w accrue&et %gsauts plus hauts%w (utilise&l'amélioration existante du Masque&de Lapin)." },
     { RG_MM_MASK_DON_GERO, static_cast<ItemID>(ITEM_MM_MASK_DON_GERO),
       "You got %yDon Gero's Mask%w!&The conductor's mask of the&frog choir.^Equip from the mask page.&Approach the %glog at Zora's River%w&and press %y\xA0%w to %ccollect every&unclaimed Frog Song reward%w at once.^Frog flags 0-4 = purple rupee&each, flags 5-6 = heart piece.",
-      "Du erhältst %yDon Geros Maske%w!&Die Dirigentenmaske des&Froschchors.^Aufsetzen auf der Maskenseite.^Geh zum %gBaumstamm an Zoras Fluss%w und drücke %y\xA0%w, um %calle ungeholten Froschlied-&Belohnungen%w zu sammeln.^Flags 0-4 = je lila Rupie,&Flags 5-6 = Herzteil.",
+      "Du hast %yDon Geros Maske%w!&Die Dirigentenmaske des&Froschchors.^Aufsetzen auf der Maskenseite.&Geh zum %gBaumstamm an Zoras Fluss%w&und drücke %y\xA0%w um %calle ungeholten&Froschlied-Belohnungen%w zu sammeln.^Flags 0-4 = je lila Rupie,&Flags 5-6 = Herzteil.",
       "Vous obtenez le %yMasque de Don Gero%w!&Le masque du chef d'orchestre&du chœur des grenouilles.^Équipez depuis la page des masques.&Approchez la %gbûche à la Rivière Zora%w&et appuyez sur %y\xA0%w pour %crécupérer&toutes les récompenses non-réclamées%w.^Drapeaux 0-4 = rubis violet chacun,&drapeaux 5-6 = pièce de cœur." },
     { RG_MM_MASK_SCENTS, static_cast<ItemID>(ITEM_MM_MASK_SCENTS),
       "You got the %yMask of Scents%w!&A mask said to grant the keen&nose of a beast.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.",
-      "Du erhältst die %yMaske der Düfte%w!&Eine Maske, die den scharfen&Geruchssinn eines Tieres verleiht.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast die %yGeruchsmaske%w!&Eine Maske, die den scharfen&Geruchssinn eines Tieres verleiht.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
       "Vous obtenez le %yMasque des Odeurs%w!&Un masque qui octroierait le&flair d'une bête sauvage.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement." },
     { RG_MM_MASK_GORON, static_cast<ItemID>(ITEM_MM_MASK_GORON),
       "You got the %rGoron Mask%w!&Holds the spirit of the fallen&Goron hero Darmani.^Equip from the mask page -&Link transforms into a heavy,&powerful Goron.^3-hit %rpunch combo%w (%y\xA0%w / %y\xA0%w / %y\xA0%w):&left fist, right fist, butt slam.&Same heavy blunt damage as the&%rMegaton Hammer%w.^Hold %y\xA3%w to %rcurl into a ball%w -&fast Goron Roll. %y\xA0%w mid-roll&to %rground pound%w (jump -> slam).^%rImmune to lava and fire%w.&%bSinks in water%w - voids out from&deep water.",
-      "Du erhältst die %rGoronen-Haut%w!&Birgt den Geist des gefallenen&Goronen-Helden Darmani.^Aufsetzen auf der Maskenseite^Link verwandelt sich in einen&schweren, kraftvollen Goronen.^3-Hit %rFaustkombo%w (%y\xA0%w / %y\xA0%w / %y\xA0%w):&Linke, rechte Faust, Sturzangriff. Derselbe schwere Schaden wie der %rStahlhammer%w.^Halte %y\xA3%w zum %rEinrollen%w -&schnelle Goronen-Rolle. %y\xA0%w im Rollen für %rStampfangriff%w (Sprung -> Schlag).^%rImmun gegen Lava und Feuer%w.&%bSinkt im Wasser%w.",
+      "Du hast die %rGoronen-Maske%w!&Birgt den Geist des gefallenen&Goronen-Helden Darmani.^Aufsetzen auf der Maskenseite -&Link verwandelt sich in einen schweren,&kraftvollen Goronen.^3-Hit %rFaustkombo%w (%y\xA0%w / %y\xA0%w / %y\xA0%w):&linke Faust, rechte Faust, Sturzangriff.&Selber schwerer Schaden wie der&%rStahlhammer%w.^Halte %y\xA3%w zum %rEinrollen%w -&schneller Goronen-Roll. %y\xA0%w im Roll&für %rStampfangriff%w (Sprung -> Schlag).^%rImmun gegen Lava und Feuer%w.&%bSinkt im Wasser%w - Voids aus&tiefem Wasser.",
       "Vous obtenez le %rMasque de Goron%w!&Renferme l'esprit du héros&goron déchu Darmani.^Équipez depuis la page des masques -&Link se transforme en Goron&lourd et puissant.^%rCombo de 3 coups%w (%y\xA0%w / %y\xA0%w / %y\xA0%w):&poing gauche, poing droit, attaque-fesse.&Même dégâts lourds que la&%rMasse des Titans%w.^Maintenez %y\xA3%w pour vous %renrouler%w&en boule - Roulade Goron rapide.&%y\xA0%w en roulant pour un %rgroundpound%w&(saut -> impact).^%rImmunisé au feu et à la lave%w.&%bCoule dans l'eau%w - sortie forcée&en eau profonde." },
     { RG_MM_MASK_ROMANI, static_cast<ItemID>(ITEM_MM_MASK_ROMANI),
       "You got %yRomani's Mask%w!&A young rancher's mask carrying&her trust with cattle.^Equip from the mask page.&Walk up to %gany cow%w and press %y\xA0%w -&the cow gives you milk %cdirectly%w&without needing Epona's Song.",
-      "Du erhältst %yRomanis Maske%w!&Eine junge Bauernmaske, die ihr&Vertrauen zu Kühen trägt.^Aufsetzen auf der Maskenseite.^Geh zu %gjeder Kuh%w und drücke %y\xA0%w, &die Kuh gibt dir Milch %cdirekt%w&ohne Eponas Lied.",
+      "Du hast %yRomanis Maske%w!&Eine junge Bauernmaske die ihr&Vertrauen zu Kühen trägt.^Aufsetzen auf der Maskenseite.&Geh zu %gjeder Kuh%w und drücke %y\xA0%w -&die Kuh gibt dir Milch %cdirekt%w&ohne Eponas Lied.",
       "Vous obtenez le %yMasque de Romani%w!&Le masque d'une jeune fermière&qui inspire confiance au bétail.^Équipez depuis la page des masques.&Approchez %gn'importe quelle vache%w et %y\xA0%w -&elle vous donne du lait %cdirectement%w&sans la Chanson d'Épona." },
     { RG_MM_MASK_CIRCUS_LEADER, static_cast<ItemID>(ITEM_MM_MASK_CIRCUS_LEADER),
       "You got the %yCircus Leader's Mask%w!&Worn, you become Ganondorf's&%cTax Collector%w. NPCs cower&and pay tribute on sight.^Talk to a minigame NPC and the&%centire minigame is skipped%w -&its reward is granted directly:^%gShooting Gallery%w (bullet bag/quiver),&%gBombchu Bowling%w (bomb bag -> heart piece),&%gIngo%w (Epona + Hyrule Field warp),&%gTalon%w (Milk Bottle, child Lon Lon),&%gAdult Malon%w (sells cow, %p100 Rupees%w),&%gHBA%w, %gFishing Pond%w, %gChest Game%w,&%gZora Diving Game%w (Silver Scale).^Repeat visits give a small bribe.&Rando-aware: delivers shuffled checks.",
-      "Du erhältst die %yMaske des Zirkusdirektors%w!&Beim Tragen wirst du zu Ganondorfs %cSteuereintreiber%w.^Aufsetzen auf der Maskenseite.^NPCs zahlen&Tribut bei deinem Anblick.^Mit einem Minispiel-NPC reden und das %ggesamte Minispiel wird übersprungen%w - Belohnung wird direkt gegeben:^%gSchießbude%w, %gBombchu-Bowling%w, %gIngo%w, %gTalon%w, %gErwachsene Malon%w, %gHBA%w, %gAngelteich%w, %gKistenspiel%w, %gZora-Tauchspiel%w.^Folgebesuche geben Bestechungsgeld.&Rando: Liefert geshufflte Items.",
+      "Du hast die %yZirkusleitermaske%w!&Beim Tragen wirst du zu Ganondorfs&%cSteuereintreiber%w. NPCs zahlen&Tribut bei deinem Anblick.^Mit einem Minispiel-NPC reden und das&%ggesamte Minispiel wird übersprungen%w -&Belohnung wird direkt gegeben:^%gSchießbude%w (Munitionstasche/Köcher),&%gBombchu-Bowling%w (Bombentasche -> Herzteil),&%gIngo%w (Epona + Hyrule-Feld-Warp),&%gTalon%w (Milchflasche, Kind Lon Lon),&%gErwachsene Malon%w (verkauft Kuh, %p100 Rupien%w),&%gHBA%w, %gAngelteich%w, %gKistenspiel%w,&%gZora-Tauchspiel%w (Silberschuppe).^Wiederholungsbesuche geben Bestechungsgeld.&Rando-bewusst: liefert die geshufflten Items.",
       "Vous obtenez le %yMasque du Chef de Cirque%w!&Porté, vous devenez le %cCollecteur&d'Impôts%w de Ganondorf. Les PNJ&se soumettent à votre vue.^Parler à un PNJ de mini-jeu et le&%cmini-jeu entier est sauté%w -&sa récompense est donnée directement:^%gStand de Tir%w (sac à billes/carquois),&%gBombchu Bowling%w (sac de bombes -> cœur),&%gIngo%w (Épona + transition Plaine d'Hyrule),&%gTalon%w (Bouteille de Lait, Lon Lon enfant),&%gMalon adulte%w (vend vache, %p100 Rubis%w),&%gHBA%w, %gPêche%w, %gJeu de Coffres%w,&%gJeu de Plongée Zora%w (Écaille d'Argent).^Visites répétées donnent un pourboire.&Conscient du rando: livre les items shufflés." },
     { RG_MM_MASK_KAFEI, static_cast<ItemID>(ITEM_MM_MASK_KAFEI),
       "You got %yKafei's Mask%w!&A small mask carved in the&likeness of a missing groom.^Equip from the mask page.&While worn, %y\xA0%w toggles a&%cKafei character model%w on Link&(uses the N64_Kafei pak).&Cosmetic only.",
-      "Du erhältst %yKafeis Maske%w!&Eine kleine Maske im Antlitz&eines verschwundenen Bräutigams.^Aufsetzen auf der Maskenseite.^Beim Tragen schaltet %y\xA0%w ein&%cKafei-Charaktermodell%w an Link um (nutzt N64_Kafei pak).&Nur Kosmetik.",
+      "Du hast %yKafeis Maske%w!&Eine kleine Maske im Antlitz&eines verschwundenen Bräutigams.^Aufsetzen auf der Maskenseite.&Beim Tragen schaltet %y\xA0%w ein&%cKafei-Charaktermodell%w an Link um&(nutzt N64_Kafei pak).&Nur Kosmetik.",
       "Vous obtenez le %yMasque de Kafei%w!&Un petit masque sculpté à l'image&d'un fiancé disparu.^Équipez depuis la page des masques.&Pendant le port, %y\xA0%w bascule un&%cmodèle de Kafei%w sur Link&(utilise le pak N64_Kafei).&Cosmétique seulement." },
     { RG_MM_MASK_COUPLE, static_cast<ItemID>(ITEM_MM_MASK_COUPLE),
       "You got the %yCouple's Mask%w!&The reunion mask of two lovers&forever entwined.^Equip from the mask page.^%cPassive regen%w while worn:&%rDay%w -> %g+1 HP every 4 frames%w&(full hearts in ~32s).&%bNight%w -> %g+1 MP every 7 frames%w&(full magic in ~32s).",
-      "Du erhältst die %yMaske der Liebenden%w! Die Wieder-&vereinigungsmaske zweier für immer verbundener Liebender.^Aufsetzen auf der Maskenseite.&%cPassive Regeneration%w&beim Tragen:^%rTag%w -> %g+1 HP alle 4 Frames%w&(volle Herzen in ~32s).&%bNacht%w -> %g+1 MP alle 7 Frames%w&(volle Magie in ~32s).",
+      "Du hast die %yPaarmaske%w!&Die Wiedervereinigungsmaske zweier&für immer verbundener Liebender.^Aufsetzen auf der Maskenseite.^%cPassive Regeneration%w beim Tragen:&%rTag%w -> %g+1 HP alle 4 Frames%w&(volle Herzen in ~32s).&%bNacht%w -> %g+1 MP alle 7 Frames%w&(volle Magie in ~32s).",
       "Vous obtenez le %yMasque des Amoureux%w!&Le masque des retrouvailles de deux&amants à jamais entrelacés.^Équipez depuis la page des masques.^%cRégénération passive%w pendant le port:&%rJour%w -> %g+1 PV toutes les 4 frames%w&(cœurs pleins en ~32s).&%bNuit%w -> %g+1 PM toutes les 7 frames%w&(magie pleine en ~32s)." },
     { RG_MM_MASK_TRUTH, static_cast<ItemID>(ITEM_MM_MASK_TRUTH),
       "You got the %yMask of Truth%w (MM)!&The all-seeing eye that hears the&voices of beasts and stones.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.&(OOT's vanilla Mask of Truth is&a separate item.)",
-      "Du erhältst die %yMaske der Wahrheit%w! Das allsehende Auge, das die Stimmen der Tiere und Steine hört.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast die %yMaske der Wahrheit%w (MM)!&Das allsehende Auge, das die Stimmen&der Tiere und Steine hört.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.&(OOTs Vanilla-Maske der Wahrheit&ist ein separates Item.)",
       "Vous obtenez le %yMasque de Vérité%w (MM)!&L'œil omniscient qui entend les&voix des bêtes et des pierres.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement.&(Le Masque de Vérité OOT est&un objet distinct.)" },
     { RG_MM_MASK_ZORA, static_cast<ItemID>(ITEM_MM_MASK_ZORA),
       "You got the %bZora Mask%w!&Holds the spirit of the fallen&Zora guitarist Mikau.^Equip from the mask page -&Link transforms into a Zora,&master of the waters.^Real %bZora swim mechanics%w 1:1:&surface walk, %bfast dolphin swim%w,&%bswim dash%w (%y\xA0%w), %bdolphin jump%w arc.^On land: %y\xA0%w throws %bBoomerang Fins%w&(twin fin projectiles).&%y\xA3%w + %y\xA0%w raises an %cElectric Barrier%w&that shocks attackers (costs Magic).^Aerial %y\xA0%w -> flying %bjump kick%w.",
-      "Du erhältst die %bZora-Schuppen%w!&Birgt den Geist des gefallenen&Zora-Gitarristen Mikau.^Aufsetzen auf der Maskenseite^Link verwandelt sich in einen Zora, Meister des Wassers.^Echte %bZora-Schwimmmechanik%w 1:1: Wasserlauf, %bschnelles Delfinschwimmen%w, %bSchwimm-Dash%w (%y\xA0%w), %bDelfinsprung%w-Bogen.^An Land: %y\xA0%w wirft %bBumerang-Flossen%w (zwei Flossen-Projektile). %y\xA3%w + %y\xA0%w = %cElektrische Barriere%w die Angreifer schockt (Magie).^In der Luft %y\xA0%w -> fliegender %bSprungkick%w.",
+      "Du hast die %bZora-Maske%w!&Birgt den Geist des gefallenen&Zora-Gitarristen Mikau.^Aufsetzen auf der Maskenseite -&Link verwandelt sich in einen Zora,&Meister des Wassers.^Echte %bZora-Schwimmmechanik%w 1:1:&Wasserlauf, %bschnelles Delfinschwimmen%w,&%bSchwimm-Dash%w (%y\xA0%w), %bDelfinsprung%w-Bogen.^An Land: %y\xA0%w wirft %bBumerang-Flossen%w&(zwei Flossen-Projektile).&%y\xA3%w + %y\xA0%w erhebt eine %cElektrische Barriere%w&die Angreifer schockt (Magie).^In der Luft %y\xA0%w -> fliegender %bSprungkick%w.",
       "Vous obtenez le %bMasque de Zora%w!&Renferme l'esprit du guitariste&zora déchu Mikau.^Équipez depuis la page des masques -&Link se transforme en Zora,&maître des eaux.^Vraies %bmécaniques de nage Zora%w 1:1:&marche en surface, %bnage dauphin rapide%w,&%bdash de nage%w (%y\xA0%w), %bsaut de dauphin%w.^À terre: %y\xA0%w lance des %bAilerons Boomerang%w&(deux projectiles).&%y\xA3%w + %y\xA0%w élève une %cBarrière Électrique%w&qui foudroie les attaquants (Magie).^En l'air %y\xA0%w -> %bcoup de pied%w volant." },
     { RG_MM_MASK_KAMARO, static_cast<ItemID>(ITEM_MM_MASK_KAMARO),
       "You got %yKamaro's Mask%w!&The mask of a wandering ghost&dancer who lost his audience.^Equip from the mask page.&%cHold %y\xA0%w to dance%w (movement locks).&Release to stop.^At %gGoron City%w near Darunia,&dance with him for ~5 seconds&to trigger %cDarunia's Joy%w reward.",
-      "Du erhältst %yKamaros Maske%w!&Die Maske eines umherwandernden Geist-&Tänzers ohne Publikum.^Aufsetzen auf der Maskenseite.^%cHalte %y\xA0%w zum Tanzen%w (Bewegung sperrt).&Loslassen zum Stoppen.^In %gGoronen-Stadt%w nahe Darunia,&tanze mit ihm für ~5 Sekunden,&um %cDarunias Freude%w auszulösen.",
+      "Du hast %yKamaros Maske%w!&Die Maske eines umherwandernden Geist-&Tänzers ohne Publikum.^Aufsetzen auf der Maskenseite.&%cHalte %y\xA0%w zum Tanzen%w (Bewegung sperrt).&Loslassen zum Stoppen.^In %gGoronen-Stadt%w nahe Darunia,&tanze mit ihm für ~5 Sekunden,&um %cDarunias Freude%w auszulösen.",
       "Vous obtenez le %yMasque de Kamaro%w!&Le masque d'un fantôme danseur&errant ayant perdu son public.^Équipez depuis la page des masques.&%cMaintenez %y\xA0%w pour danser%w (mouvement verrouillé).&Relâchez pour arrêter.^Au %gVillage Goron%w près de Darunia,&dansez avec lui ~5 secondes pour&déclencher la %cJoie de Darunia%w." },
     { RG_MM_MASK_GIBDO, static_cast<ItemID>(ITEM_MM_MASK_GIBDO),
       "You got the %yGibdo Mask%w!&The decayed face of a mummy,&worn by ancient cult initiates.^Equip from the mask page.^While worn, %cReDeads and Gibdos%w&%gignore you completely%w -&they will not lunge or grab&while you wear the mask.",
-      "Du erhältst %yGibdos Maske%w!&Das verwitterte Antlitz einer Mumie, getragen von Kultanwärtern.^Aufsetzen auf der Maskenseite.^Beim Tragen %gignorieren%w dich&%cReDead und Gibdo%w komplett.&Sie greifen dich nicht an und&packen dich nicht.",
+      "Du hast die %yGibdo-Maske%w!&Das verwitterte Antlitz einer Mumie,&getragen von Kultanwärtern.^Aufsetzen auf der Maskenseite.^Beim Tragen %gignorieren%w dich&%cReDead und Gibdo%w komplett -&sie greifen dich nicht an und&packen dich nicht.",
       "Vous obtenez le %yMasque de Gibdo%w!&Le visage décrépit d'une momie,&porté par les initiés cultistes.^Équipez depuis la page des masques.^Pendant le port, %cReDead et Gibdo%w&%gvous ignorent complètement%w -&ils ne vous attaquent ni ne&vous attrapent." },
     { RG_MM_MASK_GARO, static_cast<ItemID>(ITEM_MM_MASK_GARO),
       "You got %yGaro's Mask%w!&The shrouded mask of a Garo&ninja, sworn to silence.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.",
-      "Du erhältst %yGaros Maske%w!&Die verhüllte Maske eines Garo-&Ninjas, der Stille geschworen hat.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast %yGaros Maske%w!&Die verhüllte Maske eines Garo-&Ninjas, der Stille geschworen hat.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
       "Vous obtenez le %yMasque de Garo%w!&Le masque drapé d'un ninja Garo,&qui a juré silence.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement." },
     { RG_MM_MASK_CAPTAIN, static_cast<ItemID>(ITEM_MM_MASK_CAPTAIN),
       "You got the %yCaptain's Hat%w!&The crested helm of Captain&Keeta, leader of the Stalfos.^Equip from the mask page.^At night in %gHyrule Field%w only,&summons %rgiant Stalfos%w (adult Link)&or %rgiant Stalchildren%w (2x scale&and speed for child) to roam the field.&One spawns every ~5 seconds, max 3.",
-      "Du erhältst den %yHelm des Hauptmanns%w! Der Kammhelm von Captain Keeta, Anführer der Stalfos.^Aufsetzen auf der Maskenseite.^Nur nachts in %gHyrule-Feld%w werden %rriesige Stalfos%w (Erwachsener) oder %rriesige Stalchild%w (2x Größe und Tempo für Jung) gerufen.^Einer alle ~5s, max. 3.",
+      "Du hast den %yKapitänshut%w!&Der Kammhelm von Captain Keeta,&Anführer der Stalfos.^Aufsetzen auf der Maskenseite.^Nur nachts in %gHyrule-Feld%w werden&%rriesige Stalfos%w (Erwachsener) oder&%rriesige Stalchild%w (2x Größe und&Tempo für Jung) gerufen.&Einer alle ~5s, max. 3.",
       "Vous obtenez la %yCasquette du Capitaine%w!&Le casque du Capitaine Keeta,&chef des Stalfos.^Équipez depuis la page des masques.^La nuit dans la %gPlaine d'Hyrule%w,&invoque des %rStalfos géants%w (Link adulte)&ou des %rStalchild géants%w (2x taille&et vitesse pour Jeune Link).&Un toutes les ~5s, max. 3." },
     { RG_MM_MASK_GIANT, static_cast<ItemID>(ITEM_MM_MASK_GIANT),
       "You got the %yGiant's Mask%w!&The colossal mask said to grow&its wearer to monstrous size.^Equip from the mask page.&%rNo gameplay effect yet%w -&currently cosmetic only.&(In MM it scales Link to fight&Twinmold.)",
-      "Du erhältst die %yMaske des Giganten%w!&Die kolossale Maske, die ihren&Träger riesenhaft wachsen lässt.^Aufsetzen auf der Maskenseite.^%rNoch kein Effekt%w -&derzeit nur Kosmetik.",
+      "Du hast die %yRiesenmaske%w!&Die kolossale Maske, die ihren&Träger riesenhaft wachsen lässt.^Aufsetzen auf der Maskenseite.&%rNoch kein Effekt%w -&derzeit nur Kosmetik.&(In MM vergrößert sie Link&für den Twinmold-Kampf.)",
       "Vous obtenez le %yMasque de Géant%w!&Le masque colossal qui ferait&grandir son porteur.^Équipez depuis la page des masques.&%rPas d'effet de jeu%w -&actuellement cosmétique seulement.&(Dans MM, il agrandit Link pour&combattre Twinmold.)" },
     { RG_MM_MASK_FIERCE_DEITY, static_cast<ItemID>(ITEM_MM_MASK_FIERCE_DEITY),
       "You got %pFierce Deity's Mask%w!&The legendary forbidden mask of&a god-like warrior.^Equip from the mask page -&Link transforms into the towering&%pFierce Deity%w. The Final Form.^%c1.5x movement speed%w - the only&form with a speed multiplier.^Wields a massive %ptwo-handed sword%w&(PLAYER_ANIMTYPE_3 stance).&Every full-health %y\xA0%w swing fires&a long-range %psword beam%w projectile.^Hyrule's strongest combat form.",
-      "Du erhältst das %yGesicht der Grimmigen Gottheit%w! Die legendäre verbotene Maske eines gottgleichen Kriegers.^Aufsetzen auf der Maskenseite^Link verwandelt sich in den hoch aufragenden %pFinsteren Gott%w.&Die Endform.^%c1,5x Bewegungsgeschwindigkeit%w - die einzige Form mit Geschwindigkeitsbonus.^Führt ein massives %pZweihandschwert%w.^Jeder %y\xA0%w-Schwung bei voller Gesundheit feuert einen %pSchwertstrahl%w in die Ferne.^Hyrules stärkste Kampfform.",
+      "Du hast %pMajoras Maske%w!&Die legendäre verbotene Maske eines&gottgleichen Kriegers.^Aufsetzen auf der Maskenseite -&Link verwandelt sich in den hoch&aufragenden %pFinsteren Gott%w. Die Endform.^%c1,5x Bewegungsgeschwindigkeit%w - die&einzige Form mit Geschwindigkeitsbonus.^Führt ein massives %pZweihandschwert%w&(PLAYER_ANIMTYPE_3-Haltung).&Jeder %y\xA0%w-Schwung bei voller Gesundheit&feuert einen %pSchwertstrahl%w in die Ferne.^Hyrules stärkste Kampfform.",
       "Vous obtenez le %pMasque du Dieu Féroce%w!&Le masque légendaire interdit d'un&guerrier divin.^Équipez depuis la page des masques -&Link se transforme en imposant&%pDieu Féroce%w. La Forme Finale.^%c1,5x vitesse de déplacement%w - la&seule forme avec un bonus de vitesse.^Manie une massive %pépée à deux mains%w&(posture PLAYER_ANIMTYPE_3).&Chaque coup %y\xA0%w à pleine santé tire&un %prayon d'épée%w à longue portée.^La forme de combat la plus puissante." },
 
     { RG_ZONAI_PERMAFROST, static_cast<ItemID>(ITEM_ZONAI_PERMAFROST),
       "You got %cZonai Permafrost%w!&Ancient Zonai technology that&freezes the flow of time itself.^Press %y\xA1%w to "
       "cast the spell.&%rAll enemies%w, %ypuzzle elements%w,&and even the %cday/night cycle%w&freeze for %g10 "
       "seconds%w!^Costs %g12 Magic%w per use.&Move freely while time is stopped.",
-      "Du erhältst %cSonau Urfrost%w!&Uralte Sonau-Technologie die&den Fluss der Zeit einfriert.^Drücke %y\xA1%w um den "
-      "Zauber&zu wirken. %rAlle Feinde%w,&%yRätsel-Elemente%w, und sogar&der %cTag/Nacht-Zyklus%w frieren^für %g10 "
+      "Du hast %cSonau Permafrost%w!&Uralte Sonau-Technologie die&den Fluss der Zeit einfriert.^Drücke %y\xA1%w um den "
+      "Zauber&zu wirken. %rAlle Feinde%w,&%yRätsel-Elemente%w, und sogar&der %cTag/Nacht-Zyklus%w frieren&für %g10 "
       "Sekunden%w ein!^Kostet %g12 Magie%w pro Nutzung.&Bewege dich frei während die&Zeit angehalten ist.",
       "Vous obtenez %cPermafrost Soneau%w!&Technologie ancienne des Soneau&qui gèle le flux du temps.^Appuyez sur "
       "%y\xA1%w pour lancer&le sort. %rTous les ennemis%w,&%yéléments de puzzle%w, et même&le %ccycle jour/nuit%w "
@@ -235,8 +235,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got %rDemise Destruction%w!&The dark power of the Demon King&Demise, sealed in this artifact.^Press %y\xA1%w "
       "to unleash a&devastating %rlightning explosion%w&that damages all enemies in&a %glarge radius%w around "
       "you.^%rHigh Magic cost%w.&Best saved for emergencies!&The ground itself trembles...",
-      "Du erhältst %rTodbringer Zerstörung%w! Die dunkle Macht des Dämonenkönigs Todbringer, versiegelt in "
-      "diesem Artefakt.^Drücke %y\xA1%w um eine verheerende&%rBlitz-Explosion%w zu entfesseln&die alle Feinde in "
+      "Du hast %rTodbringer Zerstörung%w!&Die dunkle Macht des Dämonenkönigs&Todbringer, versiegelt in "
+      "diesem&Artefakt.^Drücke %y\xA1%w um eine verheerende&%rBlitz-Explosion%w zu entfesseln&die alle Feinde in "
       "einem&%ggroßen Radius%w um dich trifft.^%rHohe Magiekosten%w.&Am besten für Notfälle aufheben!&Der Boden selbst "
       "bebt...",
       "Vous obtenez %rDestruction de l'Avatar%w!&Le pouvoir sombre du Roi Démon&Avatar, scellé dans cet "
@@ -248,8 +248,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %cTime Gate%w!&A portable door through the ages,&the power of the Temple of Time&in your "
       "hands.^Press %y\xA1%w to activate.&A prompt will ask: %g\"Travel&through time?\"%w^Select %yYes%w to switch "
       "between&%rChild%w and %gAdult%w Link&anywhere in the world!^Costs %g48 Magic%w per use.",
-      "Du erhältst das %cZeittor%w!&Eine tragbare Tür durch die Zeit, die Macht des Zeitturms in deinen Händen.^Drücke "
-      "%y\xA1%w zum Aktivieren.&Eine Frage erscheint:&%g\"Durch die Zeit reisen?\"%w^Wähle %yJa%w um zwischen&%rKind%w "
+      "Du hast das %cZeittor%w!&Eine tragbare Tür durch die Zeit,&die Macht des Zeitturms in&deinen Händen.^Drücke "
+      "%y\xA1%w zum Aktivieren.&Eine Frage erscheint: %g\"Durch&die Zeit reisen?\"%w^Wähle %yJa%w um zwischen&%rKind%w "
       "und %gErwachsenem%w Link&überall zu wechseln!^Kostet %g48 Magie%w pro Nutzung.",
       "Vous obtenez la %cPorte du Temps%w!&Une porte portable à travers les&âges, le pouvoir du Temple du Temps&dans "
       "vos mains.^Appuyez sur %y\xA1%w pour activer.&Une question apparaît: %g\"Voyager&dans le temps?\"%w^Sélectionnez "
@@ -260,24 +260,24 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %cSwitch Hook%w!&A magical hook that swaps&your position with targets.^Hold %y\xA1%w to aim,&release "
       "to fire.&%c\xA5%w = First-person mode^Swap places with pots, crates,&and certain enemies!&Non-swappable targets "
       "take damage.",
-      "Du erhältst den %cTauschhaken%w!&Ein magischer Haken der deine&Position mit Zielen tauscht.^Halte %y\xA1%w zum "
-      "Zielen,&lass los zum Feuern.&%c\xA5%w = Erste-Person^Tausche Plätze mit Töpfen, Kisten und bestimmten "
-      "Feinden! Nicht-tauschbare Ziele nehmen Schaden.",
+      "Du hast den %cWechselhaken%w!&Ein magischer Haken der deine&Position mit Zielen tauscht.^Halte %y\xA1%w zum "
+      "Zielen,&lass los zum Feuern.&%c\xA5%w = Erste-Person^Tausche Plätze mit Töpfen, Kisten&und bestimmten "
+      "Feinden!&Nicht-tauschbare Ziele nehmen Schaden.",
       "Vous obtenez le %cCrochet Échange%w!&Un crochet magique qui échange&votre position avec les cibles.^Maintenez "
       "%y\xA1%w pour viser,&relâchez pour tirer.&%c\xA5%w = Première personne^Échangez avec des pots, caisses,&et "
       "certains ennemis!&Les cibles non-échangeables subissent des dégâts." },
 
     { RG_MOGMA_MITTS, static_cast<ItemID>(ITEM_MOGMA_MITTS),
       "You got the %yMogma Mitts%w!&Claws of the underground.&Climb any wall! Uses %gMagic%w.",
-      "Du erhältst die %yGrabklauen%w!&Klauen aus dem Untergrund.&Klettere überall!&Verbraucht %gMagie%w.",
+      "Du hast die %yMogma-Klauen%w erhalten!&Klauen aus dem Untergrund.&Klettere überall! Verbraucht %gMagie%w.",
       "Vous obtenez les %yGants Mogma%w!&Griffes souterraines.&Grimpez partout! Utilise de la %gMagie%w." },
 
     { RG_GUST_JAR, static_cast<ItemID>(ITEM_GUST_JAR),
       "You got the %gGust Jar%w!&A vessel containing&ancient winds.^%ySuction mode%w: Hold %y\xA1%w&to absorb objects, "
       "enemies&and environmental elements.^%yCapture mode%w: Absorb fire,&ice or electricity to store&special "
       "ammunition.^%yShoot mode%w: Release %y\xA1%w to&fire what you captured.&%c\xA5%w = First-person mode",
-      "Du erhältst den %gMagischen Krug%w!&Ein Gefäß mit uralten Winden.^%yAnsaugmodus%w: Halte %y\xA1%w um&Objekte, Feinde "
-      "und Umgebungselemente anzusaugen.^%yFangmodus%w: Sauge Feuer,&Eis oder Elektrizität auf&als spezielle "
+      "Du hast den %gMagischen Krug%w!&Ein Gefäß mit uralten&Winden.^%yAnsaugmodus%w: Halte %y\xA1%w&um Objekte, Feinde "
+      "und&Umgebungselemente anzusaugen.^%yFangmodus%w: Sauge Feuer,&Eis oder Elektrizität auf&als spezielle "
       "Munition.^%ySchussmodus%w: Lass %y\xA1%w los&um das Gefangene zu feuern.&%c\xA5%w = Erste-Person",
       "Vous obtenez le %gPot Magique%w!&Un récipient contenant&des vents anciens.^%yMode aspiration%w: Maintenez "
       "%y\xA1%w&pour absorber objets, ennemis&et éléments environnementaux.^%yMode capture%w: Absorbez feu,&glace ou "
@@ -287,7 +287,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_SHOVEL, static_cast<ItemID>(ITEM_SHOVEL),
       "You got the %yShovel%w!&A reliable tool for&excavation.^Use %y\xA1%w on soft soil&to dig and find "
       "hidden&treasures.^It can also reveal secret&%gGrottos%w and damage&buried enemies!",
-      "Du erhältst die %ySchaufel%w!&Ein zuverlässiges Werkzeug&zum Graben.^Benutze %y\xA1%w auf weichem&Boden, um zu graben "
+      "Du hast die %ySchaufel%w!&Ein zuverlässiges Werkzeug&zum Graben.^Benutze %y\xA1%w auf weichem&Boden um zu graben "
       "und&verborgene Schätze zu finden.^Sie kann auch geheime&%gGrotten%w aufdecken und&vergrabene Feinde verletzen!",
       "Vous obtenez la %yPelle%w!&Un outil fiable pour&l'excavation.^Utilisez %y\xA1%w sur terre&meuble pour creuser "
       "et&trouver des trésors cachés.^Elle peut aussi révéler des&%gGrottes secrètes%w et blesser&les ennemis "
@@ -298,9 +298,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %yBall and Chain%w!&A heavy weapon from the&snow palace.^Hold %y\xA1%w to charge,&release to "
       "throw.&Crush ice and enemies!^With %g\xA4%w it homes in&on the enemy automatically.&Breaks %rRed "
       "Ice%w!^%rNote%w: Your speed is reduced&while it's equipped.",
-      "Du erhältst den %yMorgenstern%w!&Eine schwere Waffe aus dem&Schneepalast.^Halte %y\xA1%w zum Aufladen,&lass los zum "
+      "Du hast die %yKettenkugel%w!&Eine schwere Waffe aus dem&Schneepalast.^Halte %y\xA1%w zum Aufladen,&lass los zum "
       "Werfen.&Zerschmettere Eis und Feinde!^Mit %g\xA4%w verfolgt sie&automatisch den Feind.&Zerbricht %rRotes "
-      "Eis%w!^%rHinweis%w: Deine Geschwindigkeit&ist reduziert, während sie&ausgerüstet ist.",
+      "Eis%w!^%rHinweis%w: Deine Geschwindigkeit&ist reduziert während sie&ausgerüstet ist.",
       "Vous obtenez le %yBoulet%w!&Une arme lourde du palais&des neiges.^Maintenez %y\xA1%w pour charger,&relâchez pour "
       "lancer.&Écrasez glace et ennemis!^Avec %g\xA4%w il suit&automatiquement l'ennemi.&Brise la %rGlace "
       "Rouge%w!^%rNote%w: Votre vitesse est réduite&tant qu'il est équipé." },
@@ -309,8 +309,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %yWhip%w!&A versatile tool for combat&and exploration.^Press %y\xA1%w to lash forward.&It latches "
       "onto beams and bars&for pendulum swinging.^%ySwinging%w: Use the stick to&control the pendulum.&Release to "
       "launch with momentum!^%yCombat%w: Paralyze enemies,&pull shields, and disarm.&Also grabs items!",
-      "Du erhältst die %yPeitsche%w!&Ein vielseitiges Werkzeug für&Kampf und Erkundung.^Drücke %y\xA1%w zum Schlagen.&Hakt "
-      "sich an Balken und Stangen zum Pendelschwingen ein.^%ySchwingen%w: Nutze den Stick, um&das Pendel zu "
+      "Du hast die %yPeitsche%w!&Ein vielseitiges Werkzeug für&Kampf und Erkundung.^Drücke %y\xA1%w zum Schlagen.&Hakt "
+      "sich an Balken und Stangen&zum Pendelschwingen ein.^%ySchwingen%w: Nutze den Stick um&das Pendel zu "
       "steuern.&Lass los für Schwung-Start!^%yKampf%w: Lähme Feinde,&ziehe Schilde weg und entwaffne.&Greift auch "
       "Items!",
       "Vous obtenez le %yFouet%w!&Un outil polyvalent pour le combat&et l'exploration.^Appuyez sur %y\xA1%w pour "
@@ -321,7 +321,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_SPINNER, static_cast<ItemID>(ITEM_SPINNER),
       "You got the %ySpinner%w!&Ancient technology from the&desert sands.^Press %y\xA1%w to ride it&and glide around. "
       "Use it to&cross great distances.^With %g\xA4%w you perform&a homing attack towards&the enemy. Breaks rocks!",
-      "Du erhältst den %yGleiter%w!&Uralte Technologie aus dem&Wüstensand.^Drücke %y\xA1%w, um aufzusteigen&und zu gleiten. "
+      "Du hast den %yKreisel%w!&Uralte Technologie aus dem&Wüstensand.^Drücke %y\xA1%w um aufzusteigen&und zu gleiten. "
       "Überbrücke&große Distanzen damit.^Mit %g\xA4%w führst du einen&Verfolgungs-Angriff auf&den Feind aus. "
       "Zerbricht Felsen!",
       "Vous obtenez la %yToupie%w!&Technologie ancienne des&sables du désert.^Appuyez sur %y\xA1%w pour monter&et "
@@ -331,8 +331,8 @@ static const CustomItemMessageEntry customItemMessages[] = {
     { RG_BOMB_ARROWS, static_cast<ItemID>(ITEM_BOMB_ARROWS),
       "You got %rBomb Arrows%w!&An explosive combination.^Requires %yArrows%w and %rBombs%w.&Use %y\xA1%w to enter "
       "first-person&mode and aim.^The arrow explodes on impact.&Consumes %y1 arrow%w + %r1 bomb%w&per shot.",
-      "Du erhältst die %rBombenpfeile%w!&Eine explosive Kombination.^Benötigt %yPfeile%w und %rBomben%w.&Benutze %y\xA1%w zum Zielen im&"
-      "First-Person-Modus.^Der Pfeil explodiert beim&Aufprall. Verbraucht %y1 Pfeil%w&+ %r1 Bombe%w pro "
+      "Du hast %rBombenpfeile%w!&Eine explosive Kombination.^Benötigt %yPfeile%w und %rBomben%w.&Benutze %y\xA1%w für "
+      "Erste-Person&Modus und zielen.^Der Pfeil explodiert beim&Aufprall. Verbraucht %y1 Pfeil%w&+ %r1 Bombe%w pro "
       "Schuss.",
       "Vous obtenez les %rFlèches-Bombes%w!&Une combinaison explosive.^Nécessite des %yFlèches%w et "
       "%rBombes%w.&Utilisez %y\xA1%w pour entrer en&première personne et viser.^La flèche explose à l'impact.&Consomme "
@@ -344,9 +344,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "fireballs&Stab = 1 fireball&Jump = Flamethrower down^%ySpecial attacks%w:&Spin = Expanding fire wave&Hold "
       "%y\xA1%w = Charge attack&%c\xA5%w = First-person mode^%rWarning%w: Without magic, the&fire will burn YOU. Make "
       "sure&you have enough magic!",
-      "Du erhältst den %rFeuerstab%w!&Eine magische Waffe mit der&Kraft des Feuers.^%yBasisangriffe%w:&Hieb = 3 "
+      "Du hast den %rFeuerstab%w!&Eine magische Waffe mit der&Kraft des Feuers.^%yBasisangriffe%w:&Hieb = 3 "
       "Feuerbälle&Stoß = 1 Feuerball&Sprung = Flammenwerfer^%ySpezialangriffe%w:&Wirbelattacke = Feuerwelle&Halte "
-      "%y\xA1%w = Aufladen&%c\xA5%w = Erste-Person^%rWarnung%w: Ohne Magie verbrennt das Feuer DICH. Achte auf genug "
+      "%y\xA1%w = Aufladen&%c\xA5%w = Erste-Person^%rWarnung%w: Ohne Magie verbrennt&das Feuer DICH. Achte auf&genug "
       "Magie!",
       "Vous obtenez la %rBaguette de Feu%w!&Une arme magique qui canalise&le pouvoir du feu.^%yAttaques de "
       "base%w:&Taille = 3 boules de feu&Estoc = 1 boule de feu&Saut = Lance-flammes^%yAttaques spéciales%w:&Tourbillon "
@@ -358,7 +358,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "projectiles&Stab = 1 ice projectile&Jump = Freezing blast down^%ySpecial attacks%w:&Spin = Expanding ice "
       "wave&Hold %y\xA1%w = Charge attack&%c\xA5%w = First-person mode^%rWarning%w: Without magic, the&ice will freeze "
       "YOU. Make sure&you have enough magic!",
-      "Du erhältst den %bEisstab%w!&Eine magische Waffe mit der&Kraft des Eises.^%yBasisangriffe%w:&Hieb = 3 "
+      "Du hast den %bEisstab%w!&Eine magische Waffe mit der&Kraft des Eises.^%yBasisangriffe%w:&Hieb = 3 "
       "Eisprojektile&Stoß = 1 Eisprojektil&Sprung = Eisstrahl^%ySpezialangriffe%w:&Wirbelattacke = Eiswelle&Halte "
       "%y\xA1%w = Aufladen&%c\xA5%w = Erste-Person^%rWarnung%w: Ohne Magie friert&das Eis DICH ein. Achte auf&genug "
       "Magie!",
@@ -372,7 +372,7 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "lightning bolts&Stab = 1 lightning bolt&Jump = Electric discharge^%ySpecial attacks%w:&Spin = Expanding "
       "electric wave&Hold %y\xA1%w = Charge attack&%c\xA5%w = First-person mode^%rWarning%w: Without magic, "
       "the&lightning will shock YOU.&Make sure you have enough magic!",
-      "Du erhältst den %yLichtstab%w!&Eine magische Waffe mit der&Kraft des Blitzes.^%yBasisangriffe%w:&Hieb = 3 Blitze im "
+      "Du hast den %yLichtstab%w!&Eine magische Waffe mit der&Kraft des Blitzes.^%yBasisangriffe%w:&Hieb = 3 Blitze im "
       "Bogen&Stoß = 1 direkter Blitz&Sprung = Elektrische Entladung^%ySpezialangriffe%w:&Wirbelattacke = "
       "Elektrowelle&Halte %y\xA1%w = Aufladen&%c\xA5%w = Erste-Person^%rWarnung%w: Ohne Magie trifft&der Blitz DICH. "
       "Achte auf&genug Magie!",
@@ -386,9 +386,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %rCane of Somaria%w!&A wand that creates magical&blocks out of thin air.^Press %y\xA1%w to swing and "
       "create&a %rmagical block%w. Up to %g3&blocks%w can exist at once.^The %roldest block%w is destroyed&when you "
       "create a 4th.^Use them to activate switches,&block enemies, or as&platforms to reach heights.",
-      "Du erhältst den %rSomaria-Stab%w!&Ein Stab der magische Blöcke&aus dem Nichts erschafft.^Drücke %y\xA1%w zum "
+      "Du hast den %rStab von Somaria%w!&Ein Stab der magische Blöcke&aus dem Nichts erschafft.^Drücke %y\xA1%w zum "
       "Schwingen&und erschaffe einen %rmagischen&Block%w. Bis zu %g3 Blöcke%w können&gleichzeitig existieren.^Der "
-      "%rälteste Block%w wird zerstört&wenn du einen 4. erschaffst.^Nutze sie für Schalter, um Feinde zu blockieren, "
+      "%rälteste Block%w wird zerstört&wenn du einen 4. erschaffst.^Nutze sie für Schalter, um Feinde&zu blockieren, "
       "oder als Plattform.",
       "Vous obtenez la %rCanne de Somaria%w!&Une baguette qui crée des&blocs magiques de nulle part.^Appuyez sur "
       "%y\xA1%w pour brandir&et créer un %rbloc magique%w.&Jusqu'à %g3 blocs%w peuvent exister.^Le %rbloc le plus "
@@ -399,9 +399,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %pDominion Rod%w!&An ancient artifact that can&possess and control enemies.^Press %y\xA1%w to fire a "
       "golden orb.&It can possess: %rBeamos%w,&%yArmos%w, and %cAnubis%w.^Once possessed, the enemy will&%gmimic your "
       "movements%w!&Walk to make it walk,&attack to make it attack.^Uses %gMagic%w while controlling.",
-      "Du erhältst den %pKopierstab%w!&Ein uraltes Artefakt, das Feinde&besitzen und kontrollieren kann.^Drücke %y\xA1%w, um "
-      "einen Orb&zu feuern.&Besitz ergreifen von:&%rBeamos%w, %yArmos%w und %cAnubis%w.^Einmal besessen, wird der "
-      "Feind&%gdeine Bewegungen imitieren%w!^Laufe, um ihn laufen zu lassen,&greife an, um ihn angreifen zu "
+      "Du hast den %pKopierstab%w!&Ein uraltes Artefakt das Feinde&besitzen und kontrollieren kann.^Drücke %y\xA1%w um "
+      "einen goldenen Orb&zu feuern. Er kann besitzen:&%rBeamos%w, %yArmos%w und %cAnubis%w.^Einmal besessen, wird der "
+      "Feind&%gdeine Bewegungen imitieren%w!&Laufe um ihn laufen zu lassen,&greife an um ihn angreifen zu "
       "lassen.^Verbraucht %gMagie%w beim Kontrollieren.",
       "Vous obtenez la %pBaguette des Animes%w!&Un artefact ancien qui peut&posséder et contrôler les ennemis.^Appuyez "
       "sur %y\xA1%w pour tirer un&orbe doré. Il peut posséder:&%rBeamos%w, %yArmos%w et %cAnubis%w.^Une fois possédé, "
@@ -412,9 +412,9 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %gBeetle%w!&A remote-controlled mechanical&insect from ancient times.^%y\xA1%w = Launch "
       "beetle&%yAnalog Stick%w = Steer flight&%y\xA1%w again = Recall beetle&%y\xA0%w = Speed boost^The camera follows "
       "the beetle.&Use it to grab distant items,&hit switches, and scout ahead!",
-      "Du erhältst den %gKäfer%w!&Ein ferngesteuertes mechanisches&Insekt aus alter Zeit.^%y\xA1%w = Käfer "
+      "Du hast den %gKäfer%w erhalten!&Ein ferngesteuertes mechanisches&Insekt aus alter Zeit.^%y\xA1%w = Käfer "
       "starten&%yAnalog-Stick%w = Flug steuern&%y\xA1%w erneut = Käfer zurückrufen&%y\xA0%w = Geschwindigkeitsschub^Die "
-      "Kamera folgt dem Käfer.&Nutze ihn, um Items zu holen,&Schalter zu treffen und voraus zu spähen!",
+      "Kamera folgt dem Käfer.&Nutze ihn um Items zu holen,&Schalter zu treffen und voraus zu spähen!",
       "Vous obtenez le %gScarabée%w!&Un insecte mécanique télécommandé&des temps anciens.^%y\xA1%w = Lancer le "
       "scarabée&%yStick Analogique%w = Diriger le vol&%y\xA1%w à nouveau = Rappeler&%y\xA0%w = Accélération^La caméra "
       "suit le scarabée.&Utilisez-le pour attraper des objets,&activer des interrupteurs et explorer!" },
@@ -423,29 +423,28 @@ static const CustomItemMessageEntry customItemMessages[] = {
       "You got the %pDesire Sensor%w!&A cursed artifact that reveals&hidden treasures... at a cost.^Press %y\xA1%w to "
       "activate.&%rCosts 3 hearts%w per use!^%g(Randomizer only)%w:&%yGolden sparkles%w = Major items&remain in this "
       "area.&%rGanondorf laugh%w = Nothing left.",
-      "Du erhältst den %pWunschsensor%w!&Ein verfluchtes Artefakt, das&verborgene Schätze enthüllt...&für einen "
+      "Du hast den %pWunschdetektor%w!&Ein verfluchtes Artefakt das&verborgene Schätze enthüllt...&für einen "
       "Preis.^Drücke %y\xA1%w zum Aktivieren.&%rKostet 3 Herzen%w pro Nutzung!^%g(Nur im Randomizer)%w:&%yGoldene "
-      "Funken%w = Wichtige Items sind noch in diesem Gebiet.^%rGanondorfs Lachen%w = Nichts mehr da.",
+      "Funken%w = Wichtige Items&sind noch in diesem Gebiet.&%rGanondorfs Lachen%w = Nichts mehr da.",
       "Vous obtenez le %pDétecteur de Désir%w!&Un artefact maudit qui révèle&les trésors cachés... à un prix.^Appuyez "
       "sur %y\xA1%w pour activer.&%rCoûte 3 cœurs%w par utilisation!^%g(Randomizer uniquement)%w:&%yÉtincelles dorées%w "
       "= Objets majeurs&restent dans cette zone.&%rRire de Ganondorf%w = Plus rien." },
 
     // Placeholder items (pending implementation)
-    { RG_PENDING_1, static_cast<ItemID>(ITEM_MINISH_CAP),
-	  "You got %pThe Minish Cap%w!&Fast travel between pod soils.",
-      "Du erhältst die %pMinish Cap%w!&Schnellreise zwischen den&weichen Erden.",
+    { RG_PENDING_1, static_cast<ItemID>(ITEM_MINISH_CAP), "You got %pThe Minish Cap%w!&Fast travel between pod soils.",
+      "Du hast %pThe Minish Cap%w!&Schnellreise zwischen Pod Soils.",
       "Vous obtenez %pPending Item 1%w!&Cet objet n'est pas encore implémenté." },
 
     { RG_LANTERN, static_cast<ItemID>(ITEM_LANTERN),
       "You got the %yLantern%w!&Catch fire from torches and&use it to light your way!",
-	  "Du erhältst die %yLaterne%w!&Fang Feuer von Fackeln und&nutze es, um deinen Weg&zu erleuchten!",
+      "Du hast die %yLaterne%w erhalten!&Fang Feuer von Fackeln und&nutze es um deinen Weg zu erleuchten!",
       "Vous obtenez la %yLanterne%w!&Capturez le feu des torches et&utilisez-le pour éclairer votre chemin!" },
 
     { RG_PENDING_3, static_cast<ItemID>(ITEM_POKEBALL),
       "You got the %yPoké Ball%w!&Use it to give orders to&a transformed Pikachu."
       "^%y\x9F%w combo  %y\xA0%w Thunder Jolt&Stick+%y\x9F%w/%y\xA0%w: smash / special&%y\xA2%w crouch  %y\xA3%w bubble shield&%y\xA1%w-buttons: special items",
-      "Du erhältst den %yPokéball%w!&Damit gibst du einem&verwandelten Pikachu Befehle."
-      "^%y\x9F%w Combo - %y\xA0%w Donner-Schock&Stick+%y\x9F%w/%y\xA0%w: Smash / Special&%y\xA2%w Hocken  %y\xA3%w Blasen-Schild&%y\xA1%w-Tasten: Special-Items",
+      "Du hast den %yPokéball%w erhalten!&Damit gibst du einem&verwandelten Pikachu Befehle."
+      "^%y\x9F%w Combo  %y\xA0%w Donner-Schock&Stick+%y\x9F%w/%y\xA0%w: Smash / Special&%y\xA2%w Hocken  %y\xA3%w Blasen-Schild&%y\xA1%w-Tasten: Special-Items",
       "Vous obtenez la %yPoké Ball%w!&Donnez des ordres à un&Pikachu transformé."
       "^%y\x9F%w combo  %y\xA0%w Tonnerre&Stick+%y\x9F%w/%y\xA0%w: smash / spécial&%y\xA2%w accroupi  %y\xA3%w bouclier&%y\xA1%w: objets spéciaux" },
 
@@ -454,67 +453,67 @@ static const CustomItemMessageEntry customItemMessages[] = {
     // ─────────────────────────────────────────────────────────────────────────
     { RG_EXT_CANE_OF_BYRNA, static_cast<ItemID>(ITEM_EXT_SWORD_1),
       "You got the %cCane of Byrna%w!&A blue cane of legend.^Equip on the %ysword slot%w&(%y\xA2%w toggles equipment pages).^Wields like the %cBiggoron Sword%w&(long range, two-handed). %gSpin%w&and %gcharge attacks%w always work.^Every melee hit %crestores HP%w&and %crefills Magic%w!",
-      "Du erhältst den %cByrna-Stab%w!&Ein blauer Stab der Legenden.^Rüste ihn am %ySchwert-Platz%w aus.^Führt sich wie das %cBiggoron-Schwert%w (lange Reichweite, beidhändig).^%gKreisangriffe%w und %gAufladeangriffe%w sind immer möglich.^Jeder Treffer %cstellt LP%w und&%cMagie%w wieder her!",
+      "Du hast den %cStab von Byrna%w!&Ein blauer Stab der Legenden.^Rüste ihn am %ySchwert-Platz%w aus&(%y\xA2%w wechselt Seiten).^Führt sich wie das %cBiggoron-Schwert%w&(lange Reichweite, beidhändig). %gKreisangriffe%w&und %gAufladeangriffe%w gehen immer.^Jeder Treffer %cstellt HP%w und&%cMagie%w wieder her!",
       "Vous obtenez la %cCanne de Byrna%w!&Une canne bleue de légende.^Équipez-la dans l'%yemplacement épée%w&(%y\xA2%w change de page).^Se manie comme l'%cÉpée de Biggoron%w&(longue portée, à deux mains).&%gAttaques tournoyantes%w et %gchargées%w&fonctionnent toujours.^Chaque coup %crestaure des PV%w&et %crecharge la Magie%w!" },
 
     { RG_EXT_FOUR_SWORD, static_cast<ItemID>(ITEM_EXT_SWORD_2),
       "You got the %gFour Sword%w!&A blade that splits its wielder&into four heroes.^Equip on the %ysword slot%w (%y\xA2%w toggles).^Hold %y\xA3%w + %y\xA0%w for 15 frames ->&%g3 colored clones%w (Red/Blue/Purple)&spawn around you in a triangle.^Each clone costs %g12 Magic%w.&Clones %gmirror your swings%w and copy&your %garrows%w, %gbombs%w and %gboomerang%w.^Enemy hits kill them.",
-      "Du erhältst das&%gSchwert der Vier%w!&Eine Klinge, die ihren Träger&in vier Helden teilt.^Rüste es am %ySchwert-Platz%w aus.^Halte %y\xA3%w + %y\xA0%w 15 Frames ->&%g3 farbige Klone%w (Rot/Blau/Violett)&erscheinen im Dreieck.^Jeder Klon kostet %g12 Magie%w.&Klone %gspiegeln deine Schwert-&hiebe%w und kopieren %gPfeile%w, %gBomben%w und %gBumerang%w.^Feindtreffer töten sie.",
+      "Du hast das %gVier-Schwert%w!&Eine Klinge die ihren Träger&in vier Helden teilt.^Rüste es am %ySchwert-Platz%w aus.^Halte %y\xA3%w + %y\xA0%w 15 Frames ->&%g3 farbige Klone%w (Rot/Blau/Violett)&erscheinen im Dreieck.^Jeder Klon kostet %g12 Magie%w.&Klone %gspiegeln deine Schwerthiebe%w und&kopieren %gPfeile%w, %gBomben%w und %gBumerang%w.^Feindtreffer töten sie.",
       "Vous obtenez l'%gÉpée de Quatre%w!&Une lame qui divise son porteur&en quatre héros.^Équipez-la dans l'%yemplacement épée%w.^Maintenez %y\xA3%w + %y\xA0%w 15 frames ->&%g3 clones colorés%w (Rouge/Bleu/Violet)&apparaissent en triangle.^Chaque clone coûte %g12 Magie%w.&Les clones %gimitent vos coups%w et copient&%gflèches%w, %gbombes%w et %gboomerang%w.^Les ennemis les tuent au contact." },
 
     { RG_EXT_IRON_KNUCKLE_AXE, static_cast<ItemID>(ITEM_EXT_SWORD_3),
       "You got the %rIron Knuckle's Axe%w!&The massive tomahawk of Ganon's&armored knights.^Equip on the %ysword slot%w (%y\xA2%w toggles).^Wields like the %rMegaton Hammer%w&with chunky heavy swings:&%gdouble damage%w, %gdouble reach%w,&slower walk while held.^Hold %y\xA3%w + %y\xA0%w 15 frames to %rthrow%w&the axe - flies forward, then&boomerangs back to your hand.",
-      "Du erhältst die %yEisenprinz-Axt%w!&Der massive Tomahawk der&gepanzerten Ritter Ganons.^Rüste sie am %ySchwert-Platz%w aus.^Führt sich wie der %rStahlhammer%w mit wuchtigem Schwung: %gdoppelter Schaden%w, %gdoppelte Reichweite%w, langsameres Gehen.^Halte %y\xA3%w + %y\xA0%w 15 Frames, um die&Axt zu %rwerfen%w - fliegt nach vorn,&kommt dann zu dir zurück.",
+      "Du hast die %rEisenknöchel-Axt%w!&Der massive Tomahawk der&gepanzerten Ritter Ganons.^Rüste sie am %ySchwert-Platz%w aus.^Führt sich wie der %rStahlhammer%w&mit schwerem chunky Schwung:&%gdoppelter Schaden%w, %gdoppelte Reichweite%w,&langsameres Gehen.^Halte %y\xA3%w + %y\xA0%w 15 Frames um die&Axt zu %rwerfen%w - fliegt nach vorn,&kommt dann zu dir zurück.",
       "Vous obtenez la %rHache d'Iron Knuckle%w!&Le tomahawk massif des chevaliers&en armure de Ganon.^Équipez-la dans l'%yemplacement épée%w.^Se manie comme la %rMasse des Titans%w&avec des coups lourds:&%gdouble dégâts%w, %gdouble portée%w,&marche plus lente.^Maintenez %y\xA3%w + %y\xA0%w 15 frames pour&%rlancer%w la hache - elle vole&et revient en boomerang." },
 
     { RG_EXT_DIVINE_SHIELD, static_cast<ItemID>(ITEM_EXT_SHIELD_1),
       "You got the %yDivine Shield%w!&A blessed wooden shield said to&repel even the wrath of fire.^Equip on the %yshield slot%w (%y\xA2%w toggles).^Light wooden shield BUT %rfireproof%w -&fire breath, Dodongo flames and&torches will not burn it.^%cPerfect Parry%w (%y\xA3%w + block within&10 frames of an attack):&%cfreezes ALL enemies%w on screen!",
-      "Du erhältst: %yHeiliger-Schild%w!&Ein gesegneter Holzschild, der selbst dem Zorn des Feuers widersteht.^Rüste ihn am %ySchild-Platz%w aus.^Leichter Holzschild ABER %rfeuerfest%w - Feueratem, Dodongo-Flammen und Fackeln verbrennen ihn nicht.^%cPerfekte Parade%w (%y\xA3%w + Block in&den ersten 10 Frames eines Angriffs): %cfriert ALLE Feinde%w auf dem Schirm ein!",
+      "Du hast den %yGötterschild%w!&Ein gesegneter Holzschild der selbst&dem Zorn des Feuers widersteht.^Rüste ihn am %ySchild-Platz%w aus.^Leichter Holzschild ABER %rfeuerfest%w -&Feueratem, Dodongo-Flammen und&Fackeln verbrennen ihn nicht.^%cPerfekte Parade%w (%y\xA3%w + block in&den ersten 10 Frames eines Angriffs):&%cfriert ALLE Feinde%w auf dem Schirm ein!",
       "Vous obtenez le %yBouclier Divin%w!&Un bouclier en bois béni qui&résiste à la colère du feu.^Équipez-le dans l'%yemplacement bouclier%w.^Bouclier en bois MAIS %rignifuge%w -&souffle de feu, flammes de Dodongo&et torches ne le brûlent pas.^%cParade Parfaite%w (%y\xA3%w + bloquer dans&les 10 premières frames d'une attaque):&%cgèle TOUS les ennemis%w à l'écran!" },
 
     { RG_EXT_SHEIKAH_SHIELD, static_cast<ItemID>(ITEM_EXT_SHIELD_2),
       "You got the %cSheikah Shield%w!&A ceremonial shield bearing the&eye of the Sheikah tribe.^Equip on the %yshield slot%w (%y\xA2%w toggles).^Hold %y\xA3%w to block normally.&Currently a %ycosmetic shield%w -&no special effect.",
-      "Du erhältst den&%cSchild der Winde%w!&Ein zeremonieller Schild.^Rüste ihn am %ySchild-Platz%w aus.^%y\xA3%w zum normalen Blocken.&Derzeit ein %ykosmetischer Schild%w -&kein besonderer Effekt.",
+      "Du hast den %cSheikah-Schild%w!&Ein zeremonieller Schild mit dem&Auge des Sheikah-Stammes.^Rüste ihn am %ySchild-Platz%w aus.^%y\xA3%w zum normalen Blocken.&Derzeit ein %ykosmetischer Schild%w -&kein besonderer Effekt.",
       "Vous obtenez le %cBouclier Sheikah%w!&Un bouclier cérémoniel portant&l'œil de la tribu Sheikah.^Équipez-le dans l'%yemplacement bouclier%w.^Maintenez %y\xA3%w pour parer normalement.&Actuellement un %ybouclier cosmétique%w -&pas d'effet particulier." },
 
     { RG_EXT_SHIELD_OF_IKANA, static_cast<ItemID>(ITEM_EXT_SHIELD_3),
       "You got the %pShield of Ikana%w!&A cursed mirror shield from the&fallen kingdom of Ikana.^Equip on the %yshield slot%w (%y\xA2%w toggles).^%cSoul Drain%w (%y\xA3%w + block within&12 frames of an attack):&drains the attacker's %rHP%w and&heals you for half a heart.^%pDeath Save%w: when struck dead,&%previves once per scene%w with&3 hearts and a dark aura.",
-      "Du erhältst den %pIkana-Schild%w!&Ein verfluchter Spiegelschild aus&dem gefallenen Reich Ikana.^Rüste ihn am %ySchild-Platz%w aus.^%cSeelenraub%w (%y\xA3%w + Block in&den ersten 12 Frames eines Angriffs): saugt %rLP%w des Angreifers und heilt 1/2 Herz.^%pTodesrettung%w: bei tödlichem Treffer %pwiederbelebt einmal pro Szene%w mit 3 Herzen und dunkler Aura.",
+      "Du hast den %pSchild von Ikana%w!&Ein verfluchter Spiegelschild aus&dem gefallenen Reich Ikana.^Rüste ihn am %ySchild-Platz%w aus.^%cSeelenraub%w (%y\xA3%w + block in&den ersten 12 Frames eines Angriffs):&saugt %rHP%w des Angreifers und&heilt dich um ein halbes Herz.^%pTodesrettung%w: bei tödlichem Treffer&%pwiederbelebt einmal pro Szene%w mit&3 Herzen und dunkler Aura.",
       "Vous obtenez le %pBouclier d'Ikana%w!&Un bouclier-miroir maudit du&royaume déchu d'Ikana.^Équipez-le dans l'%yemplacement bouclier%w.^%cVol d'Âme%w (%y\xA3%w + bloquer dans&les 12 premières frames d'une attaque):&vole les %rPV%w de l'attaquant et&vous soigne d'un demi-cœur.^%pSauvegarde de Mort%w: ressuscite&%pune fois par scène%w avec 3 cœurs&et une aura sombre." },
 
     { RG_EXT_MAGIC_CAPE, static_cast<ItemID>(ITEM_EXT_TUNIC_1),
       "You got the %pMagic Cape%w!&Ganondorf's enchanted cloak,&woven of pure dark mantle cloth.^Equip on the %ytunic slot%w (%y\xA2%w toggles).^Real %pcloth physics%w - the cape&drapes from your shoulders and&sways with movement and wind.^You %crecover half the Magic%w&you spend each frame&(rounded up).",
-      "Du erhältst die %pZauber-Rüstung%w!&Aus dunklem Stoff gewebt.^Rüste sie am %yRüstungs-Platz%w aus.^Du %cverbrauchst nur noch halb soviel Magie%w, (bei 1 MP verbrauchst du nichts).",
+      "Du hast den %pZauberumhang%w!&Ganondorfs verzauberter Mantel,&gewebt aus dunklem Mantelstoff.^Rüste ihn am %yTunika-Platz%w aus.^Echte %pStoff-Physik%w - der Umhang&fällt von deinen Schultern und&schwingt mit Bewegung und Wind.^Du %cerhältst die halbe Magie%w&zurück die du verbrauchst&(aufgerundet).",
       "Vous obtenez la %pCape Magique%w!&Le manteau enchanté de Ganondorf,&tissé de pure étoffe sombre.^Équipez-la dans l'%yemplacement tunique%w.^%pPhysique de tissu%w réelle - la cape&pend de vos épaules et ondule&avec le mouvement et le vent.^Vous %crécupérez la moitié de la Magie%w&dépensée chaque frame (arrondi&au supérieur)." },
 
     { RG_EXT_SPIRIT_BREASTPLATE, static_cast<ItemID>(ITEM_EXT_TUNIC_2),
       "You got the %ySpirit Breastplate%w!&The golden armor of the Iron&Knuckle Nabooru.^Equip on the %ytunic slot%w (%y\xA2%w toggles).^Damage costs %gRupees%w instead&of hearts (1 HP = 1 Rupee).&%gPassive drain%w: 1 Rupee every&30 frames while equipped.^If your wallet runs %rempty%w,&you take damage normally and&move at half speed.",
-      "Du erhältst die %yMagie-Rüstung%w!&Von Wüsten-Hexen in Gold gegossen.^Rüste sie am %yRüstungs-Platz%w aus.^Schaden kostet %gRubin%w statt Herzen (1 Treffer = 1 Rubin). %gPassiver Verbrauch%w: 1 Rubin alle 30 Frames beim Tragen.^Wenn deine Börse %rleer%w ist,&erleidest du normalen Schaden und bewegst dich halb so schnell.",
+      "Du hast den %ySpirit-Brustpanzer%w!&Die goldene Rüstung der Eisenknöchel&Nabooru.^Rüste ihn am %yTunika-Platz%w aus.^Schaden kostet %gRupien%w statt&Herzen (1 HP = 1 Rupie).&%gPassiver Verbrauch%w: 1 Rupie alle&30 Frames im Tragen.^Wenn dein Beutel %rleer%w ist,&erleidest du Schaden normal und&bewegst dich halb so schnell.",
       "Vous obtenez le %yPlastron Spirituel%w!&L'armure dorée de l'Iron Knuckle&Nabooru.^Équipez-le dans l'%yemplacement tunique%w.^Les dégâts coûtent des %gRubis%w au&lieu de cœurs (1 PV = 1 Rubis).&%gDrain passif%w: 1 Rubis toutes&les 30 frames tant que porté.^Si votre bourse est %rvide%w,&vous prenez les dégâts normalement&et bougez à mi-vitesse." },
 
     { RG_EXT_CHAMPIONS_TUNIC, static_cast<ItemID>(ITEM_EXT_TUNIC_3),
       "You got the %cChampion's Tunic%w!&The blue garb of Hyrule's chosen,&blessed with battle aura.^Equip on the %ytunic slot%w (%y\xA2%w toggles).^Adult Link gets the full %cBOTW Link%w&model. All ages get the combat:^%gFlurry Rush%w: sidehop or backflip&near an enemy -> world slows to&15% with iframes for ~2s. Land&up to 7 hits, then bonus damage.^%cBullet Time%w: %y\xA5%w-target while airborne&with bow/slingshot/hookshot/boomerang&-> time slows, you float, stick aims&the shot.",
-      "Du erhältst die %cRecken-Rüstung%w! Die blaue Tracht des Auserwählten Hyrules, mit Kampfaura gesegnet.^Rüste sie am %yRüstungs-Platz%w aus.^Erwachsener Link erhält das volle %cBOTW-Link%w Modell. Beide Altersstufen kämpfen damit:^%gFlurry Rush%w: Seitsprung oder Backflip neben dem Feind -> Welt 15% langsamer + i-Frames&für ~2s. Lande bis zu 7 Treffer.^%cBullet Time%w: %y\xA5%w-fokussieren in der Luft mit Bogen, Schleuder, Greifhaken und Bumerang:^-> Zeit verlangsamt, du schwebst, Stick zielt den Schuss.",
+      "Du hast die %cRüstung des Helden%w!&Die blaue Tracht des Auserwählten&Hyrules, mit Kampfaura gesegnet.^Rüste sie am %yTunika-Platz%w aus.^Adult Link erhält das volle %cBOTW-Link%w&Modell. Beide Altersstufen kämpfen damit:^%gFlurry Rush%w: Seitsprung oder Backflip&neben einem Feind -> Welt verlangsamt&auf 15% mit i-Frames für ~2s.&Lande bis zu 7 Treffer.^%cBullet Time%w: %y\xA5%w-fokussieren in der Luft&mit Bogen/Schleuder/Greifhaken/Bumerang&-> Zeit verlangsamt, du schwebst,&Stick zielt den Schuss.",
       "Vous obtenez la %cTunique du Héros%w!&Le vêtement bleu de l'élu d'Hyrule,&béni d'une aura de combat.^Équipez-la dans l'%yemplacement tunique%w.^Link adulte obtient le modèle complet&%cLink BOTW%w. Les deux âges combattent:^%gFlurry Rush%w: esquive ou saut arrière&près d'un ennemi -> le monde ralentit&à 15% avec i-frames pendant ~2s.&Jusqu'à 7 coups.^%cBullet Time%w: %y\xA5%w-cible en l'air avec&arc/lance-pierre/grappin/boomerang ->&le temps ralentit, vous flottez,&le stick vise le tir." },
 
     { RG_EXT_PEGASUS_ANKLET, static_cast<ItemID>(ITEM_EXT_BOOTS_1),
       "You got the %rPegasus Anklet%w!&Winged anklets that grant the&speed of the legendary Pegasus.^Equip on the %yboots slot%w (%y\xA2%w toggles).^Hold %y\xA0%w after a sword swing&(intercepts the spin attack charge):&Link %glunges forward%w with sword&extended, dealing damage on contact.^A %gwind cone barrier%w forms in&front while you have Magic&(1 MP per 15 frames).&Walls cause a %rbonk%w recovery.",
-      "Du erhältst den %rPegasus-Fußreif%w!&Geflügelte Fußreifen mit der&Geschwindigkeit des Pegasus.^Rüste sie am %yStiefel-Platz%w aus.^Halte %y\xA0%w nach einem Schwert-&schlag aus (unterbricht das Aufladen)^Link %gstürmt vor%w mit ausgestrecktem Schwert, verursacht Schaden bei Kontakt.^Ein %gWindkegel%w bildet sich vor dir,&solange MP vorhanden (1 MP/15 Frames).&Wände lösen einen %rZusammenstoß%w aus.",
+      "Du hast den %rPegasus-Fußreif%w!&Geflügelte Fußreifen mit der&Geschwindigkeit des Pegasus.^Rüste sie am %yStiefel-Platz%w aus.^Halte %y\xA0%w nach einem Schwertschlag&(unterbricht den Aufladeangriff):&Link %gstürmt vor%w mit ausgestrecktem&Schwert, Schaden bei Kontakt.^Ein %gWindkegel%w bildet sich vor dir&solange du Magie hast (1 MP pro&15 Frames). Wände lösen einen&%rZusammenstoß%w aus.",
       "Vous obtenez le %rBracelet de Pégase%w!&Des bracelets ailés qui octroient&la vitesse du légendaire Pégase.^Équipez-le dans l'%yemplacement bottes%w.^Maintenez %y\xA0%w après un coup d'épée&(intercepte la charge tournoyante):&Link %ss'élance%w l'épée tendue,&infligeant des dégâts au contact.^Un %gcône de vent%w protecteur se forme&devant tant que vous avez de la Magie&(1 MP toutes les 15 frames).&Les murs causent un %rchoc%w." },
 
     { RG_EXT_PENDANT_OF_MEMORIES, static_cast<ItemID>(ITEM_EXT_BOOTS_2),
       "You got the %pPendant of Memories%w!&A pendant carrying the techniques&of heroes past.^Equip on the %yboots slot%w (%y\xA2%w toggles).^Three combat techniques unlock:^%c#1 Mortal Draw%w (TP): %y\xA0%w near an&enemy + sheathed + still + NOT&%y\xA5%w-targeting -> devastating draw&slash, often a one-hit kill.^%c#2 Ground Pound%w (Smash): %y\xA0%w in&air with sword -> fast fall ->&pogo bounce on hit, shockwave on landing.^%c#3 Parry Leap%w (WW): %y\xA5%w-target +&3 sidehops + %y\xA0%w -> parabolic arc&over the foe, land behind them.",
-      "Du erhältst das %pAmulett der Erinnerungen%w! Ein Anhänger mit Techniken vergangener Helden.^Rüste es am %yStiefel-Platz%w aus.^Drei Kampftechniken:^%c#1 Mortal Draw%w (TP): %y\xA0%w bei Feind,&eingesteckt, still, kein %y\xA5%w-Fokus&-> vernichtender Hieb, oft One-Hit-Kill.^%c#2 Ground Pound%w (Smash): %y\xA0%w in&Luft mit Schwert -> schneller Fall -> Bounce bei Treffer, Schockwelle.^%c#3 Parry Leap%w (WW): %y\xA5%w-Fokus&+ 3 Seitsprünge + %y\xA0%w -> parabolischer Bogen über Feind, Landung dahinter.",
+      "Du hast das %pAmulett der Erinnerungen%w!&Ein Anhänger mit Techniken vergangener&Helden.^Rüste es am %yStiefel-Platz%w aus.^Drei Kampftechniken werden frei:^%c#1 Mortal Draw%w (TP): %y\xA0%w bei einem&Feind + eingesteckt + still + NICHT&%y\xA5%w-fokussieren -> vernichtender Hieb,&oft One-Hit-Kill.^%c#2 Ground Pound%w (Smash): %y\xA0%w in&der Luft mit Schwert -> schneller Fall&-> Bounce bei Treffer, Schockwelle beim&Landen.^%c#3 Parry Leap%w (WW): %y\xA5%w-fokussieren&+ 3 Seitsprünge + %y\xA0%w -> parabolischer&Bogen über den Feind, hinter ihm landen.",
       "Vous obtenez le %pPendentif des Souvenirs%w!&Un pendentif portant les techniques&des héros passés.^Équipez-le dans l'%yemplacement bottes%w.^Trois techniques de combat:^%c#1 Mortal Draw%w (TP): %y\xA0%w près d'un&ennemi + rengainé + immobile + PAS&en %y\xA5%w-cible -> tranche dévastatrice,&souvent un one-shot.^%c#2 Ground Pound%w (Smash): %y\xA0%w en l'air&avec épée -> chute rapide -> rebond&sur impact, onde de choc à l'atterrissage.^%c#3 Parry Leap%w (WW): %y\xA5%w-cible +&3 esquives + %y\xA0%w -> arc parabolique&par-dessus l'ennemi, atterrir derrière." },
 
     { RG_EXT_WATER_DRAGON_SCALE, static_cast<ItemID>(ITEM_EXT_BOOTS_3),
       "You got the %bWater Dragon Scale%w!&A blessed scale of the Water Dragon,&master of the depths.^Equip on the %yboots slot%w (%y\xA2%w toggles).^Adult Link only - no effect&on Young Link.^Activates real %bZora swim mechanics%w&1:1 from MM: surface walk,&%bfast dolphin swim%w, %bswim dash%w (%y\xA0%w),&%bdolphin jump%w arcs out of water.^%cIron Boots%w let you sink while&wearing the Scale.",
-      "Du erhältst die %bWasserdrachen-Schuppe%w! Eine gesegnete Schuppe des Wasserdrachen, Herrscher der Tiefen.^Rüste sie am %yStiefel-Platz%w aus.^Nur für erwachsenen Link - bei jungem Link bleibt der Effekt aus.^Aktiviert die %bZora-Schwimmmechanik%w - 1:1 aus MM: Wasserlauf, schnelles Delfinschwimmen, Schwimm-Dash (%y\xA0%w) und den Sprung aus dem Wasser.^%cEisenstiefel%w lassen dich sinken, während du die Schuppe trägst.",
+      "Du hast die %bWasserdrachen-Schuppe%w!&Eine gesegnete Schuppe des&Wasserdrachen, Herrscher der Tiefen.^Rüste sie am %yStiefel-Platz%w aus.^Nur erwachsener Link - bei jungem&Link kein Effekt.^Aktiviert echte %bZora-Schwimmmechanik%w&1:1 aus MM: Wasserlauf,&%bschneller Delfinschwimmen%w, %bSchwimm-Dash%w&(%y\xA0%w), %bDelfinsprung%w aus dem Wasser.^%cEisenstiefel%w lassen dich sinken&während du die Schuppe trägst.",
       "Vous obtenez l'%bÉcaille du Dragon d'Eau%w!&Une écaille bénie du Dragon d'Eau,&maître des profondeurs.^Équipez-la dans l'%yemplacement bottes%w.^Link adulte uniquement - aucun&effet sur Jeune Link.^Active les vraies %bmécaniques Zora%w&1:1 de MM: marche en surface,&%bnage dauphin rapide%w, %bdash de nage%w&(%y\xA0%w), %bsaut de dauphin%w hors de l'eau.^%cBottes de Plomb%w pour couler&en portant l'écaille." },
 
     { RG_BOTTLE_WITH_MAGIC_MUSHROOM, static_cast<ItemID>(ITEM_BOTTLE_WITH_MAGIC_MUSHROOM),
       "You got a %gBottle with Magic Mushroom%w!&A fragrant Termina mushroom plucked&by the keen nose of the Mask of Scents.^Stored in an empty bottle.&Drop it later for unknown effects -&or simply admire the catch.",
-      "Du erhältst eine %gFlasche mit Zauberpilz%w!&Ein duftender Termina-Pilz, erschnüffelt&von der Geruchsmaske.^In einer leeren Flasche aufbewahrt.^Lass ihn später frei für unbekannte&Effekte – oder bewundere ihn einfach."
+      "Du hast eine %gFlasche mit Zauberpilz%w!&Ein duftender Termina-Pilz, geschnüffelt&von der Geruchsmaske.^In einer leeren Flasche aufbewahrt.&Lass ihn später fallen für unbekannte&Effekte - oder bewundere ihn.",
       "Vous obtenez une %gFiole avec Champignon Magique%w!&Un champignon parfumé de Termina,&flairé par le Masque des Odeurs.^Stocké dans une fiole vide.&À déposer plus tard pour des effets&inconnus - ou à contempler." },
 };
 static constexpr size_t customItemMessageCount = sizeof(customItemMessages) / sizeof(customItemMessages[0]);

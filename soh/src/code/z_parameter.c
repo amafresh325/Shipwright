@@ -41,10 +41,6 @@ extern MessageTableEntry* sJpnMessageEntryTablePtr;
 // So, when indexing into it with a item button index, we need to adjust
 #define BUTTON_STATUS_INDEX(button) ((button) >= 4) ? ((button) + 1) : (button)
 
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
-
 s16 Top_HUD_Margin = 0;
 s16 Left_HUD_Margin = 0;
 s16 Right_HUD_Margin = 0;
@@ -3158,14 +3154,6 @@ s32 Magic_RequestChange(PlayState* play, s16 amount, s16 type) {
     if (!gSaveContext.isMagicAcquired) {
         return false;
     }
-
-    // --- HIER WIRD DIE TUNICA GEPRÜFT ---
-    // Wir halbieren für ALLE Typen, damit auch die Vorschau-Abfragen bei 2 MP 
-    // nicht mehr "Magie leer"-Fehler werfen und den Blink-Zustand auslösen.
-    if (gExtEquipState.currentExtTunic == 1 && amount > 0) {
-    amount /= 2; // Hier wird global jeder Abzug halbiert.
-    if (amount == 0) amount = 1; // Sicherstellen, dass wir nicht bei 0 landen, wenn es vorher 1 war
-}
 
     if ((type != 5) && (gSaveContext.magic - amount) < 0) {
         if (gSaveContext.magicCapacity != 0) {

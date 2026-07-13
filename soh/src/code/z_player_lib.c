@@ -1239,45 +1239,19 @@ void Player_DrawImpl(PlayState* play, void** skeleton, Vec3s* jointTable, s32 dL
         color = &sTemp;
     }
 
-// Magic Armor (Ext Tunic 1): violet
-if (ExtEquip_IsEnabled() && ExtEquip_GetCurrent(EQUIP_TYPE_TUNIC) == 1) {
-    sTemp.r = 120;
-    sTemp.g = 70;
-    sTemp.b = 255;
-    color = &sTemp;
-}
-
-
     // Champion's Tunic (Ext Tunic 3): BotW blue #38b6f1
     if (ExtEquip_IsEnabled() && ExtEquip_GetCurrent(EQUIP_TYPE_TUNIC) == 3) {
-        // Champion's Tunic Blue (BotW Style)
-        sTemp.r = 97; 
-        sTemp.g = 178; 
-        sTemp.b = 212;
+        sTemp.r = 56;
+        sTemp.g = 182;
+        sTemp.b = 241;
         color = &sTemp;
     }
 
     // Spirit Breastplate (Ext Tunic 2): armor drawn separately in PostLimbDraw, tunic color unchanged
 
-
-// Spirit Breastplate (Ext Tunic 2): Magic Armor colors
-if (ExtEquip_IsEnabled() && ExtEquip_GetCurrent(EQUIP_TYPE_TUNIC) == 2) {
-    if (gSaveContext.rupees > 0) {
-        sTemp.r = 125;
-        sTemp.g = 100;
-        sTemp.b = 50;
-    } else {
-        sTemp.r = 30;
-        sTemp.g = 30;
-        sTemp.b = 30;
+    if (GameInteractor_Should(VB_APPLY_TUNIC_COLOR, true, data, color)) {
+        gDPSetEnvColor(POLY_OPA_DISP++, color->r, color->g, color->b, 0);
     }
-
-    color = &sTemp;
-}
-
-if (GameInteractor_Should(VB_APPLY_TUNIC_COLOR, true, data, color)) {
-    gDPSetEnvColor(POLY_OPA_DISP++, color->r, color->g, color->b, 0);
-}
 
     // If we have a custom link model, always use the most detailed LOD
     if (Player_IsCustomLinkModel()) {

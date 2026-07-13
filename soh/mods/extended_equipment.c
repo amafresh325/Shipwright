@@ -620,8 +620,8 @@ void ExtEquip_CaptureCapeShoulderPos(s32 limbIndex) {
 void ExtEquip_DrawBreastplate(void* playVoid) {
     EXT_EQUIP_REQUIRE(EQUIP_TYPE_TUNIC, 2);
 
-    // Keine zusätzliche Rüstung mehr zeichnen.
-    (void)playVoid;
+    PlayState* play = (PlayState*)playVoid;
+    Breastplate_Draw(play);
 }
 
 u8 ExtEquip_IkanaDeathSave(void* playVoid) {

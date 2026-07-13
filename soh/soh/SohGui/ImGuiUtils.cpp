@@ -186,7 +186,6 @@ std::map<uint32_t, ItemMapEntry> gregMapping = {
 std::map<uint32_t, ItemMapEntry> customItemsMapping = {
     { RG_TRIFORCE_PIECE, { RG_TRIFORCE_PIECE, "RG_TRIFORCE_PIECE", "RG_TRIFORCE_PIECE_Faded", gTriforcePieceTex } },
     { RG_ROCS_FEATHER, { RG_ROCS_FEATHER, "RG_ROCS_FEATHER", "RG_ROCS_FEATHER_Faded", gRocsFeatherTex } },
-	{ RG_BRONZE_SCALE, { RG_BRONZE_SCALE, "RG_BRONZE_SCALE", "RG_BRONZE_SCALE_Faded", gBronzeScaleTex } },
     { RG_GOHMA_SOUL, { RG_GOHMA_SOUL, "RG_GOHMA_SOUL", "RG_GOHMA_SOUL_Faded", gBossSoulTex } },
     { RG_KING_DODONGO_SOUL,
       { RG_KING_DODONGO_SOUL, "RG_KING_DODONGO_SOUL", "RG_KING_DODONGO_SOUL_Faded", gBossSoulTex } },

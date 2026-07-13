@@ -20,12 +20,6 @@
 #include "../helpers/combat_helper.h"
 #include "../helpers/fx_helper.h"
 #include "../helpers/camera_helper.h"
-#include "mods/extended_equipment.h"
-
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
-
 
 static ItemEquipState sEquipState = { 0 };
 static s8 sPrevInvinc = 0;
@@ -155,8 +149,7 @@ static void FireRod_Backfire(Player* p, PlayState* play) {
 }
 
 static u8 FireRod_CheckBackfire(Player* p, PlayState* play, s16 magicCost, u8 backfireChance) {
-    // Hier wird das Makro verwendet:
-    if (ItemMagic_HasEnough(play, MAGIC_REQ(magicCost)))
+    if (ItemMagic_HasEnough(play, magicCost))
         return 0;
 
     u8 roll = (u8)(Rand_ZeroOne() * 100.0f);
@@ -461,7 +454,7 @@ static void FireRod_UpdateFlamethrower(Player* p, PlayState* play) {
 static void FireRod_SlashEffect(Player* p, PlayState* play) {
     if (FireRod_CheckBackfire(p, play, FIRE_ROD_MAGIC_SLASH, FIRE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, MAGIC_REQ(FIRE_ROD_MAGIC_SLASH));
+    ItemMagic_Consume(play, FIRE_ROD_MAGIC_SLASH);
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     s16 baseYaw, pitch;
@@ -483,7 +476,7 @@ static void FireRod_SlashEffect(Player* p, PlayState* play) {
 static void FireRod_StabEffect(Player* p, PlayState* play) {
     if (FireRod_CheckBackfire(p, play, FIRE_ROD_MAGIC_STAB, FIRE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, MAGIC_REQ(FIRE_ROD_MAGIC_STAB));
+    ItemMagic_Consume(play, FIRE_ROD_MAGIC_STAB);
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     Vec3f* basePos = &p->meleeWeaponInfo[0].base;
@@ -507,7 +500,7 @@ static void FireRod_StabEffect(Player* p, PlayState* play) {
 static void FireRod_JumpEffect(Player* p, PlayState* play) {
     if (FireRod_CheckBackfire(p, play, FIRE_ROD_MAGIC_JUMP, FIRE_ROD_BACKFIRE_JUMP))
         return;
-    ItemMagic_Consume(play, MAGIC_REQ(FIRE_ROD_MAGIC_JUMP));
+    ItemMagic_Consume(play, FIRE_ROD_MAGIC_JUMP);
     FireRod_StartFlamethrower(p, play);
 }
 
@@ -515,7 +508,7 @@ static void FireRod_JumpEffect(Player* p, PlayState* play) {
 static void FireRod_FirstPersonFire(Player* p, PlayState* play) {
     if (FireRod_CheckBackfire(p, play, FIRE_ROD_MAGIC_STAB, FIRE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, MAGIC_REQ(FIRE_ROD_MAGIC_STAB));
+    ItemMagic_Consume(play, FIRE_ROD_MAGIC_STAB);
 
     s16 aimYaw = FirstPerson_GetAimYaw(p);
     s16 aimPitch = FirstPerson_GetAimPitch(p);
@@ -733,16 +726,15 @@ static void FireRod_ReleaseCharge(Player* p, PlayState* play) {
 
     s32 spinType;
     u8 isBigSpin = 0;
-    s16 magicCost; // Diese Variable wird berechnet
+    s16 magicCost;
 
-    // Kosten hier basierend auf dem Charge-Level zuweisen UND direkt durch das Makro schicken
     if (fireRodChargeLevel >= FIRE_ROD_CHARGE_BIG) {
         spinType = PLAYER_MWA_BIG_SPIN_1H;
-        magicCost = MAGIC_REQ(FIRE_ROD_MAGIC_SPIN_BIG); // Makro anwenden
+        magicCost = FIRE_ROD_MAGIC_SPIN_BIG;
         isBigSpin = 1;
     } else if (fireRodChargeLevel >= FIRE_ROD_CHARGE_MIN) {
         spinType = PLAYER_MWA_SPIN_ATTACK_1H;
-        magicCost = MAGIC_REQ(FIRE_ROD_MAGIC_SPIN_SMALL); // Makro anwenden
+        magicCost = FIRE_ROD_MAGIC_SPIN_SMALL;
     } else {
         fireRodCharging = 0;
         fireRodChargeLevel = 0.0f;
@@ -751,7 +743,6 @@ static void FireRod_ReleaseCharge(Player* p, PlayState* play) {
         return;
     }
 
-    // Ab hier arbeiten alle Funktionen mit dem bereits angepassten magicCost
     if (FireRod_CheckBackfire(p, play, magicCost, FIRE_ROD_BACKFIRE_SPIN)) {
         fireRodCharging = 0;
         fireRodChargeLevel = 0.0f;

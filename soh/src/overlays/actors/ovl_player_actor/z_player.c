@@ -120,10 +120,6 @@ static u8 gSm64MarioInitTried = 0;
 // This is called "adjusted" for now.
 #define PLAYER_ANIM_ADJUSTED_SPEED (2.0f / 3.0f)
 
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
-
 typedef enum {
     /* 0x00 */ KNOB_ANIM_ADULT_L,
     /* 0x01 */ KNOB_ANIM_CHILD_L,
@@ -2907,31 +2903,18 @@ s32 func_8083442C(Player* this, PlayState* play) {
                 Player_PlaySfx(this, D_80854398[ABS(this->unk_860) - 1]);
             }
 
-            // --- VORAB-PRÜFUNG FÜR DIE TUNIKA ---
-            s16 backupMagic = gSaveContext.magic;
-            if (gExtEquipState.currentExtTunic == 1) {
-                gSaveContext.magic *= 2; // Simuliert doppelte Magie für die Prüfung
-            }
-
-            s32 canUseMagicArrow = func_80834380(play, this, &item, &arrowType);
-
-            gSaveContext.magic = backupMagic; // Sofort wiederherstellen
-            // ------------------------------------
-
-            if (!sDekuBubbleActive && !Player_HoldsHookshot(this) && (canUseMagicArrow > 0)) {
+            if (!sDekuBubbleActive && !Player_HoldsHookshot(this) &&
+                (func_80834380(play, this, &item, &arrowType) > 0)) {
                 magicArrowType = arrowType - ARROW_FIRE;
 
                 if (this->unk_860 >= 0) {
                     if ((magicArrowType >= 0) && (magicArrowType <= 5)) {
-                        if (GameInteractor_Should(VB_PLAYER_ARROW_MAGIC_CONSUMPTION, true, this, magicArrowType, &arrowType)) {
-    // Magic_RequestChange halbiert nun auch die Vorschau, kein Blink-Fehler mehr
-    if (!Magic_RequestChange(play, sMagicArrowCosts[magicArrowType], MAGIC_CONSUME_NOW)) {
-        arrowType = ARROW_NORMAL;
-    } else {
-        // Sicherstellen, dass das Spiel nicht im Blink-Zustand hängen bleibt
-        gSaveContext.magicState = MAGIC_STATE_IDLE; 
-    }
-}
+                        if (GameInteractor_Should(VB_PLAYER_ARROW_MAGIC_CONSUMPTION, true, this, magicArrowType,
+                                                  &arrowType)) {
+                            if (!Magic_RequestChange(play, sMagicArrowCosts[magicArrowType], MAGIC_CONSUME_NOW)) {
+                                arrowType = ARROW_NORMAL;
+                            }
+                        }
                     }
 
                     this->heldActor = Actor_SpawnAsChild(
@@ -3811,7 +3794,7 @@ void Player_UseItem(PlayState* play, Player* this, s32 item) {
                 if (((itemAction == PLAYER_IA_FARORES_WIND) && (gSaveContext.respawn[RESPAWN_MODE_TOP].data > 0) &&
                      !isMedallionSpell) ||
                     ((gSaveContext.magicCapacity != 0) && (gSaveContext.magicState == MAGIC_STATE_IDLE) &&
-                     (gSaveContext.magic >= (gExtEquipState.currentExtTunic == 1 ? (sMagicSpellCosts[temp] / 2) : sMagicSpellCosts[temp])))) {
+                     (gSaveContext.magic >= sMagicSpellCosts[temp]))) {
                     this->itemAction = itemAction;
                     this->unk_6AD = 4;
                     sSw97SpellActive = isMedallionSpell;

@@ -236,14 +236,15 @@ void BuildFishingPoleHintMessage(uint16_t* textId, bool* loadFromMessageTable) {
     }
     CustomMessage msg = CustomMessage(
         "Sorry, but the pond is closed.&I've lost my good %rfishing pole%w...&Can't go fishing without it!",
-        "Bedaure, aber der Teich ist zu.&Ich habe meine %rAngelrute%w verloren.&Ohne kann ich nicht fischen!",
+        "Entschuldigung, aber der Teich ist zu.&Ich habe meine gute %rAngelrute%w verloren.&Ohne kann ich nicht "
+        "fischen!",
         "Désolé, mais l'étang est fermé.&J'ai perdu ma bonne %rCanne à Pêche%w...&Impossible de pêcher sans elle!");
     if (RAND_GET_OPTION(RSK_FISHING_POLE_HINT)) {
         msg = msg + RAND_GET_HINT(RH_FISHING_POLE)->GetHintMessage();
     }
     if (*textId == TEXT_FISHING_POND_START_MET) {
         msg = CustomMessage("Hey, mister! I remember you!&It's been a long time!^",
-                            "",
+                            "Hallo, mein Herr! Ich erinnere mich an Sie!&Lang ist's her!",
                             "Hé, monsieur! Je me souviens de toi!&Ça fait longtemps!") +
               msg;
     }

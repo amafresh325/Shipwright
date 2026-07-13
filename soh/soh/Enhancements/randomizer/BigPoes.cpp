@@ -9,12 +9,7 @@ extern PlayState* gPlayState;
 }
 
 void BuildBigPoeCollectedMessage(uint16_t* textId, bool* loadFromMessageTable) {
-    CustomMessage msg = CustomMessage(
-        /* Englisch */   "You have #" + CustomMessage::POINTS("\x01") + "# points.",
-        /* Deutsch */    "Du hast #" + CustomMessage::POINTS("\x01") + "# Punkte.",
-        /* Französisch */ "Tu as #" + CustomMessage::POINTS("\x01") + "# points.",
-        { QM_RED }
-    );
+    CustomMessage msg = CustomMessage("You have #" + CustomMessage::POINTS("\x01") + "# points.", { QM_RED });
     msg.AutoFormat();
     *loadFromMessageTable = false;
     msg.LoadIntoFont();

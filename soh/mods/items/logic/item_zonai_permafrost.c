@@ -20,12 +20,6 @@
 #include "functions.h"
 #include "variables.h"
 #include "objects/gameplay_keep/gameplay_keep.h"
-#include "mods/extended_equipment.h"
-
-#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
-#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
-#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost)) 
-
 
 // Vanilla function: resets player actionFunc to idle (or lock-on variant)
 extern void func_80839FFC(Player* this, PlayState* play);
@@ -165,10 +159,7 @@ static void ZPerm_Start(Player* p, PlayState* play) {
     if (zpActive)
         return;
 
-    // Dynamische Kosten berechnen (nutzt dein MAGIC_REQ Macro)
-    s16 cost = MAGIC_REQ(ZPERM_MAGIC_COST);
-
-    if (!ItemMagic_HasEnough(play, cost)) {
+    if (!ItemMagic_HasEnough(play, ZPERM_MAGIC_COST)) {
         Audio_PlaySoundGeneral(NA_SE_SY_ERROR, &p->actor.world.pos, 4, &gSfxDefaultFreqAndVolScale,
                                &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
         return;
@@ -181,7 +172,7 @@ static void ZPerm_Start(Player* p, PlayState* play) {
     zpState = ZPERM_STATE_CASTING;
     zpSubPhase = ZPERM_CAST_HONOO1;
     zpTimer = -2;
-    ItemMagic_Consume(play, cost);
+    ItemMagic_Consume(play, ZPERM_MAGIC_COST);
 }
 
 // ============================================================================

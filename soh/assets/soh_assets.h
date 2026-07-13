@@ -402,9 +402,6 @@ static const ALIGN_ASSET(2) char gKeyringKeysGanonsCastleMQDL[] = dgKeyringKeysG
 #define dgHouseKeyDL "__OTR__objects/object_housekey/gHouseKeyDL"
 static const ALIGN_ASSET(2) char gHouseKeyDL[] = dgHouseKeyDL;
 
-#define dgBronzeScaleTex "__OTR__textures/icon_item_static/gBronzeScaleTex"
-static const ALIGN_ASSET(2) char gBronzeScaleTex[] = dgBronzeScaleTex;
-
 #define dgGiRocsFeatherDL "__OTR__objects/object_rocs_feather/gGiRocsFeatherDL"
 static const ALIGN_ASSET(2) char gGiRocsFeatherDL[] = dgGiRocsFeatherDL;
 

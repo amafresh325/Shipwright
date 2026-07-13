@@ -31,14 +31,15 @@ static void InitTrickNames() {
     };
     trickNameTable[RG_BIGGORON_SWORD] = {
         Text{ "Power Sword", "Épée de Puissance", "Schwert der Macht" }, // "Espada de poder",
-        Text{ "Fierce Deity Sword", "Épée du dieu démon", "Schwert des grimmigen Teufels" },  // "Espada de la Fiera Deidad"
-        Text{ "Tempered Sword", "Épée de Légende Nv.2", "Mondsichel-Klinge" }, // "Espada Maestra mejorada"
-        Text{ "Biggoron's Knife", "Lame de Grogoron", "Helix-Messer" },       // "Daga de Biggoron"
+        Text{ "Fierce Deity Sword", "Épée du dieu démon",
+              "Schwert der grimmischen Gottheit" },                              // "Espada de la Fiera Deidad"
+        Text{ "Tempered Sword", "Épée de Légende Nv.2", "Master-Schwert Lv.2" }, // "Espada Maestra mejorada"
+        Text{ "Biggoron's Knife", "Lame de Grogoron", "Biggoron-Messer" },       // "Daga de Biggoron"
     };
     trickNameTable[RG_DEKU_SHIELD] = {
-        Text{ "Boko Shield", "Bouclier Boko", "Bok-Schild" },        // "Escudo Boko"
+        Text{ "Boko Shield", "Bouclier Boko", "Bokschild" },        // "Escudo Boko"
         Text{ "Ordon Shield", "Bouclier de Toal", "Ordon-Schild" }, // "Escudo de Ordon"
-        Text{ "Wooden Shield", "Bouclier de Bois", "Holz-Schild" },  // "Escudo de madera"
+        Text{ "Wooden Shield", "Bouclier de Bois", "Holzschild" },  // "Escudo de madera"
     };
     trickNameTable[RG_HYLIAN_SHIELD] = {
         Text{ "Hyrule Shield", "Bouclier d'Hyrule", "Hyrule-Schild" },   // "Escudo Hylian"
@@ -46,9 +47,9 @@ static void InitTrickNames() {
         Text{ "Hero's Shield", "Bouclier du Héros", "Heroenschild" },    // "Escudo del héroe"
     };
     trickNameTable[RG_MIRROR_SHIELD] = {
-        Text{ "Magic Mirror", "Miroir Magique", "Magie-Spiegel" },             // "Escudo mágico"
-        Text{ "Magical Shield", "Bouclier Magique", "Schmink-Schild" },     // "Escudo arcano"
-        Text{ "Mirror of Twilight", "Miroir des Ombres", "Schatten-Spiegel" }, // "Espejo del Crepúsculo"
+        Text{ "Magic Mirror", "Miroir Magique", "Magiespiegel" },             // "Escudo mágico"
+        Text{ "Magical Shield", "Bouclier Magique", "Magischer Schild" },     // "Escudo arcano"
+        Text{ "Mirror of Twilight", "Miroir des Ombres", "Schattenspiegel" }, // "Espejo del Crepúsculo"
     };
     trickNameTable[RG_GORON_TUNIC] = {
         Text{ "Gerudo Top", "Tunique Gerudo", "Damengewand" },                  // "Pechera gerudo"
@@ -253,123 +254,123 @@ static void InitTrickNames() {
     };
 
     trickNameTable[RG_PROGRESSIVE_HOOKSHOT] = {
-        Text{ "Progressive Grappling Hook", "Lance-chaîne (prog.)", "Enterhaken (Upgrade)" }, // "Garra progresiva"
-        Text{ "Progressive Clawshot", "Grappin-griffe (prog.)", "Greifhaken (Upgrade)" },     // "Zarpa progresiva"
-        Text{ "Progressive Gripshot", "Grappince (prog.)", "Tauschhaken (Upgrade)" },         // "Enganchador progresivo"
-        Text{ "Progressive Rope", "Corde (prog.)", "Giftwurm (Upgrade)" },                    // "Cuerda progresivo"
+        Text{ "Progressive Grappling Hook", "Lance-chaîne (prog.)", "Enterhaken (prog.)" }, // "Garra progresiva"
+        Text{ "Progressive Clawshot", "Grappin-griffe (prog.)", "Greifhaken (prog.)" },     // "Zarpa progresiva"
+        Text{ "Progressive Gripshot", "Grappince (prog.)", "Tauschhaken (prog.)" },         // "Enganchador progresivo"
+        Text{ "Progressive Rope", "Corde (prog.)", "Giftwurm (prog.)" },                    // "Cuerda progresivo"
     };
     trickNameTable[RG_PROGRESSIVE_STRENGTH] = {
-        Text{ "Power Glove", "Gant de Puissance (prog.)", "Krafthandschuh (Upgrade)" },  // "Guanteletes progresivos"
-        Text{ "Power Bracelet", "Bracelet de Force (prog.)", "Kraftarmband (Upgrade)" }, // "Brasaletes progresivos"
-        Text{ "Magic Bracelet", "Bracelet Magique (prog.)", "Magiearmband (Upgrade)" },  // "Manoplas progresivas"
+        Text{ "Power Glove", "Gant de Puissance (prog.)", "Krafthandschuh (prog.)" },  // "Guanteletes progresivos"
+        Text{ "Power Bracelet", "Bracelet de Force (prog.)", "Kraftarmband (prog.)" }, // "Brasaletes progresivos"
+        Text{ "Magic Bracelet", "Bracelet Magique (prog.)", "Magiearmband (prog.)" },  // "Manoplas progresivas"
     };
     trickNameTable[RG_PROGRESSIVE_BOMB_BAG] = {
         Text{ "Progressive Bomb Capacity", "Capacité de bombes (prog.)",
-              "Bomben-Kapazität (Upgrade)" }, // "Mayor capacidad de bombas"
+              "Bomben-Kapazität (prog.)" }, // "Mayor capacidad de bombas"
         Text{ "Progressive Bomb Pack", "Paquet de bombes (prog.)",
-              "Bombenrucksack (Upgrade)" }, // "Zurrón de bombas progresivo"
+              "Bombenrucksack (prog.)" }, // "Zurrón de bombas progresivo"
         Text{ "Progressive Bomb Box", "Boîte à bombes (prog.)",
-              "Bombenschachtel (Upgrade)" }, // "Bolsa de bombas progresiva"
+              "Bombenschachtel (prog.)" }, // "Bolsa de bombas progresiva"
         Text{ "Progressive Blast Mask", "Masque d'Explosion (prog.)",
-              "Ka-Bumm-Maske (Upgrade)" }, // "Máscara explosiva progresiva"
+              "Ka-Bumm-Maske (prog.)" }, // "Máscara explosiva progresiva"
         Text{ "Progressive Powder Kegs", "Baril de Poudre (prog.)",
-              "Pulverfass (Upgrade)" }, // "Barril de polvo progresivo"
+              "Pulverfass (prog.)" }, // "Barril de polvo progresivo"
         Text{ "Progressive Remote Bombs", "Bombes à distance (prog.)",
-              "Fernzünderbomben (Upgrade)" }, // "Bombas remotas progresivas"
+              "Fernzünderbomben (prog.)€" }, // "Bombas remotas progresivas"
     };
     trickNameTable[RG_PROGRESSIVE_BOW] = {
         Text{ "Progressive Arrow Capacity", "Capacité de flèches (prog.)",
-              "Pfeil-Kapazität (Upgrade)" },                                               // "Mayor capacidad de flechas"
-        Text{ "Progressive Hero's Bow", "Arc du héros (prog.)", "Heroenbogen (Upgrade)" }, // "Arco del héroe progresivo"
-        Text{ "Progressive Arrow Holder", "Arbalète (prog.)", "Köcher (Upgrade)" },        // "Ballesta progresiva"
-        Text{ "Progressive Crossbow", "Arbalète (prog.)", "Armbrust (Upgrade)" },          // "Ballesta progresiva"
-        Text{ "Progressive Sacred Bow", "Arc sacré (prog.)", "Heiliger Bogen (Upgrade)" },  // "Arco Sagrado Progresivo"
+              "Pfeil-Kapazität (prog.)" },                                               // "Mayor capacidad de flechas"
+        Text{ "Progressive Hero's Bow", "Arc du héros (prog.)", "Heroenbogen (prog.)" }, // "Arco del héroe progresivo"
+        Text{ "Progressive Arrow Holder", "Arbalète (prog.)", "Köcher (prog.)" },        // "Ballesta progresiva"
+        Text{ "Progressive Crossbow", "Arbalète (prog.)", "Armbrust (prog.)" },          // "Ballesta progresiva"
+        Text{ "Progressive Sacred Bow", "Arc sacré (prog)", "Heiliger Bogen (prog.)" },  // "Arco Sagrado Progresivo"
         Text{ "Progressive Lynel Bow", "Arc de Lynel (prog.)",
-              "Leunenbogen (Upgrade)" }, // "Arco de centaleón Progresivo"
+              "Leunenbogen (prog.)" }, // "Arco de centaleón Progresivo"
     };
     trickNameTable[RG_PROGRESSIVE_SLINGSHOT] = {
         Text{ "Progressive Seed Capacity", "Capacité de graines (prog.)",
-              "Kern-Kapazität (Upgrade)" },                                        // "Mayor capacidad de semillas"
-        Text{ "Progressive Catapult", "Catapulte (prog.)", "Katapult (Upgrade)" }, // "Catapulta progresiva"
+              "Kern-Kapazität (prog.)" },                                        // "Mayor capacidad de semillas"
+        Text{ "Progressive Catapult", "Catapulte (prog.)", "Katapult (prog.)" }, // "Catapulta progresiva"
         Text{ "Progressive Scattershot", "Lance-Pierre rafale (prog.)",
-              "Streuschleuder (Upgrade)" }, // "Resortera múltiple progresiva"
+              "Streuschleuder (prog.)" }, // "Resortera múltiple progresiva"
         Text{ "Progressive Seed Launcher", "Lanceur de semences (prog.)",
-              "Blasrohr (Upgrade)" }, // "Lanzador de semillas progresivo"
+              "Blasrohr (prog.)" }, // "Lanzador de semillas progresivo"
         Text{ "Progressive Seed Satchel", "Sac de graines (prog.)",
-              "Saatbeutel (Upgrade)" }, // "Bolsa de semillas progresiva"
+              "Saatbeutel (prog.)" }, // "Bolsa de semillas progresiva"
     };
     trickNameTable[RG_PROGRESSIVE_WALLET] = {
         Text{ "Progressive Rupee Capacity", "Capacité de rubis (prog.)",
-              "Rubin-Kapazität (Upgrade)" },                                             // "Mayor capacidad de rupias"
-        Text{ "Progressive Purse", "Sacoche (prog.)", "Portemonnaie (Upgrade)" },        // "Cartera de rupias progresiva"
-        Text{ "Progressive Rupee Bag", "Sac à rubis (prog.)", "Rubintasche (Upgrade)" }, // "Zurrón de rupias progresivo"
+              "Rubin-Kapazität (prog.)" },                                             // "Mayor capacidad de rupias"
+        Text{ "Progressive Purse", "Sacoche (prog.)", "Portemonnaie (prog.)" },        // "Cartera de rupias progresiva"
+        Text{ "Progressive Rupee Bag", "Sac à rubis (prog.)", "Rubintasche (prog.)" }, // "Zurrón de rupias progresivo"
         Text{ "Progressive Rupoor Capacity", "Capacité de Roupir (prog.)",
-              "Rubinfalle (Upgrade)" }, // "Capacidad progresiva Rupobre"
-        Text{ "Progressive Spoils Bag", "Sac à Butin (prog.)", "Beutetasche (Upgrade)" }, // "Bolsa de trofeos progresiva"
-        Text{ "Progressive Ruby Bag", "Capacité du sac Ruby (prog.)", "Rubytasche (Upgrade)" }, // "Bolso Ruby progresivo"
+              "Rubinfalle (prog.)" }, // "Capacidad progresiva Rupobre"
+        Text{ "Progressive Spoils Bag", "Sac à Butin (prog.)", "Beutetasche (prog.)" }, // "Bolsa de trofeos progresiva"
+        Text{ "Progressive Ruby Bag", "Capacité du sac Ruby (prog.)", "Rubytasche (prog.)" }, // "Bolso Ruby progresivo"
     };
     trickNameTable[RG_PROGRESSIVE_SCALE] = {
         Text{ "Progressive Flippers", "Palmes de Zora (prog.)",
-              "Schwimmflossen (Upgrade)" }, // "Aletas de zora progresiva"
+              "Schwimmflossen (prog.)€" }, // "Aletas de zora progresiva"
         Text{ "Progressive Dragon's Scale", "Écaille du dragon d'eau (prog.)",
-              "Drachen-Schuppe (Upgrade)" }, // "Escama dragón acuático progresiva"
-        Text{ "Progressive Diving Ability", "Plongée (prog.)", "Tauchfähigkeit (Upgrade)" }, // "Buceo progresivo"
-        Text{ "Progressive Pearl", "Perle (prog.)", "Perle (Upgrade)" },                     // "Perla progresiva"
-        Text{ "Progressive Scute", "Bulle (prog.)", "Schuppe (Upgrade)" }, // "Fragmento Zora progresivo"
+              "Drachen-Schuppe (prog.)" }, // "Escama dragón acuático progresiva"
+        Text{ "Progressive Diving Ability", "Plongée (prog.)", "Tauchfähigkeit (prog.)" }, // "Buceo progresivo"
+        Text{ "Progressive Pearl", "Perle (prog.)", "Perle (prog.)" },                     // "Perla progresiva"
+        Text{ "Progressive Scute", "Bulle (prog.)", "Schuppe (prog.)" }, // "Fragmento Zora progresivo"
     };
     trickNameTable[RG_PROGRESSIVE_NUT_UPGRADE] = {
         Text{ "Progressive Nut Pack", "Paquet de noix (prog.)",
-              "Nußrucksack (Upgrade)" },                                                  // "Mayor capacidad de semillas"
-        Text{ "Progressive Bait Bag", "Sac à Appâts (prog.)", "Futtertasche (Upgrade)" }, // "Bolsa de cebo progresiva"
+              "Nußrucksack (prog.)" },                                                  // "Mayor capacidad de semillas"
+        Text{ "Progressive Bait Bag", "Sac à Appâts (prog.)", "Futtertasche (prog.)" }, // "Bolsa de cebo progresiva"
         Text{ "Progressive Pear Capacity", "Capacité de poire (prog.)",
-              "Putput-Kapazität (Upgrade)" },                                        // "Capacidad progresiva de pera"
-        Text{ "Progressive Nut Bag", "Sac de noix (prog.)", "Nußbeutel (Upgrade)" }, // "Bolsa de nueces progresiva"
+              "Putput-Kapazität (prog.)" },                                        // "Capacidad progresiva de pera"
+        Text{ "Progressive Nut Bag", "Sac de noix (prog.)", "Nußbeutel (prog.)" }, // "Bolsa de nueces progresiva"
         Text{ "Progressive Husk Capacity", "Capacité de noisettes (prog.)",
-              "Schalen-Kapazität (Upgrade)" }, // "Mayor capacidad de castañas"
+              "Schalen-Kapazität (prog.)€" }, // "Mayor capacidad de castañas"
     };
     trickNameTable[RG_PROGRESSIVE_STICK_UPGRADE] = {
         Text{ "Progressive Stick Bag", "Sac de bâtons (prog.)",
-              "Stabbeutel (Upgrade)" }, // "Mayor capacidad de ramas deku"
+              "Stabbeutel (prog.)" }, // "Mayor capacidad de ramas deku"
         Text{ "Progressive Stick Pack", "Paquet de bâtons Mojo (prog.)",
-              "Stabrucksack (Upgrade)" }, // "Mayor capacidad de bastones"
+              "Stabrucksack (prog.)" }, // "Mayor capacidad de bastones"
         Text{ "Progressive Branch Capacity", "Capacité de la succursale (prog.)",
-              "Ast-Kapazität (Upgrade)" }, // "Capacidad progresiva de la sucursal"
+              "Ast-Kapazität (prog.)" }, // "Capacidad progresiva de la sucursal"
         Text{ "Progressive Rod Capacity", "Capacité de tiges (prog.)",
-              "Stock-Kapazität (Upgrade)" }, // "Mayor capacidad de cetros deku"
+              "Stock-Kapazität (prog.)" }, // "Mayor capacidad de cetros deku"
     };
     trickNameTable[RG_PROGRESSIVE_BOMBCHU_BAG] = {
-        Text{ "Progressive Bomblings", "Bombinsectes (prog.)", "Bombenmäuse (Upgrade)" }, // "Bombinsectos progresivos"
+        Text{ "Progressive Bomblings", "Bombinsectes (prog.)", "Bombenmäuse (prog.)€" }, // "Bombinsectos progresivos"
         Text{ "Progressive Sentrobe Bombs", "Bombe de Sphérodrone (prog.)",
-              "Rokopterbomben (Upgrade)" },                                          // "Bomba de helicobot progresivo"
-        Text{ "Progressive Bomb-ombs", "Bombe Soldat (prog.)", "Bob-omb (Upgrade)" }, // "Soldado bomba progresivo"
-        Text{ "Progressive Missiles", "Missiles (prog.)", "Missiles (Upgrade)" },    // "Misiles progresivos"
+              "Rokopterbomben (prog.)€" },                                          // "Bomba de helicobot progresivo"
+        Text{ "Progressive Bomb-ombs", "Bombe Soldat (prog.)", "Bob-omb (prog.)" }, // "Soldado bomba progresivo"
+        Text{ "Progressive Missiles", "Missiles (prog.)", "Missiles (prog.)€" },    // "Misiles progresivos"
     };
     trickNameTable[RG_PROGRESSIVE_MAGIC_METER] = {
         Text{ "Progressive Stamina Meter", "Jauge d'endurance (prog.)",
-              "Ausdauer (Upgrade)" }, // "Medidor de vigor progresivo"
+              "Ausdauer (prog.)" }, // "Medidor de vigor progresivo"
         Text{ "Progressive Energy Gauge", "Jauge d'énergie (prog.)",
-              "Energie (Upgrade)" }, // "Medidor de energía progresivo"
+              "Energie (prog.)" }, // "Medidor de energía progresivo"
         Text{ "Progressive Magic Powder", "Poudre magique (prog.)",
-              "Zauberpulver (Upgrade)" }, // "Medidor de carga progresivo"
+              "Zauberpulver (prog.)" }, // "Medidor de carga progresivo"
     };
     trickNameTable[RG_PROGRESSIVE_OCARINA] = {
-        Text{ "Progressive Memento", "Souvenir (prog.)", "Souvenir (Upgrade)" },   // "Silbato progresivo"
-        Text{ "Progressive Whistle", "Siffler (prog.)", "Pfeife (Upgrade)" },      // "Silbido progresivo"
-        Text{ "Progressive Flute", "Flûte (prog.)", "Flöte (Upgrade)" },           // "Flauta progresiva"
-        Text{ "Progressive Recorder", "Harmonica (prog.)", "Rekorder (Upgrade)" }, // "Armónica progresiva"
+        Text{ "Progressive Memento", "Souvenir (prog.)", "Souvenir (prog.)" },   // "Silbato progresivo"
+        Text{ "Progressive Whistle", "Siffler (prog.)", "Pfeife (prog.)" },      // "Silbido progresivo"
+        Text{ "Progressive Flute", "Flûte (prog.)", "Flöte (prog.)" },           // "Flauta progresiva"
+        Text{ "Progressive Recorder", "Harmonica (prog.)", "Rekorder (prog.)" }, // "Armónica progresiva"
     };
     trickNameTable[RG_PROGRESSIVE_GORONSWORD] = {
         Text{ "Progressive Titan Blade", "Lame des Titans (prog.)",
-              "Titanenklinge (Upgrade)" }, // "Hoja del Titán progresiva"
-        Text{ "Progressive Goron Knife", "Lame Goron (prog.)", "Goronenmesser (Upgrade)" }, // "Daga Goron progresiva"
+              "Titanenklinge (prog.)" }, // "Hoja del Titán progresiva"
+        Text{ "Progressive Goron Knife", "Lame Goron (prog.)", "Goronenmesser (prog.)" }, // "Daga Goron progresiva"
         Text{ "Progressive Giant Sword", "Épée géante (prog.)",
-              "Riesenschwert (Upgrade)" }, // "Espada gigante progresiva"
+              "Riesenschwert (prog.)" }, // "Espada gigante progresiva"
         Text{ "Progressive Darknut Sword", "Épée de Darknut (prog.)",
-              "Gardeschwert (Upgrade)" }, // "Espada Darknut progresiva"
+              "Gardeschwert (prog.)" }, // "Espada Darknut progresiva"
         Text{ "Progressive Power Sword", "Épée de Puissance (prog.)",
-              "Schwert der Macht (Upgrade)" }, // "Espada de poder progresiva"
+              "Schwert der Macht (prog.)" }, // "Espada de poder progresiva"
         Text{ "Progressive Big Stabby", "Gros coup de poignard (prog.)",
-              "Großschwert (Upgrade)" }, // "Gran puñalada progresiva"
+              "Großschwert (prog.)" }, // "Gran puñalada progresiva"
     };
 
     trickNameTable[RG_EMPTY_BOTTLE] = {
@@ -662,59 +663,59 @@ static void InitTrickNames() {
         Text{ "Shiny Rock", "Caillou Brillant", "glänzender Stein" },       // "Shiny Rock"
     };
     trickNameTable[RG_ROCS_FEATHER] = {
-        Text{ "Chicken Wing", TODO_TRANSLATE, "Hähnchenschenkel" }, // "Chicken Wing"
-        Text{ "Roc's Leg", TODO_TRANSLATE, "Greifenfuß" },          // "Roc's Leg"
-        Text{ "Roc's Fapper", TODO_TRANSLATE, "Greifenflügel" }, // "Roc's Fapper"
+        Text{ "Chicken Wing", "Chicken Wing", "Chicken Wing" }, // "Chicken Wing"
+        Text{ "Roc's Leg", "Roc's Leg", "Roc's Leg" },          // "Roc's Leg"
+        Text{ "Roc's Fapper", "Roc's Fapper", "Roc's Fapper" }, // "Roc's Fapper"
     };
     trickNameTable[RG_DEATH_MOUNTAIN_CRATER_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Volcano Seed Spirit",TODO_TRANSLATE, "Vulkanbohnen-Seele" },
-        Text{ "Bolero Sprout Platform", TODO_TRANSLATE, "Bolero-Spross" },
+        Text{ "Volcano Seed Spirit" },
+        Text{ "Bolero Sprout Platform" },
     };
     trickNameTable[RG_DEATH_MOUNTAIN_TRAIL_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Dodongo's Seed Spirit", TODO_TRANSLATE, "Dodongo-Erbsenseele" },
-        Text{ "Boulder Sprout Platform", TODO_TRANSLATE, "Felsbrocken-Sprossseele" },
+        Text{ "Dodongo's Seed Spirit" },
+        Text{ "Boulder Sprout Platform" },
     };
     trickNameTable[RG_DESERT_COLOSSUS_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Spirit Temple Seed Spirit", TODO_TRANSLATE, "Geistertempel-Erbsenseele" },
-        Text{ "Colossus Arch Sprout Platform", TODO_TRANSLATE, "Koloss-Sprossseele" },
+        Text{ "Spirit Temple Seed Spirit" },
+        Text{ "Colossus Arch Sprout Platform" },
     };
     trickNameTable[RG_GERUDO_VALLEY_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Waterfall Seed Spirit", TODO_TRANSLATE, "Wasserfall-Erbsenseele" },
-        Text{ "Gerudo Cow Sprout Platform", TODO_TRANSLATE, "Gerudo-Kuh-Sprossseele" },
+        Text{ "Waterfall Seed Spirit" },
+        Text{ "Gerudo Cow Sprout Platform" },
     };
     trickNameTable[RG_GRAVEYARD_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "GY Crate Seed Spirit", TODO_TRANSLATE, "Friedhof-Erbsenseele" },
-        Text{ "Dampe's Sprout Platform", TODO_TRANSLATE, "Boris Sprossseele" },
+        Text{ "GY Crate Seed Spirit" },
+        Text{ "Dampe's Sprout Platform" },
     };
     trickNameTable[RG_KOKIRI_FOREST_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Rupee Ledge Seed Spirit", TODO_TRANSLATE, "Walddorf-Erbsenseele" },
-        Text{ "KF Shop Sprout Platform", TODO_TRANSLATE, "Kokiri-Laden-Sprossseele" },
+        Text{ "Rupee Ledge Seed Spirit" },
+        Text{ "KF Shop Sprout Platform" },
     };
     trickNameTable[RG_LAKE_HYLIA_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Hylia Lab Seed Spirit", TODO_TRANSLATE, "Labor-Erbsenseele" },
-        Text{ "Fishing Sprout Platform", TODO_TRANSLATE, "Angel-Sprossseele" },
+        Text{ "Hylia Lab Seed Spirit" },
+        Text{ "Fishing Sprout Platform" },
     };
     trickNameTable[RG_LOST_WOODS_BRIDGE_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "LW Bridge Seed Spirit", TODO_TRANSLATE, "Brücken-Erbsenseele" },
-        Text{ "Skull Kid Sprout Platform", TODO_TRANSLATE, "Horror Kid Sprossseele" },
+        Text{ "LW Bridge Seed Spirit" },
+        Text{ "Skull Kid Sprout Platform" },
     };
     trickNameTable[RG_LOST_WOODS_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "Deku Theatre Seed Spirit", TODO_TRANSLATE, "Theater-Erbsenseele" },
-        Text{ "Deku Scrubs Sprout Platform", TODO_TRANSLATE, "Wald-Sprossseele" },
+        Text{ "Deku Theatre Seed Spirit" },
+        Text{ "Deku Scrubs Sprout Platform" },
     };
     trickNameTable[RG_ZORAS_RIVER_BEAN_SOUL] = {
         // TODO_TRANSLATE
-        Text{ "River Ride Seed Spirit", TODO_TRANSLATE, "Fluß-Weg-Erbsenseele" },
-        Text{ "Bean Salesman Sprout Platform", TODO_TRANSLATE, "Erbsenhändler-Sprossseele" },
+        Text{ "River Ride Seed Spirit" },
+        Text{ "Bean Salesman Sprout Platform" },
     };
     trickNameTable[RG_GOHMA_SOUL] = {
         Text{ "Spider Sense", "Sens de l'Araignée", "Spinnensinn" },
@@ -762,29 +763,26 @@ static void InitTrickNames() {
         Text{ "Pork", "Porc", "Schweinefleisch" },
     };
     trickNameTable[RG_FISHING_POLE] = {
-        Text{ "Fish Tickler", "Fish Tickler", "Fischfänger" },
+        Text{ "Fish Tickler", "Fish Tickler", "Fischkitzler" },
         Text{ "Floating Lure", "Floating Lure", "Schwimmer" },
         Text{ "Fishing Reel", "Fishing Reel", "Angelschnur" },
     };
     trickNameTable[RG_SKELETON_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Stalfos Key", TODO_TRANSLATE, "Stalfos-Schlüssel" },
-		Text{ "Nightmare Key", TODO_TRANSLATE, "Albtraumschlüssel" },
-		Text{ "Graveyard Key", TODO_TRANSLATE, "Gruftschlüssel" },
-        Text{ "King's Key", TODO_TRANSLATE, "Königsschlüssel" },
-		Text{ "Hero's Key", TODO_TRANSLATE, "Heldenschlüssel" },
+        Text{ "Stalfos Key" }, Text{ "Nightmare Key" }, Text{ "Graveyard Key" },
+        Text{ "King's Key" },  Text{ "Hero's Key" },
     };
     trickNameTable[RG_CLIMB] = {
         // TODO_TRANSLATE
-        Text{ "Cling", TODO_TRANSLATE, "Klammern" },
+        Text{ "Cling" },
     };
     trickNameTable[RG_CRAWL] = {
         // TODO_TRANSLATE
-        Text{ "Crouch", TODO_TRANSLATE, "Ducken" },
+        Text{ "Crouch" },
     };
     trickNameTable[RG_OPEN_CHEST] = {
         // TODO_TRANSLATE
-        Text{ "Open Cheats", TODO_TRANSLATE, "Truhenplünderer" },
+        Text{ "Open Cheats" },
     };
 
     trickNameTable[RG_OCARINA_A_BUTTON] = {
@@ -817,781 +815,415 @@ static void InitTrickNames() {
 
     trickNameTable[RG_GREG_RUPEE] = {
         // TODO_TRANSALTE
-        Text{ "Morshu the Green Ruby", TODO_TRANSLATE, "Morshu, der weiße Rubin" },
-        Text{ "Geoffrey the Gray Rupoor", TODO_TRANSLATE, "Geoffrey, der graue Rupon" },
-        Text{ "Validation Rupee", TODO_TRANSLATE, "Bestätigungs Robin" },
-        Text{ "Gary, just Gary", TODO_TRANSLATE, "Gary, einfach Gary" },
-        Text{ "Ike the Indigo Ice Trap", TODO_TRANSLATE, "Herzog Onkleds Rubin" },
+        Text{ "Morshu the Green Ruby", "Morshu the Green Ruby", "Morshu the Green Ruby" },
+        Text{ "Geoffrey the Gray Rupoor", "Geoffrey the Gray Rupoor", "Geoffrey the Gray Rupoor" },
+        Text{ "Validation Rupee", "Validation Rupee", "Validation Rupee" },
+        Text{ "Gary, just Gary", "Gary, just Gary", "Gary, just Gary" },
+        Text{ "Ike the Indigo Ice Trap", "Ike the Indigo Ice Trap", "Ike the Indigo Ice Trap" },
     };
 
     trickNameTable[RG_FOREST_TEMPLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Wind Temple Smol Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Windtempel" },
-        Text{ "Woodfall Temple Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Dämmerwald" },
-        Text{ "Skull Woods Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Sumpftempel" },
+        Text{ "Wind Temple Smol Key", "Wind Temple Smol Key", "Wind Temple Smol Key" },
+        Text{ "Woodfall Temple Small Key", "Woodfall Temple Small Key", "Woodfall Temple Small Key" },
+        Text{ "Skull Woods Small Key", "Skull Woods Small Key", "Skull Woods Small Key" },
     };
     trickNameTable[RG_FIRE_TEMPLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Ice Cavern Small Keese", TODO_TRANSLATE, "Brecheisen für die Eishöhle" },
-        Text{ "Goron Temple Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Goronentempel" },
-        Text{ "Eldin Temple Salmon Koi", TODO_TRANSLATE, "Mini Schlüssel für den Eldintempel" },
+        Text{ "Ice Cavern Small Keese", "Ice Cavern Small Keese", "Ice Cavern Small Keese" },
+        Text{ "Goron Temple Small Key", "Goron Temple Small Key", "Goron Temple Small Key" },
+        Text{ "Eldin Temple Salmon Koi", "Eldin Temple Salmon Koi", "Eldin Temple Salmon Koi" },
     };
     trickNameTable[RG_WATER_TEMPLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Swamp Palace Small Keese", TODO_TRANSLATE, "Mini Schlüssel für den Sumpf-Palast" },
-        Text{ "Great Bay Temple Small Key", TODO_TRANSLATE, "Brecheisen für die Schädelbucht-Tempel" },
-        Text{ "Lakebed Temple Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Seeschrein" },
+        Text{ "Swamp Palace Small Keese", "Swamp Palace Small Keese", "Swamp Palace Small Keese" },
+        Text{ "Great Bay Temple Small Key", "Great Bay Temple Small Key", "Great Bay Temple Small Key" },
+        Text{ "Lakebed Temple Small Key", "Lakebed Temple Small Key", "Lakebed Temple Small Key" },
     };
     trickNameTable[RG_SPIRIT_TEMPLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Light Temple Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Lichttempel" },
-        Text{ "Lightning Temple Smol Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Blitztempel" },
-        Text{ "Desert Palace Small Key", TODO_TRANSLATE, "Mini Schlüssel für den Wüstentempel" },
-        Text{ "Stone Tower Small Keese", TODO_TRANSLATE, "Brecheisen für den Felsenturm-Tempel" },
+        Text{ "Light Temple Small Key", "Light Temple Small Key", "Light Temple Small Key" },
+        Text{ "Lightning Temple Smol Key", "Lightning Temple Smol Key", "Lightning Temple Smol Key" },
+        Text{ "Desert Palace Small Key", "Desert Palace Small Key", "Desert Palace Small Key" },
+        Text{ "Stone Tower Small Keese", "Stone Tower Small Keese", "Stone Tower Small Keese" },
     };
     trickNameTable[RG_SHADOW_TEMPLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Palace of Darkness Small Key", TODO_TRANSLATE, "Brecheisen für den Palast der Dunkelheit" },
-        Text{ "Shrine of Illusion Salmon Koi", TODO_TRANSLATE, "Kleiner Schlüssel für den Terratempel" },
-        Text{ "Palace of Twilight Small Key", TODO_TRANSLATE, "Mini Schlüssel für den Schattenpalast" },
+        Text{ "Palace of Darkness Small Key", "Palace of Darkness Small Key", "Palace of Darkness Small Key" },
+        Text{ "Shrine of Illusion Salmon Koi", "Shrine of Illusion Salmon Koi", "Shrine of Illusion Salmon Koi" },
+        Text{ "Palace of Twilight Small Key", "Palace of Twilight Small Key", "Palace of Twilight Small Key" },
     };
     trickNameTable[RG_BOTTOM_OF_THE_WELL_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Top of the Wall Small Key", TODO_TRANSLATE, "Mini Schlüssel für den Bereich über dem Brunnen" },
-        Text{ "Breath of the Wild Small Key", TODO_TRANSLATE, "Brecheisen für die Windmühle" },
-        Text{ "Beneath the Well Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für den Bereich unter dem Brunnen" },
+        Text{ "Top of the Wall Small Key", "Top of the Wall Small Key", "Top of the Wall Small Key" },
+        Text{ "Breath of the Wild Small Key", "Breath of the Wild Small Key", "Breath of the Wild Small Key" },
+        Text{ "Beneath the Well Small Key", "Beneath the Well Small Key", "Beneath the Well Small Key" },
     };
     trickNameTable[RG_GERUDO_TRAINING_GROUND_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Gerudo Sanctum Small Key", TODO_TRANSLATE, "Brecheisen für das Gerudo-Sanktum" },
-        Text{ "Lady's Lair Small Keese", TODO_TRANSLATE, "Kleiner Schlüssel für die Ritterakademie" },
-        Text{ "Knight Acadamy Small Key", TODO_TRANSLATE, "Mini Schlüssel für das Dojo" },
+        Text{ "Gerudo Sanctum Small Key", "Gerudo Sanctum Small Key", "Gerudo Sanctum Small Key" },
+        Text{ "Lady's Lair Small Keese", "Lady's Lair Small Keese", "Lady's Lair Small Keese" },
+        Text{ "Knight Acadamy Small Key", "Knight Acadamy Small Key", "Knight Acadamy Small Key" },
     };
     trickNameTable[RG_GERUDO_FORTRESS_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Fortress of Winds Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für die Piratenfestung" },
-        Text{ "Thieve's Town Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für das Gerudoversteck" },
-        Text{ "Fortress Centrum Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für die verlassene Festung" },
-        Text{ "Forsaken Fortress Smol Key", TODO_TRANSLATE, "Brecheisen für das Festungszentrum" },
-        Text{ "Pirate's Fortress Small Key", TODO_TRANSLATE, "Mini Schlüssel für das Frauenversteck" },
+        Text{ "Fortress of Winds Small Key", "Fortress of Winds Small Key", "Fortress of Winds Small Key" },
+        Text{ "Thieve's Town Small Key", "Thieve's Town Small Key", "Thieve's Town Small Key" },
+        Text{ "Fortress Centrum Small Key", "Fortress Centrum Small Key", "Fortress Centrum Small Key" },
+        Text{ "Forsaken Fortress Smol Key", "Forsaken Fortress Smol Key", "Forsaken Fortress Smol Key" },
+        Text{ "Pirate's Fortress Small Key", "Pirate's Fortress Small Key", "Pirate's Fortress Small Key" },
     };
     trickNameTable[RG_GANONS_CASTLE_SMALL_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Hyrule Castle Salmon Koi", TODO_TRANSLATE, "Mini Schlüssel für das Schloß Hyrule" },
-        Text{ "Onox's Castle Small Key", TODO_TRANSLATE, "Kleiner Schlüssel für das Verans Schloß" },
-        Text{ "Vaati's Palace Small Key", TODO_TRANSLATE, "Brecheisen für den Agahnims Palast" },
+        Text{ "Hyrule Castle Salmon Koi", "Hyrule Castle Salmon Koi", "Hyrule Castle Salmon Koi" },
+        Text{ "Onox's Castle Small Key", "Onox's Castle Small Key", "Onox's Castle Small Key" },
+        Text{ "Vaati's Palace Small Key", "Vaati's Palace Small Key", "Vaati's Palace Small Key" },
     };
 
     trickNameTable[RG_FOREST_TEMPLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Wind Temple Key Ring", TODO_TRANSLATE, "Schlüsselbund des Windtempels" },
-        Text{ "Woodfall Temple Key Ring", TODO_TRANSLATE, "Dietrich des Waldtempels" },
-        Text{ "Skull Woods Key Ring", TODO_TRANSLATE, "Schlüsselset des Sumpftempels" },
+        Text{ "Wind Temple Key Ring", "Wind Temple Key Ring", "Wind Temple Key Ring" },
+        Text{ "Woodfall Temple Key Ring", "Woodfall Temple Key Ring", "Woodfall Temple Key Ring" },
+        Text{ "Skull Woods Key Ring", "Skull Woods Key Ring", "Skull Woods Key Ring" },
     };
     trickNameTable[RG_FIRE_TEMPLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Ice Cavern Keese Ring", TODO_TRANSLATE, "Schlüsselset der Eishöhle" },
-        Text{ "Goron Temple Key Ring", TODO_TRANSLATE, "Dietrich des Feuertempels" },
-        Text{ "Eldin Temple Koi Ray", TODO_TRANSLATE, "Schlüsselbund des Eldintempels" },
+        Text{ "Ice Cavern Keese Ring", "Ice Cavern Keese Ring", "Ice Cavern Keese Ring" },
+        Text{ "Goron Temple Key Ring", "Goron Temple Key Ring", "Goron Temple Key Ring" },
+        Text{ "Eldin Temple Koi Ray", "Eldin Temple Koi Ray", "Eldin Temple Koi Ray" },
     };
     trickNameTable[RG_WATER_TEMPLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Swamp Palace Keese Ring", TODO_TRANSLATE, "Schlüsselset des Sumpfpalasts" },
-        Text{ "Great Bay Temple Key Ring", TODO_TRANSLATE, "Dietrich des Wassertempels" },
-        Text{ "Lakebed Temple Key Ring", TODO_TRANSLATE, "Schlüsselbund des Seeschreins" },
+        Text{ "Swamp Palace Keese Ring", "Swamp Palace Keese Ring", "Swamp Palace Keese Ring" },
+        Text{ "Great Bay Temple Key Ring", "Great Bay Temple Key Ring", "Great Bay Temple Key Ring" },
+        Text{ "Lakebed Temple Key Ring", "Lakebed Temple Key Ring", "Lakebed Temple Key Ring" },
     };
     trickNameTable[RG_SPIRIT_TEMPLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Light Temple Key Ring", TODO_TRANSLATE, "Schlüsselset des Lichttempels" },
-        Text{ "Lightning Temple Key Ring", TODO_TRANSLATE, "Dietrich des Geistertempels" },
-        Text{ "Desert Palace Key Ring", TODO_TRANSLATE, "Schlüsselbund des Wüstentempels" },
-        Text{ "Stone Tower Keese Ring", TODO_TRANSLATE, "Schlüsselhaufen des Felsenturm-Tempels" },
+        Text{ "Light Temple Key Ring", "Light Temple Key Ring", "Light Temple Key Ring" },
+        Text{ "Lightning Temple Key Ring", "Lightning Temple Key Ring", "Lightning Temple Key Ring" },
+        Text{ "Desert Palace Key Ring", "Desert Palace Key Ring", "Desert Palace Key Ring" },
+        Text{ "Stone Tower Keese Ring", "Stone Tower Keese Ring", "Stone Tower Keese Ring" },
     };
     trickNameTable[RG_SHADOW_TEMPLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Palace of Darkness Key Ring", TODO_TRANSLATE, "Schlüsselset des Palasts der Dunkelheit" },
-        Text{ "Shrine of Illusion Koi Ray", TODO_TRANSLATE, "Dietrich des Schattentempels" },
-        Text{ "Palace of Twilight Key Ring", TODO_TRANSLATE, "Schlüsselbund des Schattenpalasts" },
+        Text{ "Palace of Darkness Key Ring", "Palace of Darkness Key Ring", "Palace of Darkness Key Ring" },
+        Text{ "Shrine of Illusion Koi Ray", "Shrine of Illusion Koi Ray", "Shrine of Illusion Koi Ray" },
+        Text{ "Palace of Twilight Key Ring", "Palace of Twilight Key Ring", "Palace of Twilight Key Ring" },
     };
     trickNameTable[RG_BOTTOM_OF_THE_WELL_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Top of the Wall Key Ring", TODO_TRANSLATE, "Schlüsselset für Über dem Brunnen" },
-        Text{ "Breath of the Wild Key Ring", TODO_TRANSLATE, "Dietrich für Grund des Brunnens" },
-        Text{ "Beneath the Well Key Ring", TODO_TRANSLATE, "Schlüsselbund für Unter dem Brunnen" },
+        Text{ "Top of the Wall Key Ring", "Top of the Wall Key Ring", "Top of the Wall Key Ring" },
+        Text{ "Breath of the Wild Key Ring", "Breath of the Wild Key Ring", "Breath of the Wild Key Ring" },
+        Text{ "Beneath the Well Key Ring", "Beneath the Well Key Ring", "Beneath the Well Key Ring" },
     };
     trickNameTable[RG_GERUDO_TRAINING_GROUND_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Gerudo Sanctum Key Ring", TODO_TRANSLATE, "Schlüsselset des Gerudo-Sanktums" },
-        Text{ "Lady's Lair Keese Ring", TODO_TRANSLATE, "Dietrich der Gerudo-Trainingsarena" },
-        Text{ "Knight Acadamy Key Ring", TODO_TRANSLATE, "Schlüsselbund des Dojos" },
+        Text{ "Gerudo Sanctum Key Ring", "Gerudo Sanctum Key Ring", "Gerudo Sanctum Key Ring" },
+        Text{ "Lady's Lair Keese Ring", "Lady's Lair Keese Ring", "Lady's Lair Keese Ring" },
+        Text{ "Knight Acadamy Key Ring", "Knight Acadamy Key Ring", "Knight Acadamy Key Ring" },
     };
     trickNameTable[RG_GERUDO_FORTRESS_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Fortress of Winds Key Ring", TODO_TRANSLATE, "Schlüsselset der Piratenfestung" },
-        Text{ "Thieve's Town Key Ring", TODO_TRANSLATE, "Dietrich des Diebesverstecks" },
-        Text{ "Fortress Centrum Key Ring", TODO_TRANSLATE, "Schlüsselbund der verlassenen Festung" },
-        Text{ "Forsaken Fortress Key Ring", TODO_TRANSLATE, "Schlüsselhaufen des Festungszentrums" },
-        Text{ "Pirate's Fortress Key Ring", TODO_TRANSLATE, "Schlüsselpaket des Frauenverstecks" },
+        Text{ "Fortress of Winds Key Ring", "Fortress of Winds Key Ring", "Fortress of Winds Key Ring" },
+        Text{ "Thieve's Town Key Ring", "Thieve's Town Key Ring", "Thieve's Town Key Ring" },
+        Text{ "Fortress Centrum Key Ring", "Fortress Centrum Key Ring", "Fortress Centrum Key Ring" },
+        Text{ "Forsaken Fortress Key Ring", "Forsaken Fortress Key Ring", "Forsaken Fortresse Key Ring" },
+        Text{ "Pirate's Fortress Key Ring", "Pirate's Fortress Key Ring", "Pirate's Fortress Key Ring" },
     };
     trickNameTable[RG_GANONS_CASTLE_KEY_RING] = {
         // TODO_TRANSALTE
-        Text{ "Hyrule Castle Koi Ray", TODO_TRANSLATE, "Schlüsselset für Schloß Hyrule" },
-        Text{ "Onox's Castle Key Ring", TODO_TRANSLATE, "Dietrich für Ganons Schloß" },
-        Text{ "Vaati's Palace Key Ring", TODO_TRANSLATE, "Schlüsselbund für Verans Palast" },
+        Text{ "Hyrule Castle Koi Ray", "Hyrule Castle Koi Ray", "Hyrule Castle Koi Ray" },
+        Text{ "Onox's Castle Key Ring", "Onox's Castle Key Ring", "Onox's Castle Key Ring" },
+        Text{ "Vaati's Palace Key Ring", "Vaati's Palace Key Ring", "Vaati's Palace Key Ring" },
     };
 
     trickNameTable[RG_FOREST_TEMPLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Wind Temple Boss Key", TODO_TRANSLATE, "Admin-Schlüssel des Windtempels" },
-        Text{ "Woodfall Temple Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Dämmerwalds" },
-        Text{ "Skull Woods Boss Key", TODO_TRANSLATE, "Geschäftsführer-Schlüssel des Sumpftempels" },
-        Text{ "Phantom Ganon's Key", TODO_TRANSLATE, "LKW-Schlüssel für Phantom Ganon" },
-        Text{ "Deku Tree's Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Deku-Baums" },
+        Text{ "Wind Temple Boss Key", "Wind Temple Boss Key", "Wind Temple Boss Key" },
+        Text{ "Woodfall Temple Boss Key", "Woodfall Temple Boss Key", "Woodfall Temple Boss Key" },
+        Text{ "Skull Woods Boss Key", "Skull Woods Boss Key", "Skull Woods Boss Key" },
+        Text{ "Phantom Ganon's Key", "Phantom Ganon's Key", "Phantom Ganon's Key" },
+        Text{ "Deku Tree's Boss Key", "Deku Tree's Boss Key", "Deku Tree's Boss Key" },
     };
     trickNameTable[RG_FIRE_TEMPLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Ice Cavern Boss Keese", TODO_TRANSLATE, "Master-Schlüssel der Eishöhle" },
-        Text{ "Goron Temple Boss Key", TODO_TRANSLATE, "Admin-Schlüssel des Goronentempels" },
-        Text{ "Eldin Temple Boss Koi", TODO_TRANSLATE, "Geschäftsführer-Schlüssel des Eldintempels" },
-        Text{ "Volvagia's Key", TODO_TRANSLATE, "PKW-Schlüssel für Volvagia" },
-        Text{ "Dodongo's Cavern Boss Key", TODO_TRANSLATE, "Master-Schlüssel für Dodongos Höhle" },
+        Text{ "Ice Cavern Boss Keese", "Ice Cavern Boss Keese", "Ice Cavern Boss Keese" },
+        Text{ "Goron Temple Boss Key", "Goron Temple Boss Key", "Goron Temple Boss Key" },
+        Text{ "Eldin Temple Boss Koi", "Eldin Temple Boss Koi", "Eldin Temple Boss Koi" },
+        Text{ "Volvagia's Key", "Volvagia's Key", "Volvagia's Key" },
+        Text{ "Dodongo's Cavern Boss Key", "Dodongo's Cavern Boss Key", "Dodongo's Cavern Boss Key" },
     };
     trickNameTable[RG_WATER_TEMPLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Swamp Palace Boss Keese", TODO_TRANSLATE, "Master-Schlüssel des Sumpfpalasts" },
-        Text{ "Great Bay Temple Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Schädelbucht-Tempels" },
-        Text{ "Lakebed Temple Boss Key", TODO_TRANSLATE, "Geschäftsführer-Schlüssel des Seeschreins" },
-        Text{ "Morpha's Key", TODO_TRANSLATE, "Admin-Schlüssel für Morpha" },
-        Text{ "Jabu Jabu's Belly Boss Key", TODO_TRANSLATE, "Master-Schlüssel von Jabu-Jabus Bauch" },
+        Text{ "Swamp Palace Boss Keese", "Swamp Palace Boss Keese", "Swamp Palace Boss Keese" },
+        Text{ "Great Bay Temple Boss Key", "Great Bay Temple Boss Key", "Great Bay Temple Boss Key" },
+        Text{ "Lakebed Temple Boss Key", "Lakebed Temple Boss Key", "Lakebed Temple Boss Key" },
+        Text{ "Morpha's Key", "Morpha's Key", "Morpha's Key" },
+        Text{ "Jabu Jabu's Belly Boss Key", "Jabu Jabu's Belly Boss Key", "Jabu Jabu's Belly Boss Key" },
     };
     trickNameTable[RG_SPIRIT_TEMPLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Light Temple Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Lichttempels" },
-        Text{ "Lightning Temple Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Blitztempels" },
-        Text{ "Desert Palace Boss Key", TODO_TRANSLATE, "Admin-Schlüssel des Wüstentempels" },
-        Text{ "Stone Tower Boss Keese", TODO_TRANSLATE, "Master-Schlüssel des Felsenturm-Tempels" },
-        Text{ "Twinrova's Key", TODO_TRANSLATE, "Geschäftsführer-Schlüssel für Twinrova" },
+        Text{ "Light Temple Boss Key", "Light Temple Boss Key", "Light Temple Boss Key" },
+        Text{ "Lightning Temple Boss Key", "Lightning Temple Boss Key", "Lightning Temple Boss Key" },
+        Text{ "Desert Palace Boss Key", "Desert Palace Boss Key", "Desert Palace Boss Key" },
+        Text{ "Stone Tower Boss Keese", "Stone Tower Boss Keese", "Stone Tower Boss Keese" },
+        Text{ "Twinrova's Key", "Twinrova's Key", "Twinrova's Key" },
     };
     trickNameTable[RG_SHADOW_TEMPLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Palace of Darkness Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Palasts der Dunkelheit" },
-        Text{ "Shrine of Illusion Bass Koi", TODO_TRANSLATE, "Geschäftsführer-Schlüssel des Terratempels" },
-        Text{ "Palace of Twilight Boss Key", TODO_TRANSLATE, "Master-Schlüssel des Schattenpalasts" },
-        Text{ "Bongo Bongo's Key", TODO_TRANSLATE, "Admin-Schlüssel für Bongo Bongo" },
+        Text{ "Palace of Darkness Boss Key", "Palace of Darkness Boss Key", "Palace of Darkness Boss Key" },
+        Text{ "Shrine of Illusion Bass Koi", "Shrine of Illusion Bass Koi", "Shrine of Illusion Bass Koi" },
+        Text{ "Palace of Twilight Boss Key", "Palace of Twilight Boss Key", "Palace of Twilight Boss Key" },
+        Text{ "Bongo Bongo's Key", "Bongo Bongo's Key", "Bongo Bongo's Key" },
     };
     trickNameTable[RG_GANONS_CASTLE_BOSS_KEY] = {
         // TODO_TRANSALTE
-        Text{ "Hyrule Castle Bass Koi", TODO_TRANSLATE, "Master-Schlüssel für Schloß Hyrule" },
-        Text{ "Onox's Castle Boss Key", TODO_TRANSLATE, "Admin-Schlüssel für Verans Schloß" },
-        Text{ "Vaati's Palace Boss Key", TODO_TRANSLATE, "Master-Schlüssel für Agahnims Palast" },
-        Text{ "Ganondorf's Key", TODO_TRANSLATE, "Geschäftsführer-Schlüssel für Ganondorf" },
+        Text{ "Hyrule Castle Bass Koi", "Hyrule Castle Bass Koi", "Hyrule Castle Bass Koi" },
+        Text{ "Onox's Castle Boss Key", "Onox's Castle Boss Key", "Onox's Castle Boss Key" },
+        Text{ "Vaati's Palace Boss Key", "Vaati's Palace Boss Key", "Vaati's Palace Boss Key" },
+        Text{ "Ganondorf's Key", "Ganondorf's Key", "Ganondorf's Key" },
     };
 
     trickNameTable[RG_KEATON_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Korok Mask", TODO_TRANSLATE, "Krog-Maske" },
-        Text{ "Lynel Mask", TODO_TRANSLATE, "Leunen-Maske" },
-        Text{ "Cucco Mask", TODO_TRANSLATE, "Hühner-Maske" },
-        Text{ "Remlit Mask", TODO_TRANSLATE, "Lemurin-Maske" },
+        Text{ "Korok Mask" },
+        Text{ "Lynel Mask" },
+        Text{ "Cucco Mask" },
+        Text{ "Remlit Mask" },
     };
     trickNameTable[RG_SKULL_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Darknut Mask", TODO_TRANSLATE, "Eisenprinz-Maske" },
-        Text{ "Stalfos Mask", TODO_TRANSLATE, "Stalfos-Maske" },
-        Text{ "Captain's Hat", TODO_TRANSLATE, "Helm des Hauptmanns" },
+        Text{ "Darknut Mask" },
+        Text{ "Stalfos Mask" },
+        Text{ "Captain's Hat" },
     };
     trickNameTable[RG_SPOOKY_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Gibdo Mask", TODO_TRANSLATE, "Gibdo-Maske" },
-        Text{ "Garo's Mask", TODO_TRANSLATE, "Garo-Maske" },
-        Text{ "Redead mask", TODO_TRANSLATE, "Zombie-Maske" },
+        Text{ "Gibdo Mask" },
+        Text{ "Garo's Mask" },
+        Text{ "Redead mask" },
     };
     trickNameTable[RG_BUNNY_HOOD] = {
         // TODO_TRANSLATE
-        Text{ "Bunny Mask", TODO_TRANSLATE, "Hasen-Maske" },
-        Text{ "Bremen Mask", TODO_TRANSLATE, "Bremer Maske" },
-        Text{ "Rabbit Hood", TODO_TRANSLATE, "Hasenkapuze" },
+        Text{ "Bunny Mask" },
+        Text{ "Bremen Mask" },
+        Text{ "Rabbit Hood" },
     };
     trickNameTable[RG_MASK_OF_TRUTH] = {
         // TODO_TRANSLATE
-        Text{ "Feirce Diety Mask", TODO_TRANSLATE, "Grimmige Gottheit-Maske" },
-        Text{ "Majora's Mask", TODO_TRANSLATE, "Majoras Maske" },
-        Text{ "Hero's Charm", TODO_TRANSLATE, "Heldenamulett" },
+        Text{ "Feirce Diety Mask" },
+        Text{ "Majora's Mask" },
+        Text{ "Hero's Charm" },
     };
     trickNameTable[RG_GORON_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Stone Mask", TODO_TRANSLATE, "Fels-Maske" },
-        Text{ "Darmani's Mask", TODO_TRANSLATE, "Darmani-Maske" },
-        Text{ "Goron Garb", TODO_TRANSLATE, "Dodongo-Fressmaske" },
+        Text{ "Stone Mask" },
+        Text{ "Darmani's Mask" },
+        Text{ "Goron Garb" },
     };
     trickNameTable[RG_ZORA_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Zora Costume", TODO_TRANSLATE, "Sidon-Maske" },
-        Text{ "Don Gero's Mask", TODO_TRANSLATE, "Don-Gero-Maske" },
-        Text{ "Mikau's Mask", TODO_TRANSLATE, "Mikau-Maske" },
+        Text{ "Zora Costume" },
+        Text{ "Don Gero's Mask" },
+        Text{ "Mikau's Mask" },
     };
     trickNameTable[RG_GERUDO_MASK] = {
         // TODO_TRANSLATE
-        Text{ "Great Fairy Mask", TODO_TRANSLATE, "Feen-Maske" },
-        Text{ "Romani's Mask", TODO_TRANSLATE, "Romanis Maske" },
-        Text{ "Gerudo Veil", TODO_TRANSLATE, "Damenschleier" },
+        Text{ "Great Fairy Mask" },
+        Text{ "Romani's Mask" },
+        Text{ "Gerudo Veil" },
     };
 
     trickNameTable[RG_SPEAK_DEKU] = {
         // TODO_TRANSLATE
-        Text{ "Picori Jabber Nut", TODO_TRANSLATE, "Minish Quasselkopf" },
-        Text{ "Kikwi Blabber Nut", TODO_TRANSLATE, "Kyu Quatschbirne" },
-        Text{ "Talking Deku Nut", TODO_TRANSLATE, "Grüne Quatschbirne" },
+        Text{ "Picori Jabber Nut" },
+        Text{ "Kikwi Blabber Nut" },
+        Text{ "Talking Deku Nut" },
     };
     trickNameTable[RG_SPEAK_GERUDO] = {
         // TODO_TRANSLATE
-        Text{ "Gerudo Tuni Nut", TODO_TRANSLATE, "Krieger Quatschbirne" },
-        Text{ "Twili Jabber Nut", TODO_TRANSLATE, "Gerudo Laberbirne" },
-        Text{ "Zuna Blabber Nut", TODO_TRANSLATE, "Zuna Quatschbirne" },
+        Text{ "Gerudo Tuni Nut" },
+        Text{ "Twili Jabber Nut" },
+        Text{ "Zuna Blabber Nut" },
     };
     trickNameTable[RG_SPEAK_GORON] = {
         // TODO_TRANSLATE
-        Text{ "Cobble Jabber Nut", TODO_TRANSLATE, "Daiku Quatschbirne" },
-        Text{ "Mogma Blabber Nut", TODO_TRANSLATE, "Mogma Quatschbirne" },
-        Text{ "Goron Speak Stone", TODO_TRANSLATE, "Goronen Sprechstein" },
+        Text{ "Cobble Jabber Nut" },
+        Text{ "Mogma Blabber Nut" },
+        Text{ "Goron Speak Stone" },
     };
     trickNameTable[RG_SPEAK_HYLIAN] = {
         // TODO_TRANSLATE
-        Text{ "Human Jingle Nut", TODO_TRANSLATE, "Menschen Laberbirne" },
-        Text{ "Sheikah Jabber nut", TODO_TRANSLATE, "Shiekah Quatschbirne" },
-        Text{ "Lorulean Blabber Nut", TODO_TRANSLATE, "Lorulia Quatschbirne" },
+        Text{ "Human Jingle Nut" },
+        Text{ "Sheikah Jabber nut" },
+        Text{ "Lorulean Blabber Nut" },
     };
     trickNameTable[RG_SPEAK_KOKIRI] = {
         // TODO_TRANSLATE
-        Text{ "Korok Blabber Nut", TODO_TRANSLATE, "Krog Sprechstein" },
-        Text{ "Minish Jabber Nut", TODO_TRANSLATE, "Kokiri Laberbirne" },
-        Text{ "Fairy Jingle Nut", TODO_TRANSLATE, "Feen Quatschbirne" },
+        Text{ "Korok Blabber Nut" },
+        Text{ "Minish Jabber Nut" },
+        Text{ "Fairy Jingle Nut" },
     };
     trickNameTable[RG_SPEAK_ZORA] = {
         // TODO_TRANSLATE
-        Text{ "Parella Jabber Nut", TODO_TRANSLATE, "Parakwa Sprechstein" },
-        Text{ "Fishman Jabber Nut", TODO_TRANSLATE, "Neptunos Laberbirne" },
-        Text{ "Zora Jabu Nut", TODO_TRANSLATE, "Zora Quasselkopf" },
-        Text{ "Rito Jingle Nut", TODO_TRANSLATE, "Orni Quatschbirne" },
+        Text{ "Parella Jabber Nut" },
+        Text{ "Fishman Jabber Nut" },
+        Text{ "Zora Jabu Nut" },
+        Text{ "Rito Jingle Nut" },
     };
 
     trickNameTable[RG_GUARD_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Pot Room Key", TODO_TRANSLATE, "Schlüssel (Pot Raum)" },
-        Text{ "Poe Shop Keese", TODO_TRANSLATE, "Schlüssel (Geister Shop)" },
-        Text{ "Pot Collectors Club Key", TODO_TRANSLATE, "Schlüssel (Ritterschule)" },
+        Text{ "Pot Room Key", "Pot Room Key", "Pot Room Key" },
+        Text{ "Poe Shop Keese", "Poe Shop Keese", "Poe Shop Keese" },
+        Text{ "Pot Collectors Club Key", "Pot Collectors Club Key", "Pot Collectors Club Key" },
     };
     trickNameTable[RG_MARKET_BAZAAR_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Malo Mart Key", TODO_TRANSLATE, "Schlüssel (Maromarkt)" },
-        Text{ "Zora Shop Key", TODO_TRANSLATE, "Schlüssel (Zeiras Laden)" },
-        Text{ "Goronu General Store Key", TODO_TRANSLATE, "Schlüssel (Goronenladen)" },
-        Text{ "Chudly's Fine Goods Key", TODO_TRANSLATE, "Schlüssel (Chudleys Laden)" },
+        Text{ "Malo Mart Key", "Malo Mart Key", "Malo Mart Key" },
+        Text{ "Zora Shop Key", "Zora Shop Key", "Zora Shop Key" },
+        Text{ "Goronu General Store Key", "Goronu General Store Key", "Goronu General Store Key" },
+        Text{ "Chudly's Fine Goods Key", "Chudly's Fine Goods Key", "Chudly's Fine Goods Key" },
     };
     trickNameTable[RG_MARKET_POTION_SHOP_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Market Medicine Shop Koi", TODO_TRANSLATE, "Schlüssel (Kumulaladen)" },
-        Text{ "Market Pharmacy Key", TODO_TRANSLATE, "Schlüssel (REWE)" },
-        Text{ "Market Drug Store Keese", TODO_TRANSLATE, "Schlüssel (Edeka)" },
+        Text{ "Market Medicine Shop Koi", "Market Medicine Shop Koi", "Market Medicine Shop Koi" },
+        Text{ "Market Pharmacy Key", "Market Pharmacy Key", "Market Pharmacy Key" },
+        Text{ "Market Drug Store Keese", "Market Drug Store Keese", "Market Drug Store Keese" },
     };
     trickNameTable[RG_MASK_SHOP_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Masked Ship Koi", TODO_TRANSLATE, "Schlüssel (Schuhladen)" },
-        Text{ "Madame Couture's Key", TODO_TRANSLATE, "Schlüssel (Madame Couture)" },
-        Text{ "South Clock Town Key", TODO_TRANSLATE, "Schlüssel (Unruh-Stadt)" },
+        Text{ "Masked Ship Koi", "Masked Ship Koi", "Masked Ship Koi" },
+        Text{ "Madame Couture's Key", "Madame Couture's Key", "Madame Couture's Key" },
+        Text{ "South Clock Town Key", "South Clock Town Key", "South Clock Town Key" },
     };
     trickNameTable[RG_MARKET_SHOOTING_GALLERY_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Swamp Shooting Gallery Key", TODO_TRANSLATE, "Schlüssel (Lynna-Schießbude)" },
-        Text{ "Koume's Target Shooting Key", TODO_TRANSLATE, "Schlüssel (Koumes Zielschießen)" },
-        Text{ "Pumpkin Pull Key", TODO_TRANSLATE, "Schlüssel (Goronen-Schießbude)" },
+        Text{ "Swamp Shooting Gallery Key", "Swamp Shooting Gallery Key", "Swamp Shooting Gallery Key" },
+        Text{ "Koume's Target Shooting Key", "Koume's Target Shooting Key", "Koume's Target Shooting Key" },
+        Text{ "Pumpkin Pull Key", "Pumpkin Pull Key", "Pumpkin Pull Key" },
     };
     trickNameTable[RG_BOMBCHU_BOWLING_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Bombchu Gallery Key", TODO_TRANSLATE, "Schlüssel (Bowling-Bahn)" },
-        Text{ "Cucco Bowling Ally Key", TODO_TRANSLATE, "Schlüssel (Hühner-Jagd)" },
-        Text{ "Snowball Bowling Key", TODO_TRANSLATE, "Schlüssel (Schneeball-Kegeln)" },
-        Text{ "Bombsketball Key", TODO_TRANSLATE, "Schlüssel (Bombenkorb)" },
+        Text{ "Bombchu Gallery Key", "Bombchu Gallery Key", "Bombchu Gallery Key" },
+        Text{ "Cucco Bowling Ally Key", "Cucco Bowling Ally Key", "Cucco Bowling Ally Key" },
+        Text{ "Snowball Bowling Key", "Snowball Bowling Key", "Snowball Bowling Key" },
+        Text{ "Bombsketball Key", "Bombsketball Key", "Bombsketball Key" },
     };
     trickNameTable[RG_TREASURE_CHEST_GAME_BUILDING_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Lucky Treasure Game Koi", TODO_TRANSLATE, "Schlüssel ('Zur Schatzkiste')" },
-        Text{ "1 in 32 Key", TODO_TRANSLATE, "Schlüssel (Blackjack)" },
-        Text{ "Fortune's Coice Key", TODO_TRANSLATE, "Schlüssel (Casino)" },
-        Text{ "Money Making Game Key", TODO_TRANSLATE, "Schlüssel (Spielothek)" },
-        Text{ "Trading Card Game Key", TODO_TRANSLATE, "Schlüssel (Ene mene muh...)" },
+        Text{ "Lucky Treasure Game Koi", "Lucky Treasure Game Koi", "Lucky Treasure Game Koi" },
+        Text{ "1 in 32 Key", "1 in 32 Key", "1 in 32 Key" },
+        Text{ "Fortune's Coice Key", "Fortune's Coice Key", "Fortune's Coice Key" },
+        Text{ "Money Making Game Key", "Money Making Game Key", "Money Making Game Key" },
+        Text{ "Trading Card Game Key", "Trading Card Game Key", "Trading Card Game Key" },
     };
     trickNameTable[RG_BOMBCHU_SHOP_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Curiosity Shop Key", TODO_TRANSLATE, "Schlüssel (Kuriositätenladen)" },
-        Text{ "Barnes Bomb Shop Key", TODO_TRANSLATE, "Schlüssel (Barnes' Bombenladen)" },
-        Text{ "Bomb Flower Shop Key", TODO_TRANSLATE, "Schlüssel (Donnerblumenladen)" },
+        Text{ "Curiosity Shop Key", "Curiosity Shop Key", "Curiosity Shop Key" },
+        Text{ "Barnes Bomb Shop Key", "Barnes Bomb Shop Key", "Barnes Bomb Shop Key" },
+        Text{ "Bomb Flower Shop Key", "Bomb Flower Shop Key", "Bomb Flower Shop Key" },
     };
     trickNameTable[RG_RICHARDS_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Stockwell's House Key", TODO_TRANSLATE, "Schlüssel (Hunde-Haus)" },
-        Text{ "Blue Dog's House Key", TODO_TRANSLATE, "Schlüssel (Mamamu Yan)" },
-        Text{ "Barkle's House Key", TODO_TRANSLATE, "Schlüssel (Wuff-Haus)" },
-        Text{ "Chimimi's House Key", TODO_TRANSLATE, "Schlüssel (Reichards Haus)" },
+        Text{ "Stockwell's House Key", "Stockwell's House Key", "Stockwell's House Key" },
+        Text{ "Blue Dog's House Key", "Blue Dog's House Key", "Blue Dog's House Key" },
+        Text{ "Barkle's House Key", "Barkle's House Key", "Barkle's House Key" },
+        Text{ "Chimimi's House Key", "Chimimi's House Key", "Chimimi's House Key" },
     };
     trickNameTable[RG_ALLEY_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Mido's House Key", TODO_TRANSLATE, "Schlüssel (Nachbarschaft)" },
-        Text{ "Saria's House Key", TODO_TRANSLATE, "Schlüssel (Salias Haus)" },
-        Text{ "@'s House Key", TODO_TRANSLATE, "Schlüssel (Zeldas Wohnung)" },
+        Text{ "Mido's House Key", "Mido's House Key", "Mido's House Key" },
+        Text{ "Saria's House Key", "Saria's House Key", "Saria's House Key" },
+        Text{ "@'s House Key", "@'s House Key", "@'s House Key" },
     };
     trickNameTable[RG_KAK_BAZAAR_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Skyloft Bazaar Key", TODO_TRANSLATE, "Schlüssel (Ausrüstungsladen)" },
-        Text{ "Harlequin Bazaar Key", TODO_TRANSLATE, "Schlüssel (Waffenladen)" },
-        Text{ "Kokiri Shop Key", TODO_TRANSLATE, "Schlüssel (Rüstkammer)" },
-        Text{ "Goron Shop Key", TODO_TRANSLATE, "Schlüssel (Schießpulverladen)" },
+        Text{ "Skyloft Bazaar Key", "Skyloft Bazaar Key", "Skyloft Bazaar Key" },
+        Text{ "Harlequin Bazaar Key", "Harlequin Bazaar Key", "Harlequin Bazaar Key" },
+        Text{ "Kokiri Shop Key", "Kokiri Shop Key", "Kokiri Shop Key" },
+        Text{ "Goron Shop Key", "Goron Shop Key", "Goron Shop Key" },
     };
     trickNameTable[RG_KAK_POTION_SHOP_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Kak Medicine Shop Keep", TODO_TRANSLATE, "Schlüssel (Medizinladen)" },
-        Text{ "Kak Pharmacy Key", TODO_TRANSLATE, "Schlüssel (Apotheke)" },
-        Text{ "Kak Drug Store Keese", TODO_TRANSLATE, "Schlüssel (Rossmann)" },
+        Text{ "Kak Medicine Shop Keep", "Kak Medicine Shop Keep", "Kak Medicine Shop Keep" },
+        Text{ "Kak Pharmacy Key", "Kak Pharmacy Key", "Kak Pharmacy Key" },
+        Text{ "Kak Drug Store Keese", "Kak Drug Store Keese", "Kak Drug Store Keese" },
     };
     trickNameTable[RG_BOSS_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Kakariko Village Boss Key", TODO_TRANSLATE, "Schlüssel (Adminhaus)" },
-        Text{ "Lord Kohga's House Key", TODO_TRANSLATE, "Schlüssel (Kafeis Haus)" },
-        Text{ "Twinrova's House Key", TODO_TRANSLATE, "Schlüssel (Molgeras Apartment)" },
+        Text{ "Kakariko Village Boss Key", "Kakariko Village Boss Key", "Kakariko Village Boss Key" },
+        Text{ "Lord Kohga's House Key", "Lord Kohga's House Key", "Lord Kohga's House Key" },
+        Text{ "Twinrova's House Key", "Twinrova's House Key", "Twinrova's House Key" },
     };
     trickNameTable[RG_GRANNYS_POTION_SHOP_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Grandpa's Potion Shop Key", TODO_TRANSLATE, "Schlüssel (Omas Hexenküche)" },
-        Text{ "Witch's Hut Key", TODO_TRANSLATE, "Schlüssel (Hexenstube)" },
-        Text{ "Hags's Potion Shop Key", TODO_TRANSLATE, "Schlüssel (Marthas Zauberladen)" },
-        Text{ "Syrup's Potion Shop Key", TODO_TRANSLATE, "Schlüssel (Syrups Hexenküche)" },
+        Text{ "Grandpa's Potion Shop Key", "Grandpa's Potion Shop Key", "Grandpa's Potion Shop Key" },
+        Text{ "Witch's Hut Key", "Witch's Hut Key", "Witch's Hut Key" },
+        Text{ "Hags's Potion Shop Key", "Hags's Potion Shop Key", "Hags's Potion Shop Key" },
+        Text{ "Syrup's Potion Shop Key", "Syrup's Potion Shop Key", "Syrup's Potion Shop Key" },
     };
     trickNameTable[RG_SKULLTULA_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Town Spider House Key", TODO_TRANSLATE, "Schlüssel (Spinnenhaus)" },
-        Text{ "Jovani's House Key", TODO_TRANSLATE, "Schlüssel (1-Zimmer-Wohnung)" },
-        Text{ "Maiamai House Key", TODO_TRANSLATE, "Schlüssel (Revalis Wohnung)" },
+        Text{ "Town Spider House Key", "Town Spider House Key", "Town Spider House Key" },
+        Text{ "Jovani's House Key", "Jovani's House Key", "Jovani's House Key" },
+        Text{ "Maiamai House Key", "Maiamai House Key", "Maiamai House Key" },
     };
     trickNameTable[RG_IMPAS_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Zelda's House Key", TODO_TRANSLATE, "Schlüssel (Shieks Versteck)" },
-        Text{ "Sheik's House Key", TODO_TRANSLATE, "Schlüssel (Urbosas Wohnsitz)" },
-        Text{ "Purah's House Key", TODO_TRANSLATE, "Schlüssel (Tingles Haus)" },
+        Text{ "Zelda's House Key", "Zelda's House Key", "Zelda's House Key" },
+        Text{ "Sheik's House Key", "Sheik's House Key", "Sheik's House Key" },
+        Text{ "Purah's House Key", "Purah's House Key", "Purah's House Key" },
     };
     trickNameTable[RG_WINDMILL_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Wind Switch Key", TODO_TRANSLATE, "Schlüssel (Ventilatorhaus)" },
-        Text{ "Weather Vane Key", TODO_TRANSLATE, "Schlüssel (Musik-Haus)" },
+        Text{ "Wind Switch Key", "Wind Switch Key", "Wind Switch Key" },
+        Text{ "Weather Vane Key", "Weather Vane Key", "Weather Vane Key" },
     };
     trickNameTable[RG_KAK_SHOOTING_GALLERY_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Firing Range Key", TODO_TRANSLATE, "Schlüssel (Schießbude von Unruh-Stadt)" },
-        Text{ "Crossbow Training Key", TODO_TRANSLATE, "Schlüssel (Crossbow Training)" },
-        Text{ "Goron Target Range Key", TODO_TRANSLATE, "Schlüssel (Kokiri-Schießbude)" },
+        Text{ "Firing Range Key", "Firing Range Key", "Firing Range Key" },
+        Text{ "Crossbow Training Key", "Crossbow Training Key", "Crossbow Training Key" },
+        Text{ "Goron Target Range Key", "Goron Target Range Key", "Goron Target Range Key" },
     };
     trickNameTable[RG_DAMPES_HUT_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Dampe's Grave Key", TODO_TRANSLATE, "Schlüssel (Einsames Haus)" },
-        Text{ "Dampe Studio Key", TODO_TRANSLATE, "Schlüssel (Grabräuberkeller)" },
-        Text{ "Old Man's Cabin Key", TODO_TRANSLATE, "Schlüssel (Trauerhütte)" },
+        Text{ "Dampe's Grave Key", "Dampe's Grave Key", "Dampe's Grave Key" },
+        Text{ "Dampe Studio Key", "Dampe Studio Key", "Dampe Studio Key" },
+        Text{ "Old Man's Cabin Key", "Old Man's Cabin Key", "Old Man's Cabin Key" },
     };
     trickNameTable[RG_TALONS_HOUSE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Malon's House Koi", TODO_TRANSLATE, "Schlüssel (Malons Haus)" },
-        Text{ "Ingo's House Keese", TODO_TRANSLATE, "Schlüssel (Ingos Gefängnis)" },
-        Text{ "Mario's House Key", TODO_TRANSLATE, "Schlüssel (Marios Eigentum)" },
+        Text{ "Malon's House Koi", "Malon's House Koi", "Malon's House Koi" },
+        Text{ "Ingo's House Keese", "Ingo's House Keese", "Ingo's House Keese" },
+        Text{ "Mario's House Key", "Mario's House Key", "Mario's House Key" },
     };
     trickNameTable[RG_STABLES_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Corral Key", TODO_TRANSLATE, "Schlüssel (Malons Stall)" },
-        Text{ "Foothill Stable Key", TODO_TRANSLATE, "Schlüssel (Heuhof)" },
-        Text{ "Goat Barn Key", TODO_TRANSLATE, "Schlüssel (Ingos Arbeitsplatz)" },
+        Text{ "Corral Key", "Corral Key", "Corral Key" },
+        Text{ "Foothill Stable Key", "Foothill Stable Key", "Foothill Stable Key" },
+        Text{ "Goat Barn Key", "Goat Barn Key", "Goat Barn Key" },
     };
     trickNameTable[RG_BACK_TOWER_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Tower of Hera Key", TODO_TRANSLATE, "Schlüssel (Heras Turm)" },
-        Text{ "Clock Tower Key", TODO_TRANSLATE, "Schlüssel (Uhrturm)" },
-        Text{ "Tingle Tower Key", TODO_TRANSLATE, "Schlüssel (Tingles Turm)" },
-        Text{ "Skyview Tower Key", TODO_TRANSLATE, "Schlüssel (Ambis Turm)" },
-        Text{ "Sheikah Tower Key", TODO_TRANSLATE, "Schlüssel (Shiekah-Turm)" },
+        Text{ "Tower of Hera Key", "Tower of Hera Key", "Tower of Hera Key" },
+        Text{ "Clock Tower Key", "Clock Tower Key", "Clock Tower Key" },
+        Text{ "Tingle Tower Key", "Tingle Tower Key", "Tingle Tower Key" },
+        Text{ "Skyview Tower Key", "Skyview Tower Key", "Skyview Tower Key" },
+        Text{ "Sheikah Tower Key", "Sheikah Tower Key", "Sheikah Tower Key" },
     };
     trickNameTable[RG_HYLIA_LAB_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Marine Research Lab Key", TODO_TRANSLATE, "Schlüssel (Maritimes Forschungslabor)" },
-        Text{ "Hateno Tech Lab Key", TODO_TRANSLATE, "Schlüssel (Akkala-Institut)" },
-        Text{ "Tough Mango Lab Key", TODO_TRANSLATE, "Schlüssel (Experimentenhaus)" },
+        Text{ "Marine Research Lab Key", "Marine Research Lab Key", "Marine Research Lab Key" },
+        Text{ "Hateno Tech Lab Key", "Hateno Tech Lab Key", "Hateno Tech Lab Key" },
+        Text{ "Tough Mango Lab Key", "Tough Mango Lab Key", "Tough Mango Lab Key" },
     };
     trickNameTable[RG_FISHING_HOLE_KEY] = {
         // TODO_TRANSLATE
-        Text{ "Swamp Fishing Hole Key", TODO_TRANSLATE, "Schlüssel (Nordsee)" },
-        Text{ "Beaver Race Key", TODO_TRANSLATE, "Schlüssel (Biber-Brüder)" },
-        Text{ "Squid-Hunt Key", TODO_TRANSLATE, "Schlüssel (Schiffe versenken)" },
-    };
-    trickNameTable[RG_BRONZE_SCALE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kupferschuppe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schwimmkurs-Gutschein" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schwimmkugel" },
-    };
-    trickNameTable[RG_WHIP] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schnürsenkel" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Lasso" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ladekabel" },
-    };
-    trickNameTable[RG_SPINNER] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Beyblade" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kreissäge" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Drehscheibe" },
-    };
-    trickNameTable[RG_BOMB_ARROWS] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Raketenpost" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Überraschungspaket" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Problemlöser" },
-    };
-    trickNameTable[RG_FIRE_ROD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Bunsenbrenner" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Toaster" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Hitzestab" },
-    };
-    trickNameTable[RG_DEMISE_DESTRUCTION] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Weltuntergang" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Apokalypse" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Reset-Knopf" },
-    };
-    trickNameTable[RG_DEKU_LEAF] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ahornblatt" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ventilator" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Fächer" },
-    };
-    trickNameTable[RG_TIME_GATE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Portal 3000" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Zeitmaschine" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Fahrstuhl zur Vergangenheit" },
-    };
-    trickNameTable[RG_BEETLE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Drohne" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Brieftaube" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Amazon Prime" },
-    };
-    trickNameTable[RG_SWITCH_HOOK] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Platztausch" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Teleporter" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kleiderhaken" },
-    };
-    trickNameTable[RG_ICE_ROD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Gefrierfach" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Frostschutz" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Antihitze" },
-    };
-    trickNameTable[RG_ZONAI_PERMAFROST] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Gefrierbrand" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Polarmodus" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Eismaschine" },
-    };
-    trickNameTable[RG_MOGMA_MITTS] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Gartenhandschuhe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Dreckfinger" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Erdkrallen" },
-    };
-    trickNameTable[RG_GUST_JAR] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Trinkflasche" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Gurkenglas" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Nachfüllpack" },
-    };
-    trickNameTable[RG_BALL_AND_CHAIN] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Bowlingkugel" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Jojo XXL" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kettenhund" },
-    };
-    trickNameTable[RG_LIGHT_ROD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Taschenlampe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Blitzableiter" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Taschenlampe Pro" },
-    };
-    trickNameTable[RG_HYLIAS_GRACE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Extra Leben" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Krankenversicherung" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Uno Reverse" },
-    };
-    trickNameTable[RG_LANTERN] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Öllampe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Flutlicht" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Feuerzeug" },
-    };
-    trickNameTable[RG_PENDING_1] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Mütze" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Zauberhut" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schrumpfmodus" },
-    };
-    trickNameTable[RG_PENDING_3] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Tennisball" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Meisterball" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Zauberkugel" },
-    };
-    trickNameTable[RG_CANE_OF_SOMARIA] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Somalia-Stab" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Duplo" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Betonmischer" }
-    };
-    trickNameTable[RG_SHOVEL] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Erdöffner" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schatzsucher" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Wühlmaus" },
-    };
-    trickNameTable[RG_DOMINION_ROD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Doppelgänger" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Nachmacher" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Plagiat" },
-    };
-    trickNameTable[RG_DESIRE_SENSOR] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schatzradar" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Alexa" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Röntgenblick" },
-    };
-    trickNameTable[RG_EXT_CANE_OF_BYRNA] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Lügner-Stab" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Zauber-Stab" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Lego-Stab" },
-    };
-    trickNameTable[RG_EXT_FOUR_SWORD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Laserschwert" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Excalibur" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Vierklinge" },
-    };
-    trickNameTable[RG_EXT_IRON_KNUCKLE_AXE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Holzfäller" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Hackebeil" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Wikingerzeug" },
-    };
-    trickNameTable[RG_EXT_DIVINE_SHIELD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schneidebrett" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Airbag" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Regenschirm" },
-    };
-    trickNameTable[RG_EXT_SHEIKAH_SHIELD] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Tablett" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Segel" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Luftfilter" },
-    };
-    trickNameTable[RG_EXT_SHIELD_OF_IKANA] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Friedhofsschild" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ritterblech" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Mülleimerdeckel" },
-    };
-    trickNameTable[RG_EXT_MAGIC_CAPE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Harry Potter" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Handtuch" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ganondorfs T-Shirt" },
-    };
-    trickNameTable[RG_EXT_SPIRIT_BREASTPLATE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Goldrüstung" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Luxuspanzer" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Akku-Rüstung" },
-    };
-    trickNameTable[RG_EXT_CHAMPIONS_TUNIC] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Jogginganzug" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Starterpaket" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Heldenkostüm" },
-    };
-    trickNameTable[RG_EXT_PEGASUS_ANKLET] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Speedhack" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Flitzer" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Nike Air Force" },
-    };
-    trickNameTable[RG_EXT_PENDANT_OF_MEMORIES] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Amulett des Vergessens" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Amulett des Vertrauens" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Glücksbringer" },
-    };
-    trickNameTable[RG_EXT_WATER_DRAGON_SCALE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Seepferdchen" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Duschgel" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Flossen" },
-    };
-    trickNameTable[RG_MM_MASK_POSTMAN] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Mütze des Briefträgers" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Mütze des DHL-Fahrers" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Liefermütze" },
-    };
-    trickNameTable[RG_MM_MASK_ALL_NIGHT] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Nachtschicht" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kaffeemaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schlaflose Maske" },
-    };
-    trickNameTable[RG_MM_MASK_BLAST] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Explosion" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Böllermaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Knallkopf" },
-    };
-    trickNameTable[RG_MM_MASK_STONE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Tarnung" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Unsichtbarkeitsmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Steinverkleidung" },
-    };
-    trickNameTable[RG_MM_MASK_GREAT_FAIRY] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Fee" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Glitzermaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Einhornmaske" },
-    };
-    trickNameTable[RG_MM_MASK_DEKU] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Busches" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Pflanzenmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Salatkopf" },
-    };
-    trickNameTable[RG_MM_MASK_KEATON] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Fuchses" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Pokémon-Maske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Fuchsgesicht" },
-    };
-    trickNameTable[RG_MM_MASK_BREMEN] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Musikanten" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Hühnerchor" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Vogelmaske" },
-    };
-    trickNameTable[RG_MM_MASK_BUNNY] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Hasen" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Rennmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Turboohren" },
-    };
-    trickNameTable[RG_MM_MASK_DON_GERO] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Frosches" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Quakmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Teichkönig" },
-    };
-    trickNameTable[RG_MM_MASK_SCENTS] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Duftes" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Parfümmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Febreze" },
-    };
-    trickNameTable[RG_MM_MASK_GORON] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Felsens" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Bowlingkugel" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Steinkopf" },
-    };
-    trickNameTable[RG_MM_MASK_ROMANI] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Milch" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Kuhstallmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Bauernhofpass" },
-    };
-    trickNameTable[RG_MM_MASK_CIRCUS_LEADER] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Gesicht des Zirkusdirektors" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Clownsmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Manege frei" },
-    };
-    trickNameTable[RG_MM_MASK_KAFEI] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Suchenden" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Vermisstenmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Ausweis" },
-    };
-    trickNameTable[RG_MM_MASK_COUPLE] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Liebe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Hochzeitsmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Partnerlook" },
-    };
-    trickNameTable[RG_MM_MASK_TRUTH] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Lüge" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Detektivmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Lügendetektor" },
-    };
-    trickNameTable[RG_MM_MASK_ZORA] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Fisches" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Taucherbrille" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Meerjungfrauenmaske" },
-    };
-    trickNameTable[RG_MM_MASK_KAMARO] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Tänzers" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Discomaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Tanzkurs" },
-    };
-    trickNameTable[RG_MM_MASK_GIBDO] = {
-        // TODO_TRANSLATE
-        Text{ "Mummy Mask", TODO_TRANSLATE, "Maske der Mumie" },
-        Text{ "Bandage Mask", TODO_TRANSLATE, "Verbandmaske" },
-        Text{ "Toilet Paper Roll", TODO_TRANSLATE, "Klopapierrolle" },
-    };
-    trickNameTable[RG_MM_MASK_GARO] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Ninjas" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schattenmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Attentätermaske" },
-    };
-    trickNameTable[RG_MM_MASK_CAPTAIN] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske des Kapitäns" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Piratenmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Skelettmütze" },
-    };
-    trickNameTable[RG_MM_MASK_GIANT] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Maske der Größe" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "XXL-Maske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Wachstumsmaske" },
-    };
-    trickNameTable[RG_MM_MASK_FIERCE_DEITY] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Majoras Maske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Schummelmaske" },
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Krieger Maske" },
-    };
-    trickNameTable[RG_PROGRESSIVE_ROCS] = {
-        // TODO_TRANSLATE
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Hähnchenschenkel" }, // "Chicken Wing"
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Greifenfuß" },          // "Roc's Leg"
-        Text{ TODO_TRANSLATE, TODO_TRANSLATE, "Greifenflügel" }, // "Roc's Fapper"
+        Text{ "Swamp Fishing Hole Key", "Swamp Fishing Hole Key", "Swamp Fishing Hole Key" },
+        Text{ "Beaver Race Key", "Beaver Race Key", "Beaver Race Key" },
+        Text{ "Squid-Hunt Key", "Squid-Hunt Key", "Squid-Hunt Key" },
     };
 
     /*
@@ -2004,20 +1636,20 @@ static const char* const englishIceTrapMessages[] = {
 static const char* const germanIceTrapMessages[] = {
     "Du bist ein #DUMMKOPF#!",
     "Du bist eine #Frostbeule#!",
-    "#NARR#!",
+    "#DUMMKOPF#!",
     "Du wurdest #eiskalt# erwischt!",
     "Es läuft Dir #eiskalt# den Rücken hinunter, @.",
     "Bleib #cool#, @.",
     "Der #Winter# naht.",
     "Alles #cool# im Pool?",
     "#Abkühlung gefällig#?",
-    "Es ist ein #kalter# Tag im Herzen von Hyrule.",
+    "Es ist ein %kalter%w Tag im Herzen von Hyrule.",
     "Bekommst Du etwa #kalte# Füße?",
     "Sag den #Zoras# viele Grüße von mir!",
     "Bewahre einen #kühlen#! Kopf.",
     "Ganondorf setzt #Eisstrahl# ein. Das ist sehr effektiv!",
     "Ein Lächeln ist der beste Weg, um das #Eis# zu brechen!",
-    "#Eiskalt# lässt Du meine Seele erfrier'n.",
+    "#Eiskalt# lässt du meine Seele erfrier'n.",
     "Die #Titanic# hätte Angst vor Dir, @.",
     "Oh nein!",
     "Was die Dinosaurier getötet hat?&Die #Eiszeit#!",
@@ -2025,87 +1657,6 @@ static const char* const germanIceTrapMessages[] = {
     "Never gonna #give you up#. Never gonna #let you down#. Never gonna run around and #desert you#.",
     "Danke #@#! Aber der Gegenstand ist in einem anderem Schloß!",
     "Kalt. Kalt. Kälter. #EISKALT#!",
-    "Von wegen #Belohnung#!",
-    "Ganon lacht dich aus.",
-    "Zelda wartet... aber nicht auf Dich!",
-    "Hyrule braucht Dich... aber nicht so!",
-    "Master-Schmerz statt Master-Schwert.",
-    "Das passiert wenn man alles looten möchte!",
-    "Ein kleiner Vorgeschmack auf Ganons Kühlschrank.",
-    "Ich hoffe, Du hast gespeichert.",
-    "Dein Gesicht, als Du die Truhe geöffnet hast... unbezahlbar.",
-    "Tut mir leid, aber das Item befindet sich in einer anderen Truhe.",
-    "Noch 5 solcher Truhen und Du bist abgehärtet.",
-    "Keine sorge. Ich bin genau so enttäuscht wie Du.",
-    "Epona läuft gerade ohne Dich los.",
-    "Wow! Ein echtes Nichts!",
-    "Du bist sowas von bereit für den Endboss. Nicht!",
-    "Loot? Nur für Gewinner!",
-    "Pure Enttäuschung.",
-    "RNG meint es nicht gut mit dir...",
-    "Link.exe hat ein Problem erkannt. Spiel wird heruntergefahren.",
-    "Die Truhe war leer, dein Verstand ebenso.",
-    "Hier für Dich, lecker #Eis#.",
-    "Das ist kein Item - das ist Karma.",
-    "Und wieder hat Dich 'ne Kiste besiegt.",
-    "Rauru lacht Dich aus.",
-    "Salia hat sich gerade entfreundet.",
-    "Prinzessin Ruto hat die Verlobung aufgelöst.",
-    "Kein Seed, kein Ärger!",
-    "Diese Truhe wurde Ihnen präsentiert von: ABSICHT!",
-    "Nicht heute.",
-    "Nächster Halt, #Frosthausen#!",
-    "Genau so nützlich wie Navi im Bosskampf.",
-    "Zelda? Die kennt Dich nicht.",
-    "Zufall? Nein. Absicht!",
-    "Karma.exe erfolgreich ausgeführt.",
-    "Manchmal gewinnt man, aber Du gehörst nicht dazu.",
-    "#Eiskalt# versagt.",
-    "Tingle lacht Dich aus.",
-    "Du hörst Ganondorf dir folgendes zuflüstern.. \"Danke fürs Öffnen, aber das war mein #Müll#!\"",
-    "Navi: 'Hey, hör zu! Da ist... absolut #nichts# drin.",
-    "Truhe geöffnet, Hoffnung zerstört. Willkommen in Hyrule.",
-    "Die Truhe enthält: Eine pure #Enttäuschung#.",
-    "Na? Wieder zu viel von Malons #Mentos# genascht?",
-    "Du wurdest #eiskalt# beim Öffnen der Truhe erwischt.",
-    "Grats, Du hast Ganons alten #Eiswürfelvorrat# gefunden.",
-    "Die Truhe ist kälter als #Zoras Reich#.",
-    "#Eis#? Klar, das ist der #kalte# Hauch der Enttäuschung!",
-    "Die Truhe ist so leer, sogar der #Yeti# aus Twilight Princess lacht.",
-    "Die Truhe enthält: Eine #gefrorene# Hoffnungslosigkeit.",
-    "Du hast eine Truhe geöffnet und den #Kälterekord# in Hyrule gebrochen.",
-    "Du hast TM16 erhalten: #Eissturm#!",
-    "Controller Disconnect, jetzt bist Du #gefreezed#.",
-    "Noch drei solcher Truhen, und dein Spielstand wird gelöscht.",
-    "Gengar setzt Schlecker ein! Du bist vollständig #paralysiert#!",
-    "Mumbo Jumbo verwandelt Dich in einen #Eisblock#. Haste jetzt 'nen coolen Look.",
-    "Willkommen in Donkey Kong Country: Tropical #Freeze#!",
-    "Gratuliere! Du hast das Spiel #gefreezed#.",
-    "Triforce des Mutes und trotzdem bekommst Du kalte Füße.",
-    "Fortschritt #eingefroren#. Bitte blasen Sie in die Cartridge.",
-    "Du bist nicht soft-locked. Du bist #frost-locked#.",
-    "Ein #frostiger# Wind weht durch die Truhe... leer, als hätte Kirby den ganzen Inhalt eingesaugt.",
-    "Ein #eisiger# Hauch weht dir entgegen.... Doch die Truhe bleibt #kalt# und leer.",
-    "Die Truhe ist von #Frost# versiegelt... drinnen nichts als eine #kalte#, #frostige# Enttäuschung!",
-    "#Frost# knistert bedrohlich in der Truhe - kein Schatz, nur ein #eisiger# Hohn!",
-    "Diese Falle zu finden ist so #frostig# wie Fangen spielen mit Chill Penguin.",
-    "#Eis# kann funkeln, was kannst Du?",
-    "Niete, selbst die Prinzessin ist enttäuscht.",
-    "Herzteil? Nein, #Eiskalt#!",
-    "Ratet mal wer wieder zu gierig war? Richtig... DU!",
-    "Ganondorf bedankt sich persönlich für deine Inkompetenz.",
-    "Der Spind von Davy Jones!",
-    "Herzog Onkled lacht Dich aus.",
-    "GEWINNER!",
-    "VERLIERER!",
-    "Drücke B, Unten und Select um zu überleben.",
-    "#Chill# mal jetzt.",
-    "Hier, halte mal eben.",
-    "Sony lacht Dich aus!",
-    "Dieses Item ist nicht in deinem Land verfügbar.",
-    "Es ist wichtig, die #Kühltruhe# mal für einen Tag auszuschalten.",
-    "#Kacknoob#!",
-    "Insert Rupee to continue...",
 };
 
 static const char* const frenchIceTrapMessages[] = {
@@ -2239,7 +1790,7 @@ void Rando::Traps::BuildIceTrapMessage(CustomMessage& msg, GetItemEntry getItemE
     if (CVarGetInteger(CVAR_GENERAL("LetItSnow"), 0)) {
         msg = CustomMessage(
             /*english*/ "This year for Christmas, all you get is #COAL#!",
-            /*german*/ "Dieses Jahr gibt es nur #SOCKEN#! %rFröhliche Weihnachten%w!",
+            /*german*/ TODO_TRANSLATE,
             /*french*/ "Pour Noël, cette année, tu n'auras que du #CHARBON#! %rJoyeux Noël%w!", { QM_BLUE });
     } else {
         msg = CustomMessage(ReplaceItemName(ShipUtils::RandomElement(englishIceTrapMessages), getItemEntry),

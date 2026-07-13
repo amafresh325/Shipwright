@@ -143,7 +143,7 @@ std::vector<ItemTrackerItem> rocsFeather = {
 };
 
 std::vector<ItemTrackerItem> swimItems = {
-    ITEM_TRACKER_ITEM_CUSTOM(RG_BRONZE_SCALE, RG_BRONZE_SCALE, RG_BRONZE_SCALE, 0, DrawItem),
+    ITEM_TRACKER_ITEM_CUSTOM(RG_BRONZE_SCALE, ITEM_SCALE_SILVER, ITEM_SCALE_SILVER, 0, DrawItem),
 };
 
 std::vector<ItemTrackerItem> crawlItems = {
@@ -1275,7 +1275,7 @@ void DrawItem(ItemTrackerItem item) {
         ImGui::PopStyleColor();
     }
 
-    if (item.id >= RG_BRONZE_SCALE && item.id <= RG_OPEN_CHEST && item.id != RG_BRONZE_SCALE) { // <-- HIER DIE AUSNAHME REIN
+    if (item.id >= RG_BRONZE_SCALE && item.id <= RG_OPEN_CHEST) {
         ImVec2 p = ImGui::GetCursorScreenPos();
         ImGui::SetCursorScreenPos(
             ImVec2(p.x + (iconSize / 2) - (ImGui::CalcTextSize(itemName.c_str()).x / 2), p.y - (iconSize + 2)));
@@ -1633,16 +1633,24 @@ void UpdateVectors() {
         SECTION_DISPLAY_MAIN_WINDOW) {
         mainWindowItems.insert(mainWindowItems.end(), dungeonItems.begin(), dungeonItems.end());
     }
-    // =========================================================================
-    if (IS_RANDO) {
-    mainWindowItems.insert(mainWindowItems.end(), rocsFeather.begin(), rocsFeather.end());
-    mainWindowItems.insert(mainWindowItems.end(), swimItems.begin(), swimItems.end());
-    mainWindowItems.insert(mainWindowItems.end(), grabItems.begin(), grabItems.end());
-    mainWindowItems.insert(mainWindowItems.end(), climbItems.begin(), climbItems.end());
-    mainWindowItems.insert(mainWindowItems.end(), crawlItems.begin(), crawlItems.end());
-    mainWindowItems.insert(mainWindowItems.end(), openChestItems.begin(), openChestItems.end());
+    if (IS_RANDO && RAND_GET_OPTION(RSK_ROCS_FEATHER)) {
+        mainWindowItems.insert(mainWindowItems.end(), rocsFeather.begin(), rocsFeather.end());
     }
-    // =========================================================================
+    if (IS_RANDO && RAND_GET_OPTION(RSK_SHUFFLE_SWIM)) {
+        mainWindowItems.insert(mainWindowItems.end(), swimItems.begin(), swimItems.end());
+    }
+    if (IS_RANDO && RAND_GET_OPTION(RSK_SHUFFLE_GRAB)) {
+        mainWindowItems.insert(mainWindowItems.end(), grabItems.begin(), grabItems.end());
+    }
+    if (IS_RANDO && RAND_GET_OPTION(RSK_SHUFFLE_CLIMB)) {
+        mainWindowItems.insert(mainWindowItems.end(), climbItems.begin(), climbItems.end());
+    }
+    if (IS_RANDO && RAND_GET_OPTION(RSK_SHUFFLE_CRAWL)) {
+        mainWindowItems.insert(mainWindowItems.end(), crawlItems.begin(), crawlItems.end());
+    }
+    if (IS_RANDO && RAND_GET_OPTION(RSK_SHUFFLE_OPEN_CHEST)) {
+        mainWindowItems.insert(mainWindowItems.end(), openChestItems.begin(), openChestItems.end());
+    }
 
     // if we're adding greg to the misc window,
     // and misc isn't on the main window,

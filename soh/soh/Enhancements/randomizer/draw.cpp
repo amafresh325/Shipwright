@@ -100,9 +100,6 @@ extern "C" {
 #include "mods/equipment/objects/ikaxe_DL/header.h"
 #include "mods/equipment/objects/breastplate_DL/header.h"
 
-
-
-
 extern PlayState* gPlayState;
 extern SaveContext gSaveContext;
 }
@@ -1891,6 +1888,74 @@ void Randomizer_DrawExtShieldOfIkana(PlayState* play, GetItemEntry* getItemEntry
     CLOSE_DISPS(play->state.gfxCtx);
 }
 
+void Randomizer_DrawExtMagicCape(PlayState* play, GetItemEntry* getItemEntry) {
+    // Tunic model with red/purple tint (Magic Cape = LTTP magic cape)
+    OPEN_DISPS(play->state.gfxCtx);
+    Gfx_SetupDL_25Opa(play->state.gfxCtx);
+    s16 rotation = play->gameplayFrames * 0x2;
+    Matrix_RotateY(rotation * 0.01f, MTXMODE_APPLY);
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPGrayscale(POLY_OPA_DISP++, true);
+    gDPSetGrayscaleColor(POLY_OPA_DISP++, 180, 40, 120, 255);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicCollarDL);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicDL);
+    gSPGrayscale(POLY_OPA_DISP++, false);
+    CLOSE_DISPS(play->state.gfxCtx);
+}
+
+void Randomizer_DrawExtSpiritBreastplate(PlayState* play, GetItemEntry* getItemEntry) {
+    // Spirit Breastplate: chest + pauldrons composite model.
+    // Native model is in IK-axe coordinate space (huge units). Bumped 0.005 → 0.02 so
+    // the chest is actually visible in the get-item cylinder.
+    OPEN_DISPS(play->state.gfxCtx);
+    Gfx_SetupDL_25Opa(play->state.gfxCtx);
+    Matrix_Scale(0.02f, 0.02f, 0.02f, MTXMODE_APPLY);
+    s16 rotation = play->gameplayFrames * 0x2;
+    Matrix_RotateY(rotation * 0.01f, MTXMODE_APPLY);
+
+    // Chest plate (center)
+    Matrix_Push();
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gSpiritChestDL);
+    Matrix_Pop();
+
+    // Right pauldron
+    Matrix_Push();
+    Matrix_Translate(1900.0f, 0.0f, -1184.0f, MTXMODE_APPLY);
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gSpiritPauldronRDL);
+    Matrix_Pop();
+
+    // Left pauldron
+    Matrix_Push();
+    Matrix_Translate(1900.0f, 0.0f, 1184.0f, MTXMODE_APPLY);
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gSpiritPauldronLDL);
+    Matrix_Pop();
+
+    CLOSE_DISPS(play->state.gfxCtx);
+}
+
+void Randomizer_DrawExtChampionsTunic(PlayState* play, GetItemEntry* getItemEntry) {
+    // Tunic model with BotW champion blue
+    OPEN_DISPS(play->state.gfxCtx);
+    Gfx_SetupDL_25Opa(play->state.gfxCtx);
+    s16 rotation = play->gameplayFrames * 0x2;
+    Matrix_RotateY(rotation * 0.01f, MTXMODE_APPLY);
+    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPGrayscale(POLY_OPA_DISP++, true);
+    gDPSetGrayscaleColor(POLY_OPA_DISP++, 0, 120, 215, 255);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicCollarDL);
+    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicDL);
+    gSPGrayscale(POLY_OPA_DISP++, false);
+    CLOSE_DISPS(play->state.gfxCtx);
+}
+
 void Randomizer_DrawExtPegasusAnklet(PlayState* play, GetItemEntry* getItemEntry) {
     // Hover Boots model with red tint (Pegasus = red winged boots)
     OPEN_DISPS(play->state.gfxCtx);
@@ -1985,445 +2050,38 @@ static MmMaskDrawEntry sMmMaskDrawTable[] = {
     /* GIANT         */ { gGiGiantMaskEmptyDL, gGiGiantMaskDL, MM_MASK_DRAW_OPA01 },
     /* FIERCE_DEITY  */ { gGiFierceDeityMaskFaceDL, gGiFierceDeityMaskHairAndHatDL, MM_MASK_DRAW_OPA01 },
 };
-void DrawCustomMmMask_Postman(PlayState* play, GetItemEntry* getItemEntry) {
+
+void Randomizer_DrawMmMask(PlayState* play, GetItemEntry* getItemEntry) {
     if (!MmAssets_IsAvailable())
         return;
 
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiPostmanHatCapDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiPostmanHatBunnyLogoDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_AllNight(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
+    u16 index = getItemEntry->itemId - ITEM_MM_MASK_POSTMAN;
+    if (index >= ARRAY_COUNT(sMmMaskDrawTable))
         return;
 
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiAllNightMaskEyesDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiAllNightMaskFaceDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Blast(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
+    MmMaskDrawEntry* entry = &sMmMaskDrawTable[index];
 
     OPEN_DISPS(play->state.gfxCtx);
 
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiBlastMaskEmptyDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiBlastMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Stone(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiStoneMaskEmptyDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiStoneMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_GreatFairy(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGreatFairyMaskFaceDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiGreatFairyMaskLeavesDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Deku(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiDekuMaskEmptyDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiDekuMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Goron(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGoronMaskEmptyDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiGoronMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Keaton(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiKeatonMaskDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiKeatonMaskEyesDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Bremen(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiBremenMaskEmptyDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiBremenMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Bunny(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiBunnyHoodDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiBunnyHoodEyesDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_DonGero(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiDonGeroMaskFaceDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiDonGeroMaskBodyDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Scents(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiMaskOfScentsFaceDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiMaskOfScentsTeethDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Romani(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiRomaniMaskCapDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiRomaniMaskNoseEyeDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_CircusLeader(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiCircusLeaderMaskEyebrowsDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiCircusLeaderMaskFaceDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Kafei(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiKafeiMaskEmptyDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiKafeiMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Couple(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiCouplesMaskFullDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiCouplesMaskHalfDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Truth(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiMaskOfTruthDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiMaskOfTruthAccentsDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Zora(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiZoraMaskEmptyDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiZoraMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Kamaro(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiKamaroMaskDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiKamaroMaskEmptyDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Gibdo(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGibdoMaskEmptyDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiGibdoMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Garo(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGarosMaskCloakDL);
-
-    Gfx_SetupDL_25Xlu(play->state.gfxCtx);
-    gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_XLU_DISP++, (Gfx*)gGiGarosMaskFaceDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Captain(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiCaptainsHatBodyDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiCaptainsHatFaceDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_Giant(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGiantMaskEmptyDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiGiantMaskDL);
-
-    CLOSE_DISPS(play->state.gfxCtx);
-}
-
-
-void DrawCustomMmMask_FierceDeity(PlayState* play, GetItemEntry* getItemEntry) {
-    if (!MmAssets_IsAvailable())
-        return;
-
-    OPEN_DISPS(play->state.gfxCtx);
-
-    Gfx_SetupDL_25Opa(play->state.gfxCtx);
-    gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
-              G_MTX_MODELVIEW | G_MTX_LOAD);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiFierceDeityMaskFaceDL);
-    gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiFierceDeityMaskHairAndHatDL);
+    if (entry->mode == MM_MASK_DRAW_OPA0_XLU1) {
+        // DL1: Opaque, DL2: Translucent (like MM GetItem_DrawOpa0Xlu1)
+        Gfx_SetupDL_25Opa(play->state.gfxCtx);
+        gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+                  G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPDisplayList(POLY_OPA_DISP++, (Gfx*)entry->dl1);
+
+        Gfx_SetupDL_25Xlu(play->state.gfxCtx);
+        gSPMatrix(POLY_XLU_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+                  G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPDisplayList(POLY_XLU_DISP++, (Gfx*)entry->dl2);
+    } else {
+        // Both DLs: Opaque (like MM GetItem_DrawOpa01)
+        Gfx_SetupDL_25Opa(play->state.gfxCtx);
+        gSPMatrix(POLY_OPA_DISP++, Matrix_NewMtx(play->state.gfxCtx, (char*)__FILE__, __LINE__),
+                  G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPDisplayList(POLY_OPA_DISP++, (Gfx*)entry->dl1);
+        gSPDisplayList(POLY_OPA_DISP++, (Gfx*)entry->dl2);
+    }
 
     CLOSE_DISPS(play->state.gfxCtx);
 }

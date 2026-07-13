@@ -214,20 +214,20 @@ static const char* const englishIceTrapMessages[] = {
 static const char* const germanIceTrapMessages[] = {
     "Du bist ein #DUMMKOPF#!",
     "Du bist eine #Frostbeule#!",
-    "#NARR#!",
+    "#DUMMKOPF#!",
     "Du wurdest #eiskalt# erwischt!",
     "Es läuft Dir #eiskalt# den Rücken hinunter, @.",
     "Bleib #cool#, @.",
     "Der #Winter# naht.",
     "Alles #cool# im Pool?",
     "#Abkühlung gefällig#?",
-    "Es ist ein #kalter# Tag im Herzen von Hyrule.",
+    "Es ist ein %kalter%w Tag im Herzen von Hyrule.",
     "Bekommst Du etwa #kalte# Füße?",
     "Sag den #Zoras# viele Grüße von mir!",
     "Bewahre einen #kühlen#! Kopf.",
     "Ganondorf setzt #Eisstrahl# ein. Das ist sehr effektiv!",
     "Ein Lächeln ist der beste Weg, um das #Eis# zu brechen!",
-    "#Eiskalt# lässt Du meine Seele erfrier'n.",
+    "#Eiskalt# lässt du meine Seele erfrier'n.",
     "Die #Titanic# hätte Angst vor Dir, @.",
     "Oh nein!",
     "Was die Dinosaurier getötet hat?&Die #Eiszeit#!",
@@ -235,87 +235,6 @@ static const char* const germanIceTrapMessages[] = {
     "Never gonna #give you up#. Never gonna #let you down#. Never gonna run around and #desert you#.",
     "Danke #@#! Aber der Gegenstand ist in einem anderem Schloß!",
     "Kalt. Kalt. Kälter. #EISKALT#!",
-    "Von wegen #Belohnung#!",
-    "Ganon lacht dich aus.",
-    "Zelda wartet... aber nicht auf Dich!",
-    "Hyrule braucht Dich... aber nicht so!",
-    "Master-Schmerz statt Master-Schwert.",
-    "Das passiert wenn man alles looten möchte!",
-    "Ein kleiner Vorgeschmack auf Ganons Kühlschrank.",
-    "Ich hoffe, Du hast gespeichert.",
-    "Dein Gesicht, als Du die Truhe geöffnet hast... unbezahlbar.",
-    "Tut mir leid, aber das Item befindet sich in einer anderen Truhe.",
-    "Noch 5 solcher Truhen und Du bist abgehärtet.",
-    "Keine sorge. Ich bin genau so enttäuscht wie Du.",
-    "Epona läuft gerade ohne Dich los.",
-    "Wow! Ein echtes Nichts!",
-    "Du bist sowas von bereit für den Endboss. Nicht!",
-    "Loot? Nur für Gewinner!",
-    "Pure Enttäuschung.",
-    "RNG meint es nicht gut mit dir...",
-    "Link.exe hat ein Problem erkannt. Spiel wird heruntergefahren.",
-    "Die Truhe war leer, dein Verstand ebenso.",
-    "Hier für Dich, lecker #Eis#.",
-    "Das ist kein Item - das ist Karma.",
-    "Und wieder hat Dich 'ne Kiste besiegt.",
-    "Rauru lacht Dich aus.",
-    "Salia hat sich gerade entfreundet.",
-    "Prinzessin Ruto hat die Verlobung aufgelöst.",
-    "Kein Seed, kein Ärger!",
-    "Diese Truhe wurde Ihnen präsentiert von: ABSICHT!",
-    "Nicht heute.",
-    "Nächster Halt, #Frosthausen#!",
-    "Genau so nützlich wie Navi im Bosskampf.",
-    "Zelda? Die kennt Dich nicht.",
-    "Zufall? Nein. Absicht!",
-    "Karma.exe erfolgreich ausgeführt.",
-    "Manchmal gewinnt man, aber Du gehörst nicht dazu.",
-    "#Eiskalt# versagt.",
-    "Tingle lacht Dich aus.",
-    "Du hörst Ganondorf dir folgendes zuflüstern.. \"Danke fürs Öffnen, aber das war mein #Müll#!\"",
-    "Navi: 'Hey, hör zu! Da ist... absolut #nichts# drin.",
-    "Truhe geöffnet, Hoffnung zerstört. Willkommen in Hyrule.",
-    "Die Truhe enthält: Eine pure #Enttäuschung#.",
-    "Na? Wieder zu viel von Malons #Mentos# genascht?",
-    "Du wurdest #eiskalt# beim Öffnen der Truhe erwischt.",
-    "Grats, Du hast Ganons alten #Eiswürfelvorrat# gefunden.",
-    "Die Truhe ist kälter als #Zoras Reich#.",
-    "#Eis#? Klar, das ist der #kalte# Hauch der Enttäuschung!",
-    "Die Truhe ist so leer, sogar der #Yeti# aus Twilight Princess lacht.",
-    "Die Truhe enthält: Eine #gefrorene# Hoffnungslosigkeit.",
-    "Du hast eine Truhe geöffnet und den #Kälterekord# in Hyrule gebrochen.",
-    "Du hast TM16 erhalten: #Eissturm#!",
-    "Controller Disconnect, jetzt bist Du #gefreezed#.",
-    "Noch drei solcher Truhen, und dein Spielstand wird gelöscht.",
-    "Gengar setzt Schlecker ein! Du bist vollständig #paralysiert#!",
-    "Mumbo Jumbo verwandelt Dich in einen #Eisblock#. Haste jetzt 'nen coolen Look.",
-    "Willkommen in Donkey Kong Country: Tropical #Freeze#!",
-    "Gratuliere! Du hast das Spiel #gefreezed#.",
-    "Triforce des Mutes und trotzdem bekommst Du kalte Füße.",
-    "Fortschritt #eingefroren#. Bitte blasen Sie in die Cartridge.",
-    "Du bist nicht soft-locked. Du bist #frost-locked#.",
-    "Ein #frostiger# Wind weht durch die Truhe... leer, als hätte Kirby den ganzen Inhalt eingesaugt.",
-    "Ein #eisiger# Hauch weht dir entgegen.... Doch die Truhe bleibt #kalt# und leer.",
-    "Die Truhe ist von #Frost# versiegelt... drinnen nichts als eine #kalte#, #frostige# Enttäuschung!",
-    "#Frost# knistert bedrohlich in der Truhe - kein Schatz, nur ein #eisiger# Hohn!",
-    "Diese Falle zu finden ist so #frostig# wie Fangen spielen mit Chill Penguin.",
-    "#Eis# kann funkeln, was kannst Du?",
-    "Niete, selbst die Prinzessin ist enttäuscht.",
-    "Herzteil? Nein, #Eiskalt#!",
-    "Ratet mal wer wieder zu gierig war? Richtig... DU!",
-    "Ganondorf bedankt sich persönlich für deine Inkompetenz.",
-    "Der Spind von Davy Jones!",
-    "Herzog Onkled lacht Dich aus.",
-    "GEWINNER!",
-    "VERLIERER!",
-    "Drücke B, Unten und Select um zu überleben.",
-    "#Chill# mal jetzt.",
-    "Hier, halte mal eben.",
-    "Sony lacht Dich aus!",
-    "Dieses Item ist nicht in deinem Land verfügbar.",
-    "Es ist wichtig, die #Kühltruhe# mal für einen Tag auszuschalten.",
-    "#Kacknoob#!",
-    "Insert Rupee to continue...",
 };
 
 static const char* const frenchIceTrapMessages[] = {
@@ -457,7 +376,7 @@ void BuildTriforcePieceMessage(CustomMessage& msg) {
         };
     } else if (current == required) {
         msg = { "You completed the %yTriforce of&Courage%w! %gGG%w!",
-                "Das %yTriforce des Mutes%w! Du hast&alle Splitter gefunden.&%gGut gemacht%w!",
+                "Das %yTriforce des Mutes%w! Du hast&alle Splitter gefunden. %gGut gemacht%w!",
                 "Vous avez complété la %yTriforce&du Courage%w! %gFélicitations%w!" };
     } else {
         msg = { "You found a spare %yTriforce Piece%w!&You only needed %c[[required]]%w, but you have %g[[current]]%w!",
@@ -494,7 +413,7 @@ void BuildCustomItemMessage(Player* player, CustomMessage& msg) {
 
     // Fall back to generic "You found X!" message for other items
     msg = CustomMessage("You found [[article]][[color]][[name]]%w!",
-                        "Du hast [[article]][[color]][[name]]%w gefunden!",
+                        "Du erhältst [[article]][[color]][[name]]%w gefunden!",
                         "Vous avez trouvé [[article]][[color]][[name]]%w!", TEXTBOX_TYPE_BLUE);
     CustomMessage name =
         CustomMessage(Rando::StaticData::RetrieveItem(static_cast<RandomizerGet>(rgid)).GetName(), TEXTBOX_TYPE_BLUE);
@@ -583,8 +502,7 @@ void BuildMapMessage(uint16_t* textId, bool* loadFromMessageTable) {
     GetItemEntry itemEntry = GET_PLAYER(gPlayState)->getItemEntry;
     auto ctx = OTRGlobals::Instance->gRandoContext;
     CustomMessage msg =
-        CustomMessage("You found the %g[[name]]%w! [[typeHint]]",
-                      "Du erhältst [[article]]%g[[name]]%w! [[typeHint]]",
+        CustomMessage("You found the %g[[name]]%w! [[typeHint]]", "Du erhältst das %g[[name]]%w! [[typeHint]]",
                       "Vous ebtenez %g[[name]]%w! [[typeHint]]", TEXTBOX_TYPE_BLUE);
     int sceneNum;
     switch (itemEntry.getItemId) {
@@ -621,11 +539,6 @@ void BuildMapMessage(uint16_t* textId, bool* loadFromMessageTable) {
     }
     CustomMessage name =
         CustomMessage(Rando::StaticData::RetrieveItem(static_cast<RandomizerGet>(itemEntry.getItemId)).GetName());
-    // --- NEU: Article abrufen und ersetzen ---
-    CustomMessage article = 
-        CustomMessage(Rando::StaticData::RetrieveItem(static_cast<RandomizerGet>(itemEntry.getItemId)).GetArticle());
-    msg.Replace("[[article]]", article);
-    // -----------------------------------------
     msg.Replace("[[name]]", name);
     if (ctx->GetOption(RSK_MQ_DUNGEON_RANDOM).Is(RO_MQ_DUNGEONS_NONE) ||
         (ctx->GetOption(RSK_MQ_DUNGEON_RANDOM).Is(RO_MQ_DUNGEONS_SET_NUMBER) &&

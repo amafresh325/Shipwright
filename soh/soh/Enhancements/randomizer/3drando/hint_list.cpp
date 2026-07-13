@@ -2191,7 +2191,7 @@ void StaticData::HintTable_Init() {
 
     hintTextTable[RHT_ADULT_ALTAR_MEDALLIONS] = HintText(CustomMessage("An awakening voice from the Sacred Realm will call those destined to be Sages, who dwell in the #five temples#.^"
                                                                        "$8#[[1]]#...^$3#[[2]]#...^$4#[[3]]#...^$5#[[4]]#...^$6#[[5]]#...^$7#[[6]]#...^" ,
-                                                            /*german*/ "Beherrscht das Böse die Welt, weilen Weise, geweckt vom Heiligen Reich, noch in den #fünf Tempeln#.^"
+                                                            /*german*/ "Beherrscht das Böse die Welt, verweilen die Weisen, erweckt von der Stimme des Heiligen Reiches, noch in den #fünf Tempeln#.^"
                                                                        "$8#[[1]]#...^$3#[[2]]#...^$4#[[3]]#...^$5#[[4]]#...^$6#[[5]]#...^$7#[[6]]#...^",
                                                             /*french*/ "Quand le mal aura triomphé, une voix du Saint Royaume appellera ceux cachés dans les #cinq temples#, destinés^à être Sages.^"
                                                                        "$8#[[1]]#...^$3#[[2]]#...^$4#[[3]]#...^$5#[[4]]#...^$6#[[5]]#...^$7#[[6]]#...^",
@@ -2235,7 +2235,7 @@ void StaticData::HintTable_Init() {
                                                                    {QM_YELLOW, QM_RED}));
 
     hintTextTable[RHT_BOSS_KEY_HINT] = HintText(CustomMessage("%c@! I can hear Rauru's guidance! He's saying the %ykey for this door%c is in %w[[1]]%c!",
-                                                   /*german*/ "Den #Master-Schlüssel# für diese Tür findest du #[[1]]#!",
+                                                   /*german*/ TODO_TRANSLATE,
                                                    /*french*/ TODO_TRANSLATE));
 
     hintTextTable[RHT_DAMPE_DIARY] = HintText(CustomMessage("Whoever reads this, please enter #[[1]]#. I will let you have my #stretching, shrinking keepsake#.^I'm waiting for you.&--Dampé",
@@ -2269,7 +2269,7 @@ void StaticData::HintTable_Init() {
                                                            {QM_RED}));
 
     hintTextTable[RHT_FISHING_POLE_HINT] = HintText(CustomMessage("^If I remember correctly, I lost it somewhere in #[[1]]#...&Let me know if you find it!",
-	                                                    /*german*/ "   Wenn ich mich recht erinnere, habe ich sie irgendwo #[[1]]# verloren...",
+	                                                    /*german*/ "Wenn ich mich recht erinnere,&habe ich sie irgendwo&#[[1]]#&verloren...&Sag mir Bescheid, wenn Du sie findest!",
 													    /*french*/ "Si je me souviens bien, il me&semble que je l'ai perdue&quelque part dans&#[[1]]#...^Fais-moi signe si jamais&tu la trouves!",
                                                                    {QM_RED}));
 
