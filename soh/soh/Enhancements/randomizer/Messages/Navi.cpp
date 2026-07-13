@@ -20,7 +20,7 @@ static CustomMessage NaviMessages[] = {
       "%cParfois, tu peux utiliser la %rMasse&des Titans %cau lieu de tes bombes!" },
 
     { "%cStuck on this seed? You could &throw in the towel and check the&%wspoiler log%c...",
-      "%cHängst Du bei diesem Seed fest?&Du könntest die Flinte ins Korn&werfen und ins %wSpoiler Log %cschauen...",
+      "%cHängst Du bei diesem Seed fest?&Du könntest die Flinte ins Korn&werfen und ins %wSpoiler Log %cschauen.",
       "%cSi tu es coincé sur cette seed,&tu peux toujours jeter l'éponge&et regader le %wSpoiler log%c..." },
 
     { "%cDid you know that the %yHover&Boots %ccan be used to cross&%wquicksand%c?",
@@ -106,8 +106,8 @@ static CustomMessage NaviMessages[] = {
 
     { "%cIf you don't have a %wsword %cas a&child, try buying %wDeku Sticks%c!&They're effective against your "
       "foes!",
-      "%cSolltest Du als Kind kein %wSchwert&%cbesitzen, empfehle ich %wDeku-Stäbe&%czu kaufen! Diese sind "
-      "effektiv gegen&Widersacher!",
+      "%cSolltest Du als Kind kein %wSchwert&%cbesitzen, empfehle ich %wDeku-Stäbe&%czu kaufen! Diese sind&"
+      "effektiv gegen Widersacher!",
       "%cSi tu n'as pas d'%wépée %cen tant&qu'enfant, pourquoi n'irais-tu pas&acheter quelques %wBâtons Mojo%c? "
       "Ils&sont efficaces contre tes ennemis!" }
 };

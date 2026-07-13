@@ -60,7 +60,7 @@ void BuildBeanGuyMessage(uint16_t* textId, bool* loadFromMessageTable) {
         msg.AutoFormat();
     } else if (*textId == TEXT_BEAN_SALESMAN_BUY_FOR_10) {
         msg = CustomMessage("Want to buy [[color]][[1]]%w for %y[[2]] Rupees%w?\x1B%gYes&No%w",
-                            "Möchten Sie [[color]][[1]]%w für %y[[2]] Rubin%w kaufen?\x1B%gJa&Nein%w",
+                            "Hier, [[color]][[1]]%w für %y[[2]] Rubine%w?\x1B%gJa&Nein%w",
                             "Voulez-vous acheter [[color]][[1]]%w pour %y[[2]] Rubis%w?\x1B%gOui&Non%w");
         BuildMerchantMessage(msg, RC_ZR_MAGIC_BEAN_SALESMAN,
                              !RAND_GET_OPTION(RSK_MERCHANT_TEXT_HINT) ||
@@ -73,7 +73,7 @@ void BuildBeanGuyMessage(uint16_t* textId, bool* loadFromMessageTable) {
 
 void BuildMedigoronMessage(uint16_t* textId, bool* loadFromMessageTable) {
     CustomMessage msg = CustomMessage("Want to buy [[color]][[1]]%w for %y[[2]] Rupees%w?\x1B%gYes&No%w",
-                                      "Möchten Sie [[color]][[1]]%w für %y[[2]] Rubin%w kaufen?\x1B%gJa&Nein%w",
+                                      "Hier, [[color]][[1]]%w für %y[[2]] Rubine%w?\x1B%gJa&Nein%w",
                                       "Voulez-vous acheter [[color]][[1]]%w pour %y[[2]] Rubis%w?\x1B%gOui&Non%w");
     BuildMerchantMessage(msg, RC_GC_MEDIGORON,
                          !RAND_GET_OPTION(RSK_MERCHANT_TEXT_HINT) ||
@@ -87,7 +87,7 @@ void BuildGrannyMessage(uint16_t* textId, bool* loadFromMessageTable) {
     if (!Flags_GetRandomizerInf(RAND_INF_MERCHANTS_GRANNYS_SHOP) &&
         (RAND_GET_OPTION(RSK_SHUFFLE_ADULT_TRADE) || INV_CONTENT(ITEM_CLAIM_CHECK) == ITEM_CLAIM_CHECK)) {
         CustomMessage msg = CustomMessage("Want to buy [[color]][[1]]%w for %y[[2]] Rupees%w?\x1B%gYes&No%w",
-                                          "Möchten Sie [[color]][[1]]%w für %y[[2]] Rubin%w kaufen?\x1B%gJa&Nein%w",
+                                          "Hier, [[color]][[1]]%w für %y[[2]] Rubine%w?\x1B%gJa&Nein%w",
                                           "Voulez-vous acheter [[color]][[1]]%w pour %y[[2]] Rubis%w?\x1B%gOui&Non%w");
         BuildMerchantMessage(msg, RC_KAK_GRANNYS_SHOP,
                              !RAND_GET_OPTION(RSK_MERCHANT_TEXT_HINT) ||
@@ -106,7 +106,7 @@ void BuildCarpetGuyMessage(uint16_t* textId, bool* loadFromMessageTable) {
                             /*french*/ "Squalala! Je vais enfin pouvoir %rprendre des vacances%w!");
     } else if (!Flags_GetRandomizerInf(RAND_INF_MERCHANTS_CARPET_SALESMAN)) {
         msg = CustomMessage("Want to buy [[color]][[1]]%w for %y[[2]] Rupees%w?\x1B%gYes&No%w",
-                            "Möchten Sie [[color]][[1]]%w für %y[[2]] Rubin%w kaufen?\x1B%gJa&Nein%w",
+                            "Hier, [[color]][[1]]%w für %y[[2]] Rubine%w?\x1B%gJa&Nein%w",
                             "Voulez-vous acheter [[color]][[1]]%w pour %y[[2]] Rubis%w?\x1B%gOui&Non%w");
         BuildMerchantMessage(msg, RC_WASTELAND_BOMBCHU_SALESMAN,
                              !RAND_GET_OPTION(RSK_MERCHANT_TEXT_HINT) ||
@@ -184,6 +184,7 @@ void BuildShopMessage(uint16_t* textId, bool* loadFromMessageTable) {
         return;
     }
     BuildMerchantMessage(msg, rc, CVarGetInteger(CVAR_RANDOMIZER_ENHANCEMENT("MysteriousShuffle"), 0));
+	msg.SetSingularPlural();
     msg.AutoFormat();
     msg.LoadIntoFont();
     *loadFromMessageTable = false;

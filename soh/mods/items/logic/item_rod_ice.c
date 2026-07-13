@@ -20,6 +20,12 @@
 #include "../helpers/fx_helper.h"
 #include "../helpers/camera_helper.h"
 #include "overlays/actors/ovl_Bg_Ice_Shelter/z_bg_ice_shelter.h"
+#include "mods/extended_equipment.h"
+
+#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
+#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
+#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
+
 
 static ItemEquipState sIceEquipState = { 0 };
 static s8 sIcePrevInvinc = 0;
@@ -464,14 +470,17 @@ static void IceRod_UpdateIceWave(Player* p, PlayState* play) {
 }
 
 // =============================================================================
-// ATTACK EFFECTS
+// ATTACK EFFECTS (Tunika-Aware)
 // =============================================================================
 
 // Slash: 3 iceballs spread at short range
 static void IceRod_SlashEffect(Player* p, PlayState* play) {
-    if (IceRod_CheckBackfire(p, play, ICE_ROD_MAGIC_SLASH, ICE_ROD_BACKFIRE_SLASH))
+    s16 magicCost = MAGIC_REQ(ICE_ROD_MAGIC_SLASH); // Kosten berechnen
+    
+    if (IceRod_CheckBackfire(p, play, magicCost, ICE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, ICE_ROD_MAGIC_SLASH);
+        
+    ItemMagic_Consume(play, magicCost);
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     s16 baseYaw, pitch;
@@ -489,11 +498,14 @@ static void IceRod_SlashEffect(Player* p, PlayState* play) {
     Audio_PlayActorSound2(&p->actor, ICE_ROD_SFX_SWING);
 }
 
-// Stab: Single iceball at long range - uses weapon direction from base to tip
+// Stab: Single iceball at long range
 static void IceRod_StabEffect(Player* p, PlayState* play) {
-    if (IceRod_CheckBackfire(p, play, ICE_ROD_MAGIC_STAB, ICE_ROD_BACKFIRE_SLASH))
+    s16 magicCost = MAGIC_REQ(ICE_ROD_MAGIC_STAB); // Kosten berechnen
+    
+    if (IceRod_CheckBackfire(p, play, magicCost, ICE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, ICE_ROD_MAGIC_STAB);
+        
+    ItemMagic_Consume(play, magicCost);
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     Vec3f* basePos = &p->meleeWeaponInfo[0].base;
@@ -504,7 +516,6 @@ static void IceRod_StabEffect(Player* p, PlayState* play) {
         yaw = Math_Vec3f_Yaw(tipPos, targetPos);
         pitch = Math_Vec3f_Pitch(tipPos, targetPos);
     } else {
-        // Use weapon direction (base to tip) for stab direction
         yaw = Math_Vec3f_Yaw(basePos, tipPos);
         pitch = Math_Vec3f_Pitch(basePos, tipPos);
     }
@@ -515,17 +526,23 @@ static void IceRod_StabEffect(Player* p, PlayState* play) {
 
 // Jump Slash: Ice wave cone
 static void IceRod_JumpEffect(Player* p, PlayState* play) {
-    if (IceRod_CheckBackfire(p, play, ICE_ROD_MAGIC_JUMP, ICE_ROD_BACKFIRE_JUMP))
+    s16 magicCost = MAGIC_REQ(ICE_ROD_MAGIC_JUMP); // Kosten berechnen
+    
+    if (IceRod_CheckBackfire(p, play, magicCost, ICE_ROD_BACKFIRE_JUMP))
         return;
-    ItemMagic_Consume(play, ICE_ROD_MAGIC_JUMP);
+        
+    ItemMagic_Consume(play, magicCost);
     IceRod_StartIceWave(p, play);
 }
 
 // First Person: Fires stab in aimed direction
 static void IceRod_FirstPersonFire(Player* p, PlayState* play) {
-    if (IceRod_CheckBackfire(p, play, ICE_ROD_MAGIC_STAB, ICE_ROD_BACKFIRE_SLASH))
+    s16 magicCost = MAGIC_REQ(ICE_ROD_MAGIC_STAB); // Kosten berechnen
+    
+    if (IceRod_CheckBackfire(p, play, magicCost, ICE_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, ICE_ROD_MAGIC_STAB);
+        
+    ItemMagic_Consume(play, magicCost);
 
     s16 aimYaw = FirstPerson_GetAimYaw(p);
     s16 aimPitch = FirstPerson_GetAimPitch(p);
@@ -765,13 +782,14 @@ static void IceRod_ReleaseCharge(Player* p, PlayState* play) {
     u8 isBigSpin = 0;
     s16 magicCost;
 
+    // Kosten dynamisch basierend auf Tunika/Makro berechnen
     if (iceRodChargeLevel >= ICE_ROD_CHARGE_BIG) {
         spinType = PLAYER_MWA_BIG_SPIN_1H;
-        magicCost = ICE_ROD_MAGIC_SPIN_BIG;
+        magicCost = MAGIC_REQ(ICE_ROD_MAGIC_SPIN_BIG);
         isBigSpin = 1;
     } else if (iceRodChargeLevel >= ICE_ROD_CHARGE_MIN) {
         spinType = PLAYER_MWA_SPIN_ATTACK_1H;
-        magicCost = ICE_ROD_MAGIC_SPIN_SMALL;
+        magicCost = MAGIC_REQ(ICE_ROD_MAGIC_SPIN_SMALL);
     } else {
         iceRodCharging = 0;
         iceRodChargeLevel = 0.0f;
@@ -780,6 +798,7 @@ static void IceRod_ReleaseCharge(Player* p, PlayState* play) {
         return;
     }
 
+    // Backfire-Check mit den korrekten, angepassten Kosten
     if (IceRod_CheckBackfire(p, play, magicCost, ICE_ROD_BACKFIRE_SPIN)) {
         iceRodCharging = 0;
         iceRodChargeLevel = 0.0f;

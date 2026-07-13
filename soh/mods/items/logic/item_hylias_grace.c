@@ -28,6 +28,12 @@
 #include "functions.h"
 #include "variables.h"
 #include "objects/gameplay_keep/gameplay_keep.h"
+#include "mods/extended_equipment.h"
+
+#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
+#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
+#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
+
 
 extern void Player_Draw(Actor* thisx, PlayState* play);
 
@@ -230,11 +236,15 @@ static void HGrace_Stop(Player* p, PlayState* play) {
 static void HGrace_Start(Player* p, PlayState* play) {
     if (hgActive)
         return;
-    if (!ItemMagic_HasEnough(play, HGRACE_MAGIC_COST)) {
+    
+    // Nutze hier das MAGIC_REQ Makro für die Prüfung
+    if (!ItemMagic_HasEnough(play, MAGIC_REQ(HGRACE_MAGIC_COST))) {
         Audio_PlaySoundGeneral(NA_SE_SY_ERROR, &p->actor.world.pos, 4, &gSfxDefaultFreqAndVolScale,
                                &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
         return;
     }
+    
+    // Basis-Checks
     if (!(p->actor.bgCheckFlags & BGCHECKFLAG_GROUND))
         return;
     if (p->stateFlags1 & PLAYER_STATE1_IN_WATER)
@@ -244,7 +254,9 @@ static void HGrace_Start(Player* p, PlayState* play) {
     hgState = HGRACE_STATE_CASTING;
     hgSubPhase = HGRACE_CAST_KAZE1;
     hgTimer = -2;
-    ItemMagic_Consume(play, HGRACE_MAGIC_COST);
+    
+    // Nutze hier das MAGIC_REQ Makro für den Verbrauch
+    ItemMagic_Consume(play, MAGIC_REQ(HGRACE_MAGIC_COST));
 }
 
 // =============================================================================
