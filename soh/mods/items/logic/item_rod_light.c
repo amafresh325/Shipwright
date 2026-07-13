@@ -19,6 +19,12 @@
 #include "../helpers/combat_helper.h"
 #include "../helpers/fx_helper.h"
 #include "../helpers/camera_helper.h"
+#include "mods/extended_equipment.h"
+
+#define GET_REQ_MAGIC(cost) (gExtEquipState.currentExtTunic == 1 ? ((cost) / 2) : (cost))
+#define IS_TUNIC_ACTIVE (gExtEquipState.currentExtTunic == 1)
+#define MAGIC_REQ(cost) (IS_TUNIC_ACTIVE ? ((cost) / 2) : (cost))
+
 
 static ItemEquipState sLightEquipState = { 0 };
 static s8 sLightPrevInvinc = 0;
@@ -83,7 +89,8 @@ static void LightRod_Backfire(Player* p, PlayState* play) {
 }
 
 static u8 LightRod_CheckBackfire(Player* p, PlayState* play, s16 magicCost, u8 backfireChance) {
-    if (ItemMagic_HasEnough(play, magicCost))
+    // Hier wird das Makro verwendet:
+    if (ItemMagic_HasEnough(play, MAGIC_REQ(magicCost)))
         return 0;
 
     u8 roll = (u8)(Rand_ZeroOne() * 100.0f);
@@ -509,7 +516,7 @@ static void LightRod_UpdateLightBeam(Player* p, PlayState* play) {
 static void LightRod_SlashEffect(Player* p, PlayState* play) {
     if (LightRod_CheckBackfire(p, play, LIGHT_ROD_MAGIC_SLASH, LIGHT_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, LIGHT_ROD_MAGIC_SLASH);
+    ItemMagic_Consume(play, MAGIC_REQ(LIGHT_ROD_MAGIC_SLASH));
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     s16 baseYaw, pitch;
@@ -531,7 +538,7 @@ static void LightRod_SlashEffect(Player* p, PlayState* play) {
 static void LightRod_StabEffect(Player* p, PlayState* play) {
     if (LightRod_CheckBackfire(p, play, LIGHT_ROD_MAGIC_STAB, LIGHT_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, LIGHT_ROD_MAGIC_STAB);
+    ItemMagic_Consume(play, MAGIC_REQ(LIGHT_ROD_MAGIC_STAB));
 
     Vec3f* tipPos = &p->meleeWeaponInfo[0].tip;
     Vec3f* basePos = &p->meleeWeaponInfo[0].base;
@@ -554,7 +561,7 @@ static void LightRod_StabEffect(Player* p, PlayState* play) {
 static void LightRod_JumpEffect(Player* p, PlayState* play) {
     if (LightRod_CheckBackfire(p, play, LIGHT_ROD_MAGIC_JUMP, LIGHT_ROD_BACKFIRE_JUMP))
         return;
-    ItemMagic_Consume(play, LIGHT_ROD_MAGIC_JUMP);
+    ItemMagic_Consume(play, MAGIC_REQ(LIGHT_ROD_MAGIC_JUMP));
     LightRod_StartLightBeam(p, play);
 }
 
@@ -562,7 +569,7 @@ static void LightRod_JumpEffect(Player* p, PlayState* play) {
 static void LightRod_FirstPersonFire(Player* p, PlayState* play) {
     if (LightRod_CheckBackfire(p, play, LIGHT_ROD_MAGIC_STAB, LIGHT_ROD_BACKFIRE_SLASH))
         return;
-    ItemMagic_Consume(play, LIGHT_ROD_MAGIC_STAB);
+    ItemMagic_Consume(play, MAGIC_REQ(LIGHT_ROD_MAGIC_STAB));
 
     s16 aimYaw = FirstPerson_GetAimYaw(p);
     s16 aimPitch = FirstPerson_GetAimPitch(p);
@@ -838,7 +845,7 @@ static void LightRod_ReleaseCharge(Player* p, PlayState* play) {
         return;
     }
 
-    ItemMagic_Consume(play, magicCost);
+    ItemMagic_Consume(play, MAGIC_REQ(magicCost));
     func_80837948(play, p, spinType);
 
     lightRodCharging = 0;

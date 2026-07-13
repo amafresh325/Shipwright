@@ -2,11 +2,9 @@
  * equip_champion.c - Champion's Tunic (Extended Tunic Slot 3)
  *
  * Features:
- *  1. BOTW Link model forced for adult Link. Child keeps vanilla model but
- *     still gets the combat mechanics.
- *  2. Flurry Rush: rising-edge PLAYER_STATE2_HOPPING + ENEMY/BOSS within
+ *  1. Flurry Rush: rising-edge PLAYER_STATE2_HOPPING + ENEMY/BOSS within
  *     range → world slows to 15%, Link gets iframes, up to 7-hit window.
- *  3. Bullet Time: use aimable item while airborne → world slows to 15%,
+ *  2. Bullet Time: use aimable item while airborne → world slows to 15%,
  *     Link floats, analog stick controls pitch+yaw (Zora boomerang style).
  *     Camera follows behind Link. Items fire in aimed direction.
  *
@@ -20,7 +18,6 @@
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-#define CHAMPION_PAK_PATH "nei/Adult_BOTWLink.pak"
 #define CHAMPION_FLURRY_DURATION 120 // real frames the slow window lasts (~2s)
 #define CHAMPION_FLURRY_HIT_MAX 7    // hits that end the window early
 #define CHAMPION_SLOW_FACTOR 0.15f   // world speed multiplier during both modes
@@ -51,7 +48,6 @@ typedef enum {
 // ---------------------------------------------------------------------------
 // Module-level statics
 // ---------------------------------------------------------------------------
-static u8 sChampionModelActive = 0;
 static ChampionState sChampionState = CHAMPION_IDLE;
 static s16 sChampionTimer = 0;
 static u8 sChampionHitCount = 0;
@@ -103,12 +99,6 @@ static u8 Champion_EnemyNearby(Player* player, PlayState* play) {
 
 /**
  * Set or clear the screen tint.
- * fillScreen must be toggled alongside screenFillColor for the engine to
- * render the overlay. fillScreen persists until explicitly cleared.
- *
- * golden=1 → warm gold (Flurry Rush)
- * golden=0 → cool blue (Bullet Time)
- * alpha=0  → clear tint
  */
 static void Champion_SetScreenTint(PlayState* play, u8 golden, u8 alpha) {
     if (alpha == 0) {
@@ -161,7 +151,6 @@ static void Champion_EnterBulletTime(Player* player, PlayState* play) {
     gChampionSlowFactor = CHAMPION_SLOW_FACTOR;
     player->actor.speedXZ = 0.0f;
     player->linearVelocity = 0.0f;
-    // Save initial facing direction, zero aim offsets
     sLockedYaw = player->actor.shape.rot.y;
     sAimYaw = 0;
     sAimPitch = 0;
@@ -175,9 +164,6 @@ static void Champion_ExitBulletTime(Player* player, PlayState* play) {
     Champion_SetScreenTint(play, 0, 0);
 }
 
-// ---------------------------------------------------------------------------
-// Melee hit callback — called from ExtEquip_OnMeleeHitDispatch
-// ---------------------------------------------------------------------------
 static void Champion_OnMeleeHit(Player* player, PlayState* play) {
     (void)player;
     if (sChampionState != CHAMPION_FLURRY_RUSH) {
@@ -193,19 +179,6 @@ static void Champion_OnMeleeHit(Player* player, PlayState* play) {
 // Per-frame behavior
 // ---------------------------------------------------------------------------
 static void Champion_Behavior(Player* player, PlayState* play) {
-    // ---- Model forcing: adult-only; mechanics work for all ages ------------
-    if (LINK_AGE_IN_YEARS == YEARS_ADULT) {
-        if (!sChampionModelActive) {
-            PakLoader_ForceModel(CHAMPION_PAK_PATH);
-            sChampionModelActive = 1;
-        }
-    } else {
-        if (sChampionModelActive) {
-            PakLoader_ClearForcedModel();
-            sChampionModelActive = 0;
-        }
-    }
-
     // ---- Guard: clean exit during cutscenes / death / loading --------------
     u32 blockedFlags = PLAYER_STATE1_DEAD | PLAYER_STATE1_IN_CUTSCENE | PLAYER_STATE1_LOADING |
                        PLAYER_STATE1_IN_ITEM_CS | PLAYER_STATE1_GETTING_ITEM;
@@ -223,7 +196,7 @@ static void Champion_Behavior(Player* player, PlayState* play) {
     if (sScreenFlashTimer > 0) {
         sScreenFlashTimer--;
         if (sScreenFlashTimer == 0 && sChampionState == CHAMPION_FLURRY_RUSH) {
-            Champion_SetScreenTint(play, 1, 50); // settle to dim persistent gold
+            Champion_SetScreenTint(play, 1, 50);
         }
     }
 
@@ -235,13 +208,11 @@ static void Champion_Behavior(Player* player, PlayState* play) {
     switch (sChampionState) {
 
         case CHAMPION_IDLE: {
-            // Bullet Time: Z-target held + airborne + aiming or aimable item
             if (!onGround && CHECK_BTN_ALL(play->state.input[0].cur.button, BTN_Z) &&
                 (player->unk_6AD == 2 || Champion_IsAimableItem(player))) {
                 Champion_EnterBulletTime(player, play);
                 break;
             }
-            // Flurry Rush: first frame of sidehop/backflip near an enemy or boss
             u8 risingEdge = curHopping && !sPrevHopping;
             if (risingEdge && Champion_EnemyNearby(player, play)) {
                 Champion_EnterFlurry(player, play);
@@ -252,7 +223,6 @@ static void Champion_Behavior(Player* player, PlayState* play) {
         case CHAMPION_FLURRY_RUSH: {
             if (sChampionTimer > 0) {
                 sChampionTimer--;
-                // Keep iframes in sync with remaining window
                 Player_SetIntangibility(player, sChampionTimer);
             }
             if (sChampionTimer <= 0) {
@@ -262,7 +232,6 @@ static void Champion_Behavior(Player* player, PlayState* play) {
         }
 
         case CHAMPION_BULLET_TIME: {
-            // Exit: landed or Z released
             u8 zHeld = CHECK_BTN_ALL(play->state.input[0].cur.button, BTN_Z);
             u8 cancel = onGround || !zHeld;
             if (cancel) {
@@ -270,18 +239,9 @@ static void Champion_Behavior(Player* player, PlayState* play) {
                 break;
             }
 
-            // Suspend fall
             player->actor.velocity.y = CHAMPION_BULLET_FLOAT;
-
-            // Maintain aim state for OOT items that need sustained aim (hookshot,
-            // longshot, bow, slingshot). z_player.c:3296 cancels their aim if
-            // unk_6AD == 0 AND not Z-targeting AND not FIRST_PERSON — so the
-            // hookshot would unequip without firing. unk_6AD = 2 keeps aim active.
-            // (PLAYER_STATE1_FIRST_PERSON is suppressed in camera_helper.c when
-            // Bullet Time is active, so custom items don't flip to first-person.)
             player->unk_6AD = 2;
 
-            // Stick → aim offsets (yaw = horizontal, pitch = vertical)
             s8 stickX = play->state.input[0].cur.stick_x;
             s8 stickY = play->state.input[0].cur.stick_y;
 
@@ -290,7 +250,6 @@ static void Champion_Behavior(Player* player, PlayState* play) {
             if (ABS(stickY) > 10)
                 sAimPitch += stickY * CHAMPION_AIM_SENSITIVITY;
 
-            // Clamp rotation range
             if (sAimYaw > (s16)CHAMPION_YAW_LIMIT)
                 sAimYaw = (s16)CHAMPION_YAW_LIMIT;
             if (sAimYaw < -(s16)CHAMPION_YAW_LIMIT)
@@ -300,10 +259,6 @@ static void Champion_Behavior(Player* player, PlayState* play) {
             if (sAimPitch < -(s16)CHAMPION_PITCH_LIMIT)
                 sAimPitch = -(s16)CHAMPION_PITCH_LIMIT;
 
-            // Apply aim: body rotation + camera focus direction.
-            // These persist across frames so when an item spawns in the NEXT
-            // frame's Player_UpdateCommon (which runs before us), it reads
-            // the rotated direction correctly.
             player->actor.shape.rot.y = sLockedYaw + sAimYaw;
             player->yaw = player->actor.shape.rot.y;
             player->upperLimbRot.x = sAimPitch;
@@ -319,15 +274,9 @@ static void Champion_Behavior(Player* player, PlayState* play) {
 }
 
 // ---------------------------------------------------------------------------
-// Cleanup — called from ExtEquip_DispatchBehavior with PlayState* when the
-// tunic slot is no longer 3. Takes PlayState* unlike other cleanups so that
-// the screen tint (fillScreen) can be properly cleared immediately.
+// Cleanup
 // ---------------------------------------------------------------------------
 static void Champion_Cleanup(PlayState* play) {
-    if (sChampionModelActive) {
-        PakLoader_ClearForcedModel();
-        sChampionModelActive = 0;
-    }
     gChampionSlowFactor = 1.0f;
 
     if (play != NULL) {
