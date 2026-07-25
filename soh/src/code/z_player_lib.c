@@ -1241,9 +1241,9 @@ void Player_DrawImpl(PlayState* play, void** skeleton, Vec3s* jointTable, s32 dL
 
 // Magic Armor (Ext Tunic 1): violet
 if (ExtEquip_IsEnabled() && ExtEquip_GetCurrent(EQUIP_TYPE_TUNIC) == 1) {
-    sTemp.r = 120;
-    sTemp.g = 70;
-    sTemp.b = 255;
+    sTemp.r = 245;
+    sTemp.g = 245;
+    sTemp.b = 250;
     color = &sTemp;
 }
 

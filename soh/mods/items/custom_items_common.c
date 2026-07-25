@@ -88,10 +88,10 @@ void DrawCustomExtChampionsTunic(PlayState* play, GetItemEntry* getItemEntry) {
 }
 
 void DrawCustomExtMagicCape(PlayState* play, GetItemEntry* getItemEntry) {
-    // Licht optimiert: Mehr Rot/Grün-Anteile, damit die gelben Kreuze richtig hell strahlen
+    // Licht optimiert für weißes Design: Etwas helleres Ambient-Licht, damit das Weiß sauber strahlt
     static Lights1 brightLights = gdSPDefLights1(
-        90, 55, 120,   // Ambient (Schatten) -> Erlaubt den goldenen Kreuzen im Schatten zu leuchten
-        255, 225, 255, // Diffuse (Hauptlicht) -> Sehr helles, leicht warmes Licht von vorne
+        120, 120, 130,   // Ambient (Schatten)
+        255, 255, 255, // Diffuse (Hauptlicht) -> Reines weißes Licht von vorne
         0, 80, 80      // Lichtrichtung
     );
 
@@ -108,27 +108,27 @@ void DrawCustomExtMagicCape(PlayState* play, GetItemEntry* getItemEntry) {
     gSPSetLights1(POLY_OPA_DISP++, brightLights);
 
     // Das magische Pulsieren
-    s16 pulse = (play->gameplayFrames * 3) % 60;
-    if (pulse > 30) {
-        pulse = 60 - pulse;
+    s16 pulse = (play->gameplayFrames * 3) % 40;
+    if (pulse > 20) {
+        pulse = 40 - pulse;
     }
     
-    // 1. FARBEN FÜR DEN STOFF (Helles, leuchtendes Lila)
-    u8 targetR = 115 + pulse;
-    u8 targetG = 55 + pulse;
-    u8 targetB = 225 + pulse;
+    // 1. FARBEN FÜR DEN STOFF (Korrigiert, damit nichts über 255 geht!)
+    u8 targetR = 230 + pulse; // max 250
+    u8 targetG = 230 + pulse; // max 250
+    u8 targetB = 235 + pulse; // max 255 (Schneeweiß mit minimal kühlem Schimmer)
 
-    // 2. FARBEN FÜR DEN KRAGEN (Ein deutlich dunkleres, tieferes Violett)
-    u8 collarR = 55 + (pulse / 2);
-    u8 collarG = 15 + (pulse / 2);
-    u8 collarB = 135 + (pulse / 2);
+    // 2. FARBEN FÜR DEN KRAGEN (Bleibt sicher unterm Limit)
+    u8 collarR = 210 + (pulse / 2);
+    u8 collarG = 200 + (pulse / 2);
+    u8 collarB = 180 + (pulse / 2);
 
-    // A) KRAGEN ZEICHNEN: Ohne Grayscale, direkt in dunklem Violett eingefärbt
+    // A) KRAGEN ZEICHNEN: Eierschalenweiß / Cremeweiß
     gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, collarR, collarG, collarB, 255);
     gDPSetEnvColor(POLY_OPA_DISP++, collarR / 2, collarG / 2, collarB / 2, 255);
     gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicCollarDL);
     
-    // B) STOFF & KREUZE ZEICHNEN: Umschalten auf das hellere, pulsierende Lila
+    // B) STOFF & KREUZE ZEICHNEN: Schneeweiß
     gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, targetR, targetG, targetB, 255);
     gDPSetEnvColor(POLY_OPA_DISP++, targetR / 2, targetG / 2, targetB / 2, 255); 
     gSPDisplayList(POLY_OPA_DISP++, (Gfx*)gGiTunicDL);
